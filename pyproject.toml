@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "farialimer"
+version = "0.0.1-alpha"
 authors = [
     {name = "Leandro Meili", email = "leandro.meili@gmail.com"},
 ]
@@ -18,4 +19,3 @@ classifiers = [
 dependencies = [
 
 ]
-dynamic = ["version"]
