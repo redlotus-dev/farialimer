@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "farialimer"
+authors = [
+    {name = "Leandro Meili", email = "leandro.meili@gmail.com"},
+]
+description = "Parser for Brazilian Finance Documents. Ex: IMBARQ, CNAB"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["parser", "imbarq", "cnab"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+
+]
+dynamic = ["version"]
