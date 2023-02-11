@@ -1,3 +1,5 @@
+"""Container for imbarq014 layouts"""
+
 from farialimer.providers.b3.documents.imbarq014.layouts.layout_00 import (
     layout as layout_00,
 )

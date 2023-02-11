@@ -1,11 +1,14 @@
+"""Parser Tests"""
+
+from collections import OrderedDict
+from datetime import date
 from farialimer.parser import Parser, get_filetype, parse_line
 import farialimer.providers.b3.documents.imbarq014.layouts as lay
-from collections import OrderedDict
-import pytest
-from datetime import date
 
 
 def test_get_filetype():
+    """Test the getfiletype"""
+
     path = "tests/providers/b3/samples/imbarq014/IMBARQ014_BV000272202205260000001000935071656.txt"
     parser = Parser()
     content = parser.read_file(path)
@@ -17,6 +20,7 @@ def test_get_filetype():
 
 
 def test_parse_layout00():
+    """Test the parsing of layout 00"""
     path = "tests/providers/b3/samples/imbarq014/IMBARQ014_BV000272202205260000001000935071656.txt"
     parser = Parser()
     content = parser.read_file(path)

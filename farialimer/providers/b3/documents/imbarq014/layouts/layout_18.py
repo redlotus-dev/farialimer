@@ -1,1 +1,3 @@
-layout = "18"
+"""Layout Specification"""
+
+LAYOUT = "18"
