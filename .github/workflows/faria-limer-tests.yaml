@@ -1,0 +1,35 @@
+name: Python checks for Flake8, Pylint and Pytest
+
+on: [ push ]
+
+jobs:
+  testing:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        python-version: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Flake8
+        run: pip install flake8
+
+      - name: Install Pylint
+        run: pip install pylint
+      - name: Run Pylint
+        run: find . -name "*.py" | xargs pylint --output-format=colorized
+
+      - name: Install Black
+        run: pip install black
+      - name: Run Black
+        run: find . -name "*.py" | xargs black --check
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name:
+        run: pytest tests/
