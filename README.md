@@ -1,3 +1,5 @@
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/redlotus-dev/farialimer/faria-limer-tests.yaml)
+
 # farialimer
 Parser for Brazilian Finance Documents
 
