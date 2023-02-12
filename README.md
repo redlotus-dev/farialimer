@@ -1,5 +1,5 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/redlotus-dev/farialimer/faria-limer-tests.yaml)
-
+[![codecov](https://codecov.io/github/redlotus-dev/farialimer/branch/main/graph/badge.svg?token=DT5E8GHT8Q)](https://codecov.io/github/redlotus-dev/farialimer)
 # farialimer
 Parser for Brazilian Finance Documents
 
@@ -15,3 +15,5 @@ CNAB significa "Centro Nacional de Automação Bancária". É um padrão de arqu
 
 # IMBARQ
 IMBARQ significa "Interface para Movimentação Bancária de Retorno e Quitação". É um padrão de arquivo utilizado pela B3 (Bolsa Brasileira de Valores) para a transferência de informações financeiras entre instituições financeiras. O IMBARQ é utilizado para facilitar a integração de sistemas de diferentes bancos, permitindo a realização de operações bancárias de forma mais ágil e segura. Além disso, o IMBARQ também é utilizado para o envio de informações de cobranças, pagamentos e movimentações financeiras entre instituições financeiras.
+
+# Graph
