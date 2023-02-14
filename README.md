@@ -21,3 +21,4 @@ Uma lista com outros projetos que serviram de inspiração:
 - https://github.com/Trust-Code/python-cnab
 - https://github.com/kivanio/brcobranca
 - https://github.com/kmee/cnab240
+- https://github.com/vintasoftware/aurorae
