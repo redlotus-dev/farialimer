@@ -1,0 +1,47 @@
+provider: B3
+service: conciliação
+layout: IMBARQ014
+register:
+  "00":
+    tipo_de_regsitro:
+      description: 'Tipo de registro - Fixo "00"'
+      type: N(02)
+      pos: [ 1,2 ]
+      default: '00'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ014'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ014
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento - Sequencial por usuário, atribuído p/ controle dos arquivos gerados'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      pos: [ 54,61 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      pos: [ 62,69 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(931)
+      pos: [ 70, 1000 ]
