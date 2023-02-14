@@ -25,3 +25,4 @@ Uma lista com outros projetos que serviram de inspiração:
 - https://github.com/kivanio/brcobranca
 - https://github.com/kmee/cnab240
 - https://github.com/vintasoftware/aurorae
+- https://github.com/glauberportella/cnab-layouts
