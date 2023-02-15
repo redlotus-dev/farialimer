@@ -17,7 +17,7 @@ Nossa equipe acredita que a transparência e a colaboração são essenciais par
 CNAB significa "Centro Nacional de Automação Bancária". É um padrão de arquivo utilizado por bancos no Brasil para a transferência de informações financeiras, como cobranças, pagamentos, boletos bancários, entre outras. O CNAB é um padrão estabelecido pela Febraban (Federação Brasileira de Bancos) que padroniza a forma como os arquivos são estruturados, tornando mais fácil e ágil a integração entre sistemas de diferentes bancos. O uso do CNAB permite a automação de processos bancários, melhorando a eficiência e a segurança nas transações financeiras.
 
 ## IMBARQ
-IMBARQ significa "Interface para Movimentação Bancária de Retorno e Quitação". É um padrão de arquivo utilizado pela B3 (Bolsa Brasileira de Valores) para a transferência de informações financeiras entre instituições financeiras. O IMBARQ é utilizado para facilitar a integração de sistemas de diferentes bancos, permitindo a realização de operações bancárias de forma mais ágil e segura. Além disso, o IMBARQ também é utilizado para o envio de informações de cobranças, pagamentos e movimentações financeiras entre instituições financeiras.
+IMBARQ significa "Interface para Movimentação Bancária de Retorno e Quitação". É um padrão de arquivo utilizado pela B3 (Bolsa Brasileira de Valores) para a transferência de informações financeiras entre instituições financeiras. O IMBARQ é utilizado para facilitar a integração de sistemas de diferentes bancos, permitindo a realização de operações bancárias de forma mais ágil e segura.
 
 ## Outros Projetos
 Uma lista com outros projetos que serviram de inspiração:
