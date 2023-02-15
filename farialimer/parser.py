@@ -80,7 +80,6 @@ def get_filetype(line):
 def parse_line(line, fields: List[Field]):
     """Given a line and a list of fields, extract the value from each layout item,
     parse it and return an OrderedDict"""
-
     parse_result = OrderedDict()
     for item in fields:
         print(item)
