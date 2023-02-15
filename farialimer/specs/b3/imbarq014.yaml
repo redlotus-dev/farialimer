@@ -3,10 +3,11 @@ service: conciliação
 layout: IMBARQ014
 register:
   "00":
-    tipo_de_regsitro:
+    tipo_registro:
       description: 'Tipo de registro - Fixo "00"'
       type: N(02)
       pos: [ 1,2 ]
+      convert: string
       default: '00'
     codigo_arquivo:
       description: 'Código do arquivo - Fixo "IMBARQ014'
@@ -36,10 +37,12 @@ register:
     data_geracao_arquivo:
       description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
       type: N(08)
+      convert: aaaammdd
       pos: [ 54,61 ]
     data_movimento:
       description: 'Data do movimento - Formato = "AAAAMMDD"'
       type: N(08)
+      convert: aaaammdd
       pos: [ 62,69 ]
     reserva:
       description: 'Preenchido com brancos'
