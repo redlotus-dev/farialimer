@@ -19,7 +19,7 @@ jobs:
         run: pip install flake8
 
       - name: Install Black
-        run: pip install black
+        run: pip install black==23.1.0
       - name: Run Black
         run: find . -name "*.py" | xargs black --check
 

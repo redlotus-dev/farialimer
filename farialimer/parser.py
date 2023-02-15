@@ -129,7 +129,7 @@ def get_spec_dict():
     value: spec yaml filepath
     """
     spec_dict = {}
-    for (dirpath, _, filenames) in walk("farialimer/specs"):
+    for dirpath, _, filenames in walk("farialimer/specs"):
         for filename in filenames:
             if filename.endswith("yaml"):
                 spec_key = filename.split(".")[0]
