@@ -6,16 +6,14 @@ build-backend = "setuptools.build_meta"
 name = "farialimer"
 version = "0.0.1-alpha"
 authors = [
-    {name = "Leandro Meili", email = "leandro.meili@gmail.com"},
+    { name = "Leandro Meili", email = "leandro.meili@gmail.com" },
 ]
 description = "Parser for Brazilian Finance Documents. Ex: IMBARQ, CNAB"
 readme = "README.md"
 requires-python = ">=3.7"
 keywords = ["parser", "imbarq", "cnab"]
-license = {text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
-dependencies = [
-
-]
+dependencies = ["PyYAML"]
