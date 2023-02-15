@@ -30,15 +30,12 @@ class Parser:
     def parse(self, content, spec):
         """Given the content and the doc spec, return the parsed lines"""
         parsed_lines = []
-        try:
-            document_parser = self.get_doc_parser(spec)
-            for line in content[:1]:
-                line_register = self._get_line_register(line)
-                layout_type = document_parser[line_register]
-                register = parse_line(line, layout_type)
-                parsed_lines.append(register)
-        except KeyError as err:
-            print(err)
+        document_parser = self.get_doc_parser(spec)
+        for line in content[:1]:
+            line_register = self._get_line_register(line)
+            layout_type = document_parser[line_register]
+            register = parse_line(line, layout_type)
+            parsed_lines.append(register)
         return parsed_lines
 
     def write(self):
