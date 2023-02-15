@@ -1,19 +1,24 @@
 """Parse module"""
-
+import os
 from collections import OrderedDict
+from collections import namedtuple
+from os import walk
 from typing import List
-import farialimer.providers.b3.documents.imbarq014.layouts as layout
-from farialimer.providers.b3.documents.imbarq014.layouts.layout_00 import (
-    Field,
-    NUMERIC,
-    TEXT,
-    DATE,
+
+import yaml
+
+from farialimer.utils.converters import convert_yyyymmdd
+
+Field = namedtuple(
+    "field", ["name", "description", "datatype", "convert", "start", "end"]
 )
-from farialimer.utils import convert_ymd
 
 
 class Parser:
     """Read, parse and write"""
+
+    def __init__(self):
+        self.spec_dict = get_spec_dict()
 
     @staticmethod
     def read_file(filepath, encoding="utf-8"):
@@ -22,18 +27,19 @@ class Parser:
             content = finput.readlines()
         return content
 
-    def parse_content(self, content):
-        """Parse the content and return a list of dicts"""
-        filetype = get_filetype(content[0])  # primeira linha do conteudo
-        print(filetype)
-        for line in content:
-            line_register = self._get_line_register(line)
-            layout_type = self._get_layout(line_register)
-            print(filetype, line_register, layout_type)
-            register = parse_line(line, layout_type)
-            print(register)
-        # qual é o tipo de arquivo
-        # qual é o layout
+    def parse(self, content, spec):
+        """Given the content and the doc spec, return the parsed lines"""
+        parsed_lines = []
+        try:
+            document_parser = self.get_doc_parser(spec)
+            for line in content[:1]:
+                line_register = self._get_line_register(line)
+                layout_type = document_parser[line_register]
+                register = parse_line(line, layout_type)
+                parsed_lines.append(register)
+        except KeyError as err:
+            print(err)
+        return parsed_lines
 
     def write(self):
         """Output the content on a given format"""
@@ -42,15 +48,28 @@ class Parser:
     def _get_line_register(self, line: str):
         return line[:2]
 
-    def _get_layout(self, line_register: str):
-        _register_map = {
-            "00": layout.layout_00,
-            "18": layout.layout_18,
-            "19": layout.layout_19,
-            "31": layout.layout_31,
-            "99": layout.layout_99,
-        }
-        return _register_map[line_register]
+    def get_doc_parser(self, spec):
+        """Given a spec, returns namedtuple list with its props"""
+        filepath = self.spec_dict[spec]
+        with open(filepath, encoding="utf-8") as yinput:
+            yml = yaml.safe_load(yinput)
+            document = {}
+
+            for key, values in yml["register"].items():
+                layout_list = []
+                for item, prop in values.items():
+                    layout_list.append(
+                        Field(
+                            item,
+                            prop["description"],
+                            prop["type"],
+                            prop.get("convert"),
+                            prop["pos"][0],
+                            prop["pos"][1],
+                        )
+                    )
+                document[key] = layout_list
+        return document
 
 
 def get_filetype(line):
@@ -64,12 +83,57 @@ def parse_line(line, fields: List[Field]):
 
     parse_result = OrderedDict()
     for item in fields:
+        print(item)
         parse_item = line[item.start - 1 : item.end]
-        if item.datatype == NUMERIC:
-            parse_item = int(parse_item)
-        if item.datatype == TEXT:
-            parse_item = parse_item.strip()
-        if item.datatype == DATE:
-            parse_item = convert_ymd(parse_item)
-        parse_result[item.description] = parse_item
+        converter = convert_mapper(item.convert) or data_mapper(item.datatype)
+        parse_item = converter(parse_item)
+        parse_result[item.name] = parse_item
     return parse_result
+
+
+def convert_to_int(parse_item):
+    """given a string-like int, convert it to int"""
+    return int(parse_item)
+
+
+def convert_to_string(parse_item):
+    """given a string, removes leading/trailing blank spaces"""
+    return parse_item.strip()
+
+
+def convert_mapper(converter):
+    """map the converter to it respective function"""
+    _convert_map = {"aaaammdd": convert_yyyymmdd, "string": convert_to_string}
+    return _convert_map.get(converter)
+
+
+def data_mapper(datatype):
+    """for the spec datatype, return its respective converter"""
+    _data_map = {
+        "X(09)": convert_to_string,
+        "N(03)": convert_to_int,
+        "N(07)": convert_to_int,
+        "X(08)": convert_to_string,
+        "N(15)": convert_to_int,
+        "N(09)": convert_to_int,
+        "N(08)": convert_to_int,
+        "N(02)": convert_to_int,
+        "X(931)": convert_to_string,
+    }
+    return _data_map.get(datatype)
+
+
+def get_spec_dict():
+    """
+    Load a spec dict:
+    key: spec name
+    value: spec yaml filepath
+    """
+    spec_dict = {}
+    for (dirpath, _, filenames) in walk("farialimer/specs"):
+        for filename in filenames:
+            if filename.endswith("yaml"):
+                spec_key = filename.split(".")[0]
+                filepath = os.path.join(dirpath, filename)
+                spec_dict[spec_key] = filepath
+    return spec_dict

@@ -1,13 +1,13 @@
 """"Test Layout Properties"""
 
-import farialimer.providers.b3.documents.imbarq014.layouts as layout
-from farialimer.utils import sum_layout_fields_size
+import farialimer.specs.b3.imbarq014.layouts.layout_00 as layout
+from farialimer.utils.math_ops import sum_layout_fields_size
 
 
 def test_layout_size():
     """Test the Sum of layout field sizes"""
 
-    result = sum_layout_fields_size(layout.layout_00)
+    result = sum_layout_fields_size(layout.layout)
     expected = 1000
 
     assert result == expected
