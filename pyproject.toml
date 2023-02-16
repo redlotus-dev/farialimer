@@ -17,4 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = ["PyYAML"]
-project_urls = { Source = "https://github.com/redlotus-dev/farialimer" }
+
+[project.urls]
+repository = "https://github.com/redlotus-dev/farialimer"
+
