@@ -20,3 +20,4 @@ dependencies = ["PyYAML"]
 
 [project.urls]
 repository = "https://github.com/redlotus-dev/farialimer"
+
