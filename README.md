@@ -5,6 +5,7 @@
 [![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=redlotus-dev_farialimer)
 # farialimer
 Parser / Writer for Brazilian Finance Documents
+![farialimer](https://user-images.githubusercontent.com/8230037/219248391-ffad24cd-50f9-4fb5-8fc9-19a45561ab0e.png)
 
 # Intro
 Bem-vindo ao projeto de CNAB e IMBARQ! Este projeto tem como objetivo fornecer uma solução open source para processar e gerenciar arquivos de remessa e retorno de cobranças bancárias, de acordo com as normas CNAB e IMBARQ.
