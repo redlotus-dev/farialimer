@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "farialimer"
-version = "0.0.1-alpha"
+version = "0.0.2-alpha"
 authors = [
     { name = "Leandro Meili", email = "leandro.meili@gmail.com" },
 ]
@@ -17,3 +17,4 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = ["PyYAML"]
+project_urls = { Source = "https://github.com/redlotus-dev/farialimer" }
