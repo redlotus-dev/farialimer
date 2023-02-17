@@ -3,10 +3,10 @@
 from typing import List
 
 
-from farialimer.parser import Field
+from farialimer.parser.basic_parser import Field
 
 
-def sum_layout_fields_size(layout: List[Field]):
+def sum_layout_fields_size(layout: List[Field], register):
     """Given a layout, sum all the fields length"""
-    sum_size = sum((item.end - item.start + 1) for item in layout["00"])
+    sum_size = sum((item.end - item.start + 1) for item in layout[register])
     return sum_size
