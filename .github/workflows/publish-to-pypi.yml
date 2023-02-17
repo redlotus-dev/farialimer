@@ -1,6 +1,8 @@
 name: PyPI - Publish Python 🐍 distributions 📦
 
-on: push
+on:
+  release:
+    types: [published]
 
 jobs:
   build-n-publish:
