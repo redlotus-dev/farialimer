@@ -9,6 +9,7 @@ repos:
     rev: 23.1.0
     hooks:
     -   id: black
+
 - repo: local
   hooks:
     - id: pylint
@@ -23,3 +24,12 @@ repos:
           "--rcfile=.pylintrc", # Link to your config file
           "--load-plugins=pylint.extensions.docparams", # Load an extension
         ]
+
+- repo: local
+  hooks:
+    - id: pytest-check
+      name: pytest-check
+      entry: pytest
+      language: system
+      pass_filenames: false
+      always_run: true
