@@ -32,12 +32,12 @@ class BasicParser(ABC):
     @staticmethod
     @abstractmethod
     def _get_line_register(line):
-        pass
+        pass  # pragma: no cover
 
     @staticmethod
     @abstractmethod
     def _data_mapper(datatype):
-        pass
+        pass  # pragma: no cover
 
     def parse(self, content, spec):
         """Given a content and spec document, returns a list of dict with the parsed information"""
