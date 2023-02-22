@@ -1,18 +1,20 @@
 "module for converting datatypes to other representations"
 
+import re
 from datetime import date
+from decimal import Decimal
 
-from farialimer.parser.basic_parser import ParseObject
+from farialimer.parser.models import ParseObject
 
 
-def convert_yyyymmdd(str_date):
+def convert_yyyymmdd(parse_obj: ParseObject):
     """
     Given a str like 20221020
     returns a date like date(2022,10,20)
     """
-    year = int(str_date[:4])
-    month = int(str_date[4:6])
-    day = int(str_date[6:8])
+    year = int(parse_obj.value[:4])
+    month = int(parse_obj.value[4:6])
+    day = int(parse_obj.value[6:8])
 
     result = date(year, month, day)
     return result
@@ -28,6 +30,18 @@ def convert_to_string(parse_obj: ParseObject):
     return parse_obj.value.strip()
 
 
-def convert_to_numeric(parse_obj: ParseObject):
+def b3_convert_to_numeric(parse_obj: ParseObject):
     """given a parse_obj, convert to a numerico value with its decimal places"""
-    return parse_obj
+    str_int_len, str_dec_len = re.search(
+        r"N\((\d+)\)V(\d+)", parse_obj.datatype
+    ).groups()
+    int_len = int(str_int_len)
+    dec_len = int(str_dec_len)
+
+    value = parse_obj.value.zfill(int_len + dec_len)
+
+    integer_part = str(int(value[:int_len]))
+    decimal_part = str(int(value[-dec_len:]))
+    numeric_value_str = ".".join([integer_part, decimal_part])
+    numeric_value = Decimal(numeric_value_str)
+    return numeric_value

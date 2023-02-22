@@ -1,11 +1,12 @@
 """Parse module"""
 from collections import namedtuple
+import re
 
 from farialimer.parser.basic_parser import BasicParser
 from farialimer.utils.converters import (
     convert_to_int,
     convert_to_string,
-    convert_to_numeric,
+    b3_convert_to_numeric,
 )
 
 Field = namedtuple(
@@ -31,24 +32,16 @@ class B3Parser(BasicParser):
     @staticmethod
     def _data_mapper(datatype):
         """for the spec datatype, return its respective converter"""
+        core_type = _get_core_type(datatype)
+
         _data_map = {
-            "X(09)": convert_to_string,
-            "X(04)": convert_to_string,
-            "X(01)": convert_to_string,
-            "N(04)": convert_to_string,
-            "N(03)": convert_to_int,
-            "N(07)": convert_to_int,
-            "X(08)": convert_to_string,
-            "N(15)": convert_to_int,
-            "N(09)": convert_to_int,
-            "N(08)": convert_to_int,
-            "N(02)": convert_to_int,
-            "N(19)": convert_to_int,
-            "X(10)": convert_to_string,
-            "X(15)": convert_to_string,
-            "X(35)": convert_to_string,
-            "X(20)": convert_to_string,
-            "X(931)": convert_to_string,
-            "N(18)V10": convert_to_numeric,
+            "X": convert_to_string,
+            "N": convert_to_int,
+            "NV": b3_convert_to_numeric,
         }
-        return _data_map[datatype]
+        return _data_map[core_type]
+
+
+def _get_core_type(datatype):
+    result = re.sub(r"[^A-Z]", "", datatype)
+    return result

@@ -2,22 +2,17 @@
 
 import os
 from abc import ABC, abstractmethod
-from collections import namedtuple, OrderedDict
+from collections import OrderedDict
 from os import walk
 from typing import List
 
 import yaml
 
+from farialimer.parser.models import Field, ParseObject
 from farialimer.utils.converters import (
     convert_yyyymmdd,
     convert_to_string,
 )
-
-Field = namedtuple(
-    "field", ["name", "description", "datatype", "convert", "start", "end"]
-)
-
-ParseObject = namedtuple("parse_object", ["value", "converter", "dataype"])
 
 
 class BasicParser(ABC):

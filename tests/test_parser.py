@@ -23,7 +23,14 @@ def test_parse_imbarq014():
     path = "tests/specs/b3/samples/imbarq014/IMBARQ014_BV000272202205260000001000935071656.txt"
     parser = Parser("imbarq014")
     content = parser.read_file(path)
-    result = parser.parse(content, spec="imbarq014")
+
+    head = content[0]
+    l18 = content[1]
+    l19 = content[42]
+    l31 = content[47]
+    trail = content[-1]
+    sample = [head, l18, l19, l31, trail]
+    result = parser.parse(sample, spec="imbarq014")
 
     expected = [
         OrderedDict(

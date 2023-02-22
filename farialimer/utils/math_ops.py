@@ -2,8 +2,7 @@
 
 from typing import List
 
-
-from farialimer.parser.basic_parser import Field
+from farialimer.parser.models import Field
 
 
 def sum_layout_fields_size(layout: List[Field], register):
