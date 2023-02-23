@@ -394,11 +394,198 @@ register:
       description: 'PREENCHIDO COM BRANCOS'
       type: X(13)
       pos: [ 988, 1000 ]
-
-
-
   "02":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "02"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '18'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor no Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 48,62 ]
+    codigo_custodiante:
+      description: 'Código Custodiante'
+      type: X(15)
+      pos: [ 63, 77 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor no Custodiante'
+      type: X(15)
+      pos: [ 78, 92 ]
+    codigo_instrumento:
+      description: 'Security ID'
+      type: X(35)
+      pos: [ 93, 127 ]
+    codigo_origem_identificacao_instrumento:
+      description: 'Security Source'
+      type: X(35)
+      pos: [ 128, 162 ]
+    codigo_bolsa_valor:
+      description: 'Security Exchange'
+      type: X(04)
+      pos: [ 163, 166 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 167, 178 ]
+    codigo_negociacao:
+      description: 'Código de Negociação'
+      type: X(35)
+      pos: [ 179, 213 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(05)
+      pos: [ 214, 218 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(03)
+      pos: [ 219, 221 ]
+    fator_cotacao:
+      description: 'Fator de cotação'
+      type: N(10)
+      pos: [ 222, 231 ]
+    data_pregao:
+      description: 'FORMATO = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 232, 241 ]
+      convert: aaaa-mm-dd
+    data_liquidacao:
+      description: 'FORMATO = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 242, 251 ]
+      convert: aaaa-mm-dd
+    codigo_carteira:
+      description: 'Código da Carteira'
+      type: X(35)
+      pos: [ 252, 286 ]
+    quantidade_comprada:
+      description: 'Quantidade Comprada'
+      type: N(15)
+      pos: [ 287, 301 ]
+    volume_financeiro_comprado:
+      description: 'Volume Financeiro Comprado'
+      type: N(18)V02
+      pos: [ 302, 321 ]
+    preco_medio_compra:
+      description: 'Preço Médio Compra'
+      type: N(19)V07
+      pos: [ 322, 347 ]
+    quantidade_vendida:
+      description: 'Quantidade Vendida'
+      type: N(15)
+      pos: [ 348, 362 ]
+    volume_financeiro_vendido:
+      description: 'Volume Financeiro Vendido'
+      type: N(18)V02
+      pos: [ 363, 382 ]
+    preco_medio_venda:
+      description: 'Preço Médio Venda'
+      type: N(19)V07
+      pos: [ 383, 408 ]
+    posicao_coberta_vendida:
+      description: 'Posição Coberta Vendida'
+      type: N(19)V07
+      pos: [ 409, 434 ]
+    posicao_descoberta_vendida:
+      description: 'Posição Descoberta Vendida'
+      type: N(19)V07
+      pos: [ 435, 460 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(540)
+      pos: [ 461, 1000 ]
   "03":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "02"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '18'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor no Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 48,62 ]
+    codigo_instrumento:
+      description: 'Security ID'
+      type: X(35)
+      pos: [ 63, 97 ]
+    codigo_origem_identificacao_instrumento:
+      description: 'Security Source'
+      type: X(35)
+      pos: [ 98, 132 ]
+    codigo_bolsa_valor:
+      description: 'Security Exchange'
+      type: X(04)
+      pos: [ 133, 136 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 137, 148 ]
+    codigo_negociacao:
+      description: 'Código de Negociação'
+      type: X(35)
+      pos: [ 149,183 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(03)
+      pos: [ 184,186 ]
+    mercadoria:
+      description: 'Mercadoria'
+      type: X(30)
+      pos: [ 187,216 ]
+    codigo_vencimento:
+      description: 'Código de Vencimento'
+      type: X(04)
+      pos: [217,220]
+    data_alocacao_aviso_entrega:
+      description: 'FORMATO = "AAAA-MM-DD"'
+      type: X(10)
+      pos: [221, 230]
+      convert: aaaa-mm-dd
+    preco_entrega:
+      description: 'Preço de Entrega'
+      type: N(19)V07
+      pos: [231,256]
+    natureza_posicao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: X(01)
+      pos: [257, 257]
+    posicao_procedimento_entrega_fisica:
+      description: 'Posção em Procedimento de Entrega Física'
+      type: N(15)
+      pos: [258, 272]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(728)
+      pos: [273, 1000]
+
+
+
   "04":
   "05":
   "06":
