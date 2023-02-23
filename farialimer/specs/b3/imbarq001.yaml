@@ -561,33 +561,272 @@ register:
     codigo_vencimento:
       description: 'Código de Vencimento'
       type: X(04)
-      pos: [217,220]
+      pos: [ 217,220 ]
     data_alocacao_aviso_entrega:
       description: 'FORMATO = "AAAA-MM-DD"'
       type: X(10)
-      pos: [221, 230]
+      pos: [ 221, 230 ]
       convert: aaaa-mm-dd
     preco_entrega:
       description: 'Preço de Entrega'
       type: N(19)V07
-      pos: [231,256]
+      pos: [ 231,256 ]
     natureza_posicao:
       description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
       type: X(01)
-      pos: [257, 257]
+      pos: [ 257, 257 ]
     posicao_procedimento_entrega_fisica:
       description: 'Posção em Procedimento de Entrega Física'
       type: N(15)
-      pos: [258, 272]
+      pos: [ 258, 272 ]
     reserva:
       description: 'Preenchido com brancos'
       type: X(728)
-      pos: [273, 1000]
-
-
-
+      pos: [ 273, 1000 ]
   "04":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "04"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '04'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor no Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 48,62 ]
+    codigo_custodiante:
+      description: 'Código Custodiante'
+      type: X(15)
+      pos: [ 63, 77 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor no Custodiante'
+      type: X(15)
+      pos: [ 78, 92 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 93, 104 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(05)
+      pos: [ 105,109 ]
+    numero_recompra:
+      description: 'Número da Recompra'
+      type: X(35)
+      pos: [ 110, 144 ]
+    data_negociacao:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 145, 154 ]
+      convert: aaaa-mm-dd
+    data_encerramento_posicao_recompra:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 155, 164 ]
+      convert: aaaa-mm-dd
+    natureza_operacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: X(01)
+      pos: [ 165, 165 ]
+    codigo_carteira:
+      description: 'Código da Carteira'
+      type: X(35)
+      pos: [ 166, 200 ]
+    quantidade_original:
+      description: 'Quantidade Original'
+      type: N(13)V06
+      pos: [ 201, 219 ]
+    quantidade_cancelada:
+      description: 'Quantidade Cancelada'
+      type: N(13)V06
+      pos: [ 220, 238 ]
+    quantidade_executada:
+      description: 'Quantidade Executada'
+      type: N(13)V06
+      pos: [ 239, 257 ]
+    quantidade_revertida:
+      description: 'Quantidade Revertida'
+      type: N(13)V06
+      pos: [ 258, 276 ]
+    valor_original:
+      description: 'Valor Original'
+      type: N(18)V02
+      pos: [ 277, 296 ]
+    valor_cancelado:
+      description: 'Valor Cancelado'
+      type: N(18)V02
+      pos: [ 297, 316 ]
+    valor_executado:
+      description: 'Valor Executado'
+      type: N(18)V02
+      pos: [ 317, 336 ]
+    valor_revertido:
+      description: 'Valor Revertido'
+      type: N(18)V02
+      pos: [ 337, 356 ]
+    preco_medio_entrega_original:
+      description: 'Preço Médio de Entrega Original'
+      type: N(19)V07
+      pos: [ 357, 382 ]
+    preco_reversao:
+      description: 'Preço de Reversão'
+      type: N(19)V07
+      pos: [ 383, 408 ]
+    vencimento_titulo:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 409, 418 ]
+      convert: aaaa-mm-dd
+    codigo_identificador_titulo_selic:
+      description: 'Código Identificador do Título SELIC'
+      type: X(06)
+      pos: [ 419, 424 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(576)
+      pos: [ 425, 1000 ]
   "05":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "05"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '05'
+    codigo_participante_solicitante:
+      description: 'Código do Participante Solicitante'
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: 'Código do Investidor Solicitante'
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48,62 ]
+    codigo_instrumento:
+      description: 'Security ID'
+      type: X(35)
+      pos: [ 63, 97 ]
+    codigo_origem_identificador_instrumento:
+      description: 'Security Source'
+      type: X(35)
+      pos: [ 98, 132 ]
+    codigo_bolsa_valor:
+      description: 'Código Bolsa Valor'
+      type: X(12)
+      pos: [ 133, 136 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 137, 148 ]
+    codigo_negociacao:
+      description: 'Código de Negociação'
+      type: X(35)
+      pos: [ 149, 183 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(03)
+      pos: [ 184, 186 ]
+    mercadoria:
+      description: 'Mercadoria'
+      type: X(30)
+      pos: [ 187, 216 ]
+    isin_ativo_objeto:
+      description: 'ISIN do Ativo Objeto'
+      type: X(12)
+      pos: [ 217, 228 ]
+    distribuicao_ativo_objeto:
+      description: 'Distribuição do Ativo Objeto'
+      type: N(10)
+      pos: [ 229, 238 ]
+    codigo_vencimento:
+      description: 'Código do Vencimento'
+      type: X(04)
+      pos: [ 239, 242 ]
+    data_negociacao:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 243, 252 ]
+      convert: aaaa-mm-dd
+    data_vencimento:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      pos: [ 253, 262 ]
+      convert: aaaa-mm-dd
+    numero_negocio:
+      description: 'Número do Negócio'
+      type: X(35)
+      pos: [ 263, 297 ]
+    numero_contrato:
+      description: 'Número do Contrato (Somente em D+1)'
+      type: X(35)
+      pos: [ 298, 332 ]
+    natureza_operacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: N(01)
+      pos: [ 333, 333 ]
+    quantidade:
+      description: 'Quantidade'
+      type: N(15)
+      pos: [ 334, 348 ]
+    quantidade_original:
+      description: 'Quantidade Original'
+      type: N(09)V06
+      pos: [ 349, 363 ]
+    quantidade_negocios_com_posicao_a_vista:
+      description: 'Quantidade de Negócios com Posição a Vista'
+      type: N(15)
+      pos: [ 364, 378 ]
+    quantidade_liquidacao_antecipada:
+      description: 'Quantidade de Liquidação Antecipada'
+      type: N(15)
+      pos: [ 379, 393 ]
+    quantidade_coberta_falha_entrega:
+      description: 'Quantidade Coberta com Falha de Entrega'
+      type: N(15)
+      pos: [ 394, 408 ]
+    quantidade_coberta_recompra:
+      description: 'Quantidade Coberta com Recompra'
+      type: N(15)
+      pos: [ 409, 423 ]
+    quantidade_coberta:
+      description: 'Quantidade Coberta'
+      type: N(15)
+      pos: [ 424, 438 ]
+    quantidade_descoberta:
+      description: 'Quantidade Descoberta'
+      type: N(15)
+      pos: [ 439, 453 ]
+    preco_contrato:
+      description: 'Preço do Contrato'
+      type: N(19)V07
+      pos: [ 454, 479 ]
+    valor_posicao:
+      description: 'Valor da Posição'
+      type: N(18)V02
+      pos: [ 480, 499 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(501)
+      pos: [ 500, 1000 ]
+
   "06":
   "07":
   "08":
