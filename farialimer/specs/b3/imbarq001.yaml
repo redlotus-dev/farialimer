@@ -1071,6 +1071,95 @@ register:
       type: X(87)
       pos: [ 914, 1000 ]
   "07":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "07"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '07'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    data_negociacao:
+      description: 'Data da Negociação'
+      type: X(10)
+      pos: [ 98, 107 ]
+      convert: aaaa-mm-dd
+    data_registro:
+      description: 'Data do Registro'
+      type: X(10)
+      pos: [ 108, 117 ]
+      convert: aaaa-mm-dd
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 118, 127 ]
+      convert: aaaa-mm-dd
+    valor_cotacao:
+      description: 'Valor da Cotação'
+      type: N(09)V07
+      pos: [ 128, 143 ]
+    codigo_variavel:
+      description: 'Exemplos: DOL - Dólar comercial; REU – Tx. de reais/EUR; YDO - JPY X USD'
+      type: X(12)
+      pos: [ 144, 155 ]
+    descricao_codigo_variavel:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 156, 215 ]
+    codigo_tipo_variavel:
+      description: 'Exemplos: T1 - PTAX800 venda; T2 - PTAX800 compra'
+      type: X(02)
+      pos: [ 216, 217 ]
+    descricao_tipo_variavel:
+      description: 'Descrição do Tipo da Variável'
+      type: X(60)
+      pos: [ 218, 277 ]
+    tamanho_base:
+      description: 'Tamanho da Base'
+      type: N(15)V02
+      pos: [ 278, 294 ]
+    natureza_posicao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: X(01)
+      pos: [ 295, 295 ]
+    indicador_garantias:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CollateralIndicator'
+      type: X(01)
+      pos: [ 296, 296 ]
+    codigo_negociador_contraparte:
+      description: 'Código do Negociador da Contraparte'
+      type: X(15)
+      pos: [ 297, 311 ]
+    indicador_garantias_contraparte:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CollateralIndicator'
+      type: X(01)
+      pos: [ 312, 312 ]
+    codigo_contrato:
+      description: 'Exemplos: TMC - Termo tx.cambio; TMM - Termo de metal'
+      type: X(06)
+      pos: [ 313, 318 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(682)
+      pos: [ 319, 1000 ]
   "08":
   "09":
   "10":
