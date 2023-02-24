@@ -1541,6 +1541,90 @@ register:
       type: X(785)
       pos: [ 216, 1000 ]
   "12":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "12"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '12'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48,62 ]
+    codigo_participante_conta:
+      description: 'Código do Participante por Conta'
+      type: X(15)
+      pos: [ 63, 77 ]
+    mercadoria:
+      description: 'Mercadoria'
+      type: X(30)
+      pos: [ 78, 107 ]
+    isin:
+      description: 'Código ISIN'
+      type: X(12)
+      pos: [ 108, 119 ]
+    data_referencia_movimento:
+      description: 'Data de Referência do Movimento'
+      type: X(10)
+      pos: [ 120, 129 ]
+      convert: aaaa-mm-dd
+    data_liquidacao:
+      description: 'Data de Liquidação'
+      type: X(10)
+      pos: [ 130, 139 ]
+      convert: aaaa-mm-dd
+    codigo_lancamento_financeiro:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CashEntryCode'
+      type: N(05)
+      pos: [ 140, 144 ]
+    descricao_codigo_lancamento_financeiro:
+      description: 'Descrição do Código de Lançamento Financeiro'
+      type: X(60)
+      pos: [ 145, 204 ]
+    tipo_lancamento:
+      description: 'Tipo de Lançamento'
+      type: X(01)
+      pos: [ 205, 205 ]
+    valor_financeiro_lancamento:
+      description: 'Valor Financeiro do Lançamento'
+      type: N(18)V02
+      pos: [ 206, 225 ]
+    quantidade:
+      description: 'Quantidade'
+      type: N(15)
+      pos: [ 226, 240 ]
+    preco_negociacao:
+      description: 'Preço de Negociação'
+      type: N(13)V02
+      pos: [ 241, 255 ]
+    valor_imposto_renda:
+      description: 'Valor do Imposto de Renda'
+      type: N(17)V02
+      pos: [ 256, 274 ]
+    numero_pagamento_compensado:
+      description: 'Número do Pagamento Compensado'
+      type: N(19)
+      pos: [ 275, 293 ]
+    numero_contrato_emprestimo_ativos:
+      description: 'Dado fornecido quando os códigos de lançamentos forem iguais a 12112,12113,12234,12235,12304 e 12305'
+      type: X(35)
+      pos: [ 294, 328 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(672)
+      pos: [ 329, 1000 ]
   "13":
   "14":
   "15":
