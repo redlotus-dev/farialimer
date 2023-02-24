@@ -2530,7 +2530,7 @@ register:
       description: ''
       type: X(10)
       pos: [ 335, 344 ]
-    valor_garantia:
+    valor_garantias:
       description: ''
       type: N(19)V02
       pos: [ 345, 365 ]
@@ -2734,7 +2734,7 @@ register:
       description: ''
       type: X(10)
       pos: [ 335, 344 ]
-    valor_garantia:
+    valor_garantias:
       description: ''
       type: N(19)V02
       pos: [ 345, 365 ]
