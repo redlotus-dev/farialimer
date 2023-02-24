@@ -1331,6 +1331,171 @@ register:
       type: X(805)
       pos: [ 196, 1000 ]
   "10":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "10"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '10'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado_parte:
+      description: 'Código do Participante Solicitado - Parte'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado_parte:
+      description: 'Código do Investidor Solicitado - Parte'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    data_negociacao:
+      description: 'Data da Negociação'
+      type: X(10)
+      pos: [ 98, 107 ]
+      convert: aaaa-mm-dd
+    data_registro:
+      description: 'Data do Registro'
+      type: X(10)
+      pos: [ 108, 117 ]
+      convert: aaaa-mm-dd
+    data_base:
+      description: 'Data Base'
+      type: X(10)
+      pos: [ 118, 127 ]
+      convert: aaaa-mm-dd
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 128, 137 ]
+      convert: aaaa-mm-dd
+    codigo_tipo_variavel_parte:
+      description: 'Exemplos: PF - PCO Fechamento;PL - PCO Liquidação;PM - PCO Médio;T1 - PTAX800 venda;T2 - PTAX800 compra;T3 - PTAX800 media'
+      type: X(02)
+      pos: [ 138, 139 ]
+    descricao_tipo_variavel_parte:
+      description: 'Descrição do Tipo de Variável - Parte'
+      type: X(60)
+      pos: [ 140, 199 ]
+    codigo_variavel_parte:
+      description: 'Exemplos: DI1 - Taxa do CDI;DOL - Dólar comercial;IGM - IGP-M'
+      type: X(12)
+      pos: [ 200, 211 ]
+    descricao_codigo_tipo_variavel_parte:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 212, 271 ]
+    percentual_variavel:
+      description: 'Percentual da Variável'
+      type: N(04)V07
+      pos: [ 272, 282 ]
+    tamanho_base_parte:
+      description: 'Tamanho da Base'
+      type: N(15)V02
+      pos: [ 283, 299 ]
+    valor_atual_ponta_ativa:
+      description: 'Valor Atual - Ponta Ativa'
+      type: N(15)V02
+      pos: [ 300, 316 ]
+    valor_atual_contraparte:
+      description: 'Valor Atual - Contraparte'
+      type: N(15)V02
+      pos: [ 317, 333 ]
+    codigo_tipo_variavel_contraparte:
+      description: 'Exemplos: PF - PCO Fechamento;PL - PCO Liquidação;PM - PCO Médio;T1 - PTAX800 venda;T2 - PTAX800 compra;T3 - PTAX800 media'
+      type: X(02)
+      pos: [ 334, 335 ]
+    descricao_tipo_variavel_contraparte:
+      description: 'Descrição do Tipo de Variável - Contraparte'
+      type: X(60)
+      pos: [ 336, 395 ]
+    codigo_variavel_contraparte:
+      description: 'Exemplos: DI1 - Taxa do CDI;DOL - Dólar comercial;FGV - FGV 100'
+      type: X(12)
+      pos: [ 396, 407 ]
+    descricao_codigo_variavel_contraparte:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 408, 467 ]
+    percentual_variavel_contraparte:
+      description: 'Percentual da Variável'
+      type: N(04)V07
+      pos: [ 468, 478 ]
+    codigo_participante_contraparte:
+      description: 'Código do Participante Contraparte'
+      type: X(15)
+      pos: [ 479, 493 ]
+    sinal:
+      description: 'Sinal'
+      type: X(01)
+      pos: [ 494, 494 ]
+    valor_juros_parte:
+      description: 'Valor dos Juros - Parte'
+      type: N(06)V07
+      pos: [ 495, 507 ]
+    indicador_garantias_parte:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: CollateralIndicator'
+      type: X(01)
+      pos: [ 508, 508 ]
+    indicador_garantias_contraparte:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: CollateralIndicator'
+      type: X(01)
+      pos: [ 509, 509 ]
+    sinal2:
+      description: 'Sinal'
+      type: X(01)
+      pos: [ 510, 510 ]
+    mtm_fair_value:
+      description: 'MTM - Fair Value (Diferencial das curvas) Somente será valorizado qunado for SWAP'
+      type: N(15)V02
+      pos: [ 511, 527 ]
+    codigo_contrato:
+      description: 'EXEMPLOS: “SCP” - DOL X PRE; “SDC” - DI1 X DOL; “SDP” - DI1 X PRE'
+      type: X(06)
+      pos: [ 528, 533 ]
+    sinal3:
+      description: 'Sinal'
+      type: X(01)
+      pos: [ 534, 534 ]
+    valor_juros_contraparte:
+      description: 'Valor dos Juros - Contraparte'
+      type: N(06)V07
+      pos: [ 535, 547 ]
+    cotacao_inicial_parte:
+      description: 'Cotação Inicial - Parte'
+      type: N(06)V07
+      pos: [ 548, 560 ]
+    cotacao_inicial_contraparte:
+      description: 'Cotação Inicial - Contraparte'
+      type: N(06)V07
+      pos: [ 561, 573 ]
+    data_cotacao_parte:
+      description: 'Data da Cotação - Parte'
+      type: X(03)
+      pos: [ 574, 576 ]
+    data_cotacao_contraparte:
+      description: 'Data da Cotação - Contraparte'
+      type: X(03)
+      pos: [ 577, 579 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(421)
+      pos: [ 580, 1000 ]
+
+
+
+
+
+
+
   "11":
   "12":
   "13":
