@@ -2090,6 +2090,131 @@ register:
       pos: [ 855, 1000 ]
   "34":
   "36":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "36"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '36'
+    participante_solicitante:
+      description: 'Participante Solicitante'
+      type: X(15)
+      pos: [ 3, 17 ]
+    informacao_solicitada_codigo_participante:
+      description: 'Informação Solicitada / Código do Participante'
+      type: X(15)
+      pos: [ 18, 32 ]
+    nome_simplificado:
+      description: 'Nome Simplificado'
+      type: X(20)
+      pos: [ 33, 52 ]
+    sistema:
+      description: 'Sistema'
+      type: X(02)
+      pos: [ 53, 54 ]
+      default: 21
+    tipo_instrumento_financeiro:
+      description: 'Tipo de Instrumento Financeiro'
+      type: X(05)
+      pos: [ 55, 59 ]
+    instrumento_financeiro:
+      description: 'Instrumento Financeiro'
+      type: X(20)
+      pos: [ 60, 79 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 80, 91 ]
+    emissor_registrador:
+      description: 'Emissor Registrador'
+      type: X(40)
+      pos: [ 92, 131 ]
+    data_emissao:
+      description: 'Data de Emissão'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 132, 141 ]
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 142, 151 ]
+    informacao_nao_disponivel:
+      description: 'Informação não disponível'
+      type: X(06)
+      pos: [ 152, 157 ]
+      default: "000000"
+    fir:
+      description: 'FIR'
+      type: X(11)
+      pos: [ 158, 168 ]
+    tipo_posicao_custodia:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:OTCCustodyPositionType'
+      type: X(03)
+      pos: [ 169, 171 ]
+    quantidade:
+      description: 'Quantidade'
+      type: N(19)V10
+      pos: [ 172, 200 ]
+    valor_nominal:
+      description: 'Valor Nominal'
+      type: N(19)V10
+      pos: [ 201, 229 ]
+    pu_curva:
+      description: 'PU Curva'
+      type: N(19)V10
+      pos: [ 230, 258 ]
+    data_curva:
+      description: 'Data Curva'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 259, 268 ]
+    juros_vencidos_nao_pagos:
+      description: 'Juros Vencidos Não Pagos'
+      type: N(19)V10
+      pos: [ 269, 297 ]
+    juros_pro_rata:
+      description: 'Juros Pro Rata'
+      type: N(19)V10
+      pos: [ 298, 326 ]
+    data_resgate:
+      description: 'Data de Resgate'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 327, 336 ]
+    condicao_resgate_antecipa:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:EarlyRedemptionCondition'
+      type: X(01)
+      pos: [ 337, 337 ]
+    data_inicio_resgate_antecipado:
+      description: 'Data de Início do Resgate Antecipado'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 338, 347 ]
+    tipo_regime:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:RegimeType'
+      type: X(01)
+      pos: [ 348, 348 ]
+    eventos_cursados_cetip:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 349, 349 ]
+    destinacao_recurso_lei_12_431:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 350, 350 ]
+    artigo_lei_12_431:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:TypeOfArticle'
+      type: X(01)
+      pos: [ 351, 351 ]
+    tipo_emissao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CreationType'
+      type: X(01)
+      pos: [ 352, 352 ]
+    reserva:
+      description: 'Reserva'
+      type: X(648)
+      pos: [ 353, 1000 ]
   "99":
     tipo_registro:
       description: 'Tipo de registro - Fixo "99"'
