@@ -1489,14 +1489,57 @@ register:
       description: 'Preenchido com brancos'
       type: X(421)
       pos: [ 580, 1000 ]
-
-
-
-
-
-
-
   "11":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "11"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '11'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado_ponta_ativa:
+      description: 'Código do Participante Solicitado - Ponta Ativa'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado_ponta_ativa:
+      description: 'Código do Investidor Solicitado - Ponta Ativa'
+      type: X(15)
+      pos: [ 48,62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    codigo_variavel:
+      description: 'Exemplos: DI1 - Taxa do CDI;DOL - Dólar comercial;IGM - IGP-M'
+      type: X(12)
+      pos: [ 98, 109 ]
+    descricao_codigo_variavel:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 110, 169 ]
+    codigo_negociacao:
+      description: 'Código da Negociação'
+      type: X(12)
+      pos: [ 170, 181 ]
+    percentual_participacao_acao_carteira:
+      description: 'Percentual de Participação na Ação da Carteira'
+      type: N(10)V2
+      pos: [ 182, 193 ]
+    quantidade_atualizada_acao:
+      description: 'Quantidade Atualizada da Ação'
+      type: N(22)
+      pos: [ 194, 215 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(785)
+      pos: [ 216, 1000 ]
   "12":
   "13":
   "14":
