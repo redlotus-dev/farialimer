@@ -1048,7 +1048,7 @@ register:
       pos: [ 837, 842 ]
     percentual_indice_correcao:
       description: 'Percentual do Índice de Correção'
-      type: N(12)V06  # verify with B3, probably wrong value
+      type: N(12)V04  # verified with B3
       pos: [ 843, 858 ]
     codigo_instrumento_indice_correcao:
       description: 'Security ID do índice de correção'
@@ -1279,6 +1279,57 @@ register:
       type: X(509)
       pos: [ 492, 1000 ]
   "09":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "09"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '09'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    titulo_lancador:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: Side'
+      type: X(01)
+      pos: [ 98, 98 ]
+    codigo_barreira:
+      description: 'ID – KNOCK IN N DOWN; IU – KNOCK IN AND UP;OD – KNOCK OUT N DOW;OU – KNOCK OUT N UP;PB – Barreira limite'
+      type: X(05)
+      pos: [ 99, 103 ]
+    descricao_barreira:
+      description: 'Descrição da Barreira'
+      type: X(60)
+      pos: [ 104, 163 ]
+    preco_barreira:
+      description: 'Preço da Barreira'
+      type: N(15)V07
+      pos: [ 164, 185 ]
+    data_acionamento_barreira:
+      description: 'Formato = "AAAA-MM-DD"'
+      type: X(10)
+      pos: [ 186, 195 ]
+      convert: aaaa-mm-dd
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(805)
+      pos: [ 196, 1000 ]
   "10":
   "11":
   "12":
