@@ -2326,8 +2326,109 @@ register:
       description: 'Preencher com espaços em branco'
       type: X(552)
       pos: [ 449, 1000 ]
-
   "17":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "17"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '17'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(09)
+      pos: [ 33, 41 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 42,56 ]
+    data_pregao:
+      description: 'Data do Pregão'
+      type: X(10)
+      pos: [ 57, 66 ]
+      convert: aaaa-mm-dd
+    data_liquidacao:
+      description: 'Data da Liquidação'
+      type: X(10)
+      pos: [ 67, 76 ]
+      convert: aaaa-mm-dd
+    data_movimento:
+      description: 'Data do Movimento'
+      type: X(10)
+      pos: [ 77, 86 ]
+      convert: aaaa-mm-dd
+    numero_instrucao_liquidacao:
+      description: 'Número da Instrução de Liquidação'
+      type: X(64)
+      pos: [ 87, 150 ]
+    numero_instrucao_liquidacao_original:
+      description: 'Número da Instrução de Liquidação Original'
+      type: X(64)
+      pos: [ 151, 214 ]
+    carteira:
+      description: 'Carteira'
+      type: X(10)
+      pos: [ 215, 224 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 225, 236 ]
+    distribuicao_isin:
+      description: 'Distribuição ISIN'
+      type: N(10)
+      pos: [ 237, 246 ]
+    natureza_operacao:
+      description: 'Natureza da Operação - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:LaunchType'
+      type: X(01)
+      pos: [ 247, 247 ]
+    quantidade_total_instrucao_liquidacao:
+      description: 'Quantidade Total da Instrução de Liquidação'
+      type: N(13)V06
+      pos: [ 248, 266 ]
+    preco_medio_referencia:
+      description: 'Preço Médio de Referência'
+      type: N(23)V07
+      pos: [ 267, 296 ]
+    volume_total_instrucao_liquidacao:
+      description: 'Volume Total da Instrução de Liquidação'
+      type: N(23)V07
+      pos: [ 297, 326 ]
+    quantidade_aceita:
+      description: 'Quantidade Aceita'
+      type: N(15)V04
+      pos: [ 327, 345 ]
+    tipo_resultado_liquido:
+      description: 'Tipo de Resultado Líquido - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:NettingType'
+      type: X(01)
+      pos: [ 346, 346 ]
+    conta_selic:
+      description: 'Conta SELIC'
+      type: X(09)
+      pos: [ 347, 355 ]
+    vencimento_titulo:
+      description: 'Vencimento do Título'
+      type: X(10)
+      pos: [ 356, 365 ]
+      convert: aaaa-mm-dd
+    codigo_identificador_titulo_selic:
+      description: 'Código Identificador do Título na Selic'
+      type: X(06)
+      pos: [ 366, 371 ]
+    prazo_liquidacao:
+      description: 'Prazo de Liquidação - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:SettlementGroup'
+      type: X(01)
+      pos: [ 372, 372 ]
+    reserva:
+      description: 'Preencher com espaços em branco'
+      type: X(628)
+      pos: [ 373, 1000 ]
   "18":
     tipo_registro:
       description: 'Tipo de registro - Fixo "18"'
