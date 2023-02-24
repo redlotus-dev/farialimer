@@ -1707,6 +1707,266 @@ register:
       type: X(707)
       pos: [ 294, 1000 ]
   "14":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "14"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '14'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48,62 ]
+    data_negociacao:
+      description: 'Data de Negociação'
+      type: X(10)
+      pos: [ 63, 72 ]
+      convert: aaaa-mm-dd
+    numero_negocio:
+      description: 'Número do Negócio'
+      type: N(32)
+      pos: [ 73, 104 ]
+    quantidade_original:
+      description: 'Quantidade Original'
+      type: N(19)V06
+      pos: [ 105, 129 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 130, 164 ]
+    natureza_posicao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: X(01)
+      pos: [ 165, 165 ]
+    codigo_instrumento:
+      description: 'Security ID'
+      type: X(35)
+      pos: [ 166, 200 ]
+    codigo_origem_identificacao_instrumento:
+      description: 'Security Source'
+      type: X(35)
+      pos: [ 201, 235 ]
+    codigo_bolsa_valor:
+      description: 'Security Exchange'
+      type: X(04)
+      pos: [ 236, 239 ]
+    codigo_negociacao:
+      description: 'Código de Negociação'
+      type: X(35)
+      pos: [ 240, 274 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(10)
+      pos: [ 275, 284 ]
+    mercadoria:
+      description: 'Mercadoria'
+      type: X(30)
+      pos: [ 285, 314 ]
+    isin:
+      description: 'Código ISIN'
+      type: X(12)
+      pos: [ 315, 326 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(10)
+      pos: [ 327, 336 ]
+    codigo_instrumento_ativo_objeto:
+      description: 'Security ID do ativo objeto'
+      type: X(35)
+      pos: [ 337, 371 ]
+    codigo_origem_identificacao_instrumento_ativo_objeto:
+      description: 'Security Source do ativo objeto'
+      type: X(35)
+      pos: [ 372, 406 ]
+    codigo_bolsa_valor_ativo_objeto:
+      description: 'Security Exchange do ativo objeto'
+      type: X(04)
+      pos: [ 407, 410 ]
+    codigo_negociacao_ativo_objeto:
+      description: 'Código de Negociação do ativo objeto'
+      type: X(35)
+      pos: [ 411, 445 ]
+    isin_ativo_objeto:
+      description: 'Código ISIN do ativo objeto'
+      type: X(12)
+      pos: [ 446, 457 ]
+    distribuicao_ativo_objeto:
+      description: 'Distribuição do ativo objeto'
+      type: N(10)
+      pos: [ 458, 467 ]
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 468, 477 ]
+      convert: aaaa-mm-dd
+    fator_cotacao:
+      description: 'Fator de Cotação'
+      type: N(10)
+      pos: [ 478, 487 ]
+    carteira:
+      description: 'Carteira'
+      type: X(35)
+      pos: [ 488, 522 ]
+    request_id:
+      description: 'Request ID'
+      type: X(35)
+      pos: [ 523, 557 ]
+    tipo_liquidacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:ForwardSettlementType'
+      type: N(01)
+      pos: [ 558, 558 ]
+    quantidade_liquidada_antecipadamente:
+      description: 'Quantidade Liquidada Antecipadamente'
+      type: N(15)
+      pos: [ 559, 573 ]
+    quantidade_vencida:
+      description: 'Quantidade Vencida'
+      type: N(19)
+      pos: [ 574, 592 ]
+    data_liquidacao:
+      description: 'Data de Liquidação'
+      type: X(10)
+      pos: [ 593, 602 ]
+      convert: aaaa-mm-dd
+    data_requisicao_liquidacao_antecipada:
+      description: 'Data de Requisição de Liquidação Antecipada'
+      type: X(10)
+      pos: [ 603, 612 ]
+      convert: aaaa-mm-dd
+    status:
+      description: 'Status'
+      type: N(06)
+      pos: [ 613, 618 ]
+    valor_liquidacao:
+      description: 'Valor de Liquidação'
+      type: N(19)V07
+      pos: [ 619, 644 ]
+    preco_termo:
+      description: 'Preço do Termo'
+      type: N(19)V07
+      pos: [ 645, 670 ]
+    codigo_vencimento:
+      description: 'Código de Vencimento'
+      type: X(04)
+      pos: [ 671, 674 ]
+    tipo_termo:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:ForwardType'
+      type: X(01)
+      pos: [ 675, 675 ]
+    tipo_contrato:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:ContractType'
+      type: X(01)
+      pos: [ 676, 676 ]
+    ultimo_dia_possivel_liquidacao:
+      description: 'Último Dia Possível de Liquidação'
+      type: X(10)
+      pos: [ 677, 686 ]
+      convert: aaaa-mm-dd
+    taxa:
+      description: 'Taxa'
+      type: N(19)V07
+      pos: [ 687, 712 ]
+    participante_executor:
+      description: 'Participante Executor'
+      type: X(15)
+      pos: [ 713, 727 ]
+    investidor_participante_executor:
+      description: 'Investidor do Participante Executor'
+      type: X(15)
+      pos: [ 728, 742 ]
+    indicador_anonimo:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 743, 743 ]
+    dias_uteis_abertura_contrato_liquidacao:
+      description: 'Dias Úteis entre Abertura do Contrato e Liquidação'
+      type: N(06)
+      pos: [ 744, 749 ]
+    valor_pago_investidor:
+      description: 'Valor Pago pelo/para o Investidor'
+      type: N(19)V07
+      pos: [ 750, 775 ]
+    preco_referencia_ativo_objeto:
+      description: 'Preço de Referência do Ativo Objeto'
+      type: N(19)V07
+      pos: [ 776, 801 ]
+    taxa_doador:
+      description: 'Taxa do Doador'
+      type: N(19)V07
+      pos: [ 802, 827 ]
+    imposto_sobre_valor_bruto:
+      description: 'Imposto sobre Valor Bruto'
+      type: N(19)V07
+      pos: [ 828, 853 ]
+    valor_bruto_doador:
+      description: 'Valor Bruto do Doador'
+      type: N(19)V07
+      pos: [ 854, 879 ]
+    codigo_custodiante:
+      description: 'Código do Custodiante'
+      type: X(15)
+      pos: [ 880, 894 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor no Custodiante'
+      type: X(15)
+      pos: [ 895, 909 ]
+    quantidade_renovada:
+      description: 'Quantidade Renovada'
+      type: N(19)
+      pos: [ 910, 928 ]
+    tipo_atualizacao_contrato:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:ContractUpdateType'
+      type: X(02)
+      pos: [ 929, 930 ]
+    indicador_origem_contrato_negociacao_eletronica:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 931, 931 ]
+    tipo_contrato_original:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:ContractType'
+      type: X(01)
+      pos: [ 932, 932 ]
+    codigo_identificador_titulo_selic:
+      description: 'Código Identificador do Título na Selic'
+      type: X(06)
+      pos: [ 933, 938 ]
+    vencimento_titulo:
+      description: 'Vencimento do Título'
+      type: X(10)
+      pos: [ 939, 948 ]
+      convert: aaaa-mm-dd
+    percentual_indice_correcao:
+      description: 'Percentual do Índice de Correção'
+      type: N(12)V06
+      pos: [ 949, 964 ]
+    codigo_instrumento_indice_correcao:
+      description: 'Security ID do índice de correção'
+      type: X(20)
+      pos: [ 965, 984 ]
+    codigo_origem_identificacao_instrumento_indice_correcao:
+      description: 'Security Source do índice de correção'
+      type: X(04)
+      pos: [ 985, 988 ]
+    codigo_bolda_valor_indice_correcao:
+      description: 'Exchange ID do índice de correção'
+      type: X(04)
+      pos: [ 989, 992 ]
+    reserva:
+      description: 'Reserva'
+      type: X(08)
+      pos: [ 993, 1000 ]
   "15":
   "16":
   "17":
