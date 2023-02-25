@@ -3366,7 +3366,7 @@ register:
       description: ''
       type: X(15)
       pos: [ 18,32 ]
-    digito_investidor_soliciatante:
+    digito_investidor_solicitante:
       description: ''
       type: X(01)
       pos: [ 33, 33 ]
@@ -3484,7 +3484,7 @@ register:
       description: ''
       type: X(15)
       pos: [ 18,32 ]
-    digito_investidor_soliciatante:
+    digito_investidor_solicitante:
       description: ''
       type: X(01)
       pos: [ 33, 33 ]
@@ -3607,7 +3607,7 @@ register:
       description: ''
       type: X(15)
       pos: [ 18,32 ]
-    digito_investidor_soliciatante:
+    digito_investidor_solicitante:
       description: ''
       type: X(01)
       pos: [ 33, 33 ]
@@ -3694,6 +3694,80 @@ register:
       type: X(762)
       pos: [ 239, 1000 ]
   "28":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "28"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '28'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    digito_investidor_solicitante:
+      description: ''
+      type: X(01)
+      pos: [ 33, 33 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 34, 48 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 49, 63 ]
+    codigo_carteira:
+      description: 'Código da Carteira'
+      type: N(05)
+      pos: [ 64, 68 ]
+    descricao_carteira:
+      description: 'Descrição da Carteira'
+      type: X(15)
+      pos: [ 69, 83 ]
+    codigo_isin:
+      description: 'Código ISIN'
+      type: X(12)
+      pos: [ 84, 95 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(03)
+      pos: [ 96, 98 ]
+    nome_sociedade_emissora:
+      description: 'Nome da Sociedade Emissora'
+      type: X(12)
+      pos: [ 99, 110 ]
+    especificacao:
+      description: 'Especificação'
+      type: X(10)
+      pos: [ 111, 120 ]
+    quantidade_acoes_custodia:
+      description: 'Quantidade de Ações em Custódia'
+      type: N(15)V03
+      pos: [ 121, 138 ]
+    quantidade_total_acoes_bloqueadas:
+      description: 'Quantidade Total de Ações Bloqueadas'
+      type: N(15)
+      pos: [ 139, 153 ]
+    codigo_negociacao:
+      description: 'Código de Negociação'
+      type: X(12)
+      pos: [ 154, 165 ]
+    indicador_saldo_analitico:
+      description: 'Indicador de Saldo Analítico'
+      type: X(01)
+      pos: [ 166, 166 ]
+    tipo_ativo:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: AssetType'
+      type: X(03)
+      pos: [ 167, 169 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(833)
+      pos: [ 170, 1000 ]
   "29":
   "30":
   "31":
