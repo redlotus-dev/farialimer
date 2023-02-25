@@ -3470,6 +3470,130 @@ register:
       type: X(721)
       pos: [ 280, 1000 ]
   "26":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "26"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '26'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    digito_investidor_soliciatante:
+      description: ''
+      type: X(01)
+      pos: [ 33, 33 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 34, 48 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor no Participante Solicitado'
+      type: X(15)
+      pos: [ 49, 63 ]
+    codigo_carteira:
+      description: 'Código da Carteira'
+      type: N(05)
+      pos: [ 64, 68 ]
+    descricao_carteira:
+      description: 'Descrição da Carteira'
+      type: X(15)
+      pos: [ 69, 83 ]
+    codigo_isin_base:
+      description: 'Código ISIN Base'
+      type: X(12)
+      pos: [ 84, 95 ]
+    distribuicao_base:
+      description: 'Distribuição Base'
+      type: N(03)
+      pos: [ 96, 98 ]
+    nome_sociedade_emissora_base:
+      description: 'Nome da Sociedade Emissora Base'
+      type: X(12)
+      pos: [ 99, 110 ]
+    especificacao:
+      description: 'Especificação'
+      type: X(10)
+      pos: [ 111, 120 ]
+    quantidade_acoes_base:
+      description: 'Quantidade de Ações Base'
+      type: N(15)V03
+      pos: [ 121, 138 ]
+    data_age:
+      description: 'Data age'
+      type: N(08)
+      pos: [ 139, 146 ]
+      convert: aaaammdd
+    data_inicio_provento:
+      description: 'Data de Início do Provento'
+      type: N(08)
+      pos: [ 147, 154 ]
+      convert: aaaammdd
+    numero_processo:
+      description: 'Número do Processo'
+      type: N(09)
+      pos: [ 155, 163 ]
+    ano_referencia_exercicio:
+      description: 'Ano de Referência do Exercício'
+      type: N(04)
+      pos: [ 164, 167 ]
+    data_prevista_pagamento_dividendo:
+      description: 'Data Prevista de Pagamento do Dividendo'
+      type: N(08)
+      pos: [ 168, 175 ]
+      convert: aaaammdd
+    valor_bruto_dividendo:
+      description: 'Valor Bruto do Dividendo'
+      type: N(16)V02
+      pos: [ 176, 193 ]
+    percentual_imposto_renda:
+      description: 'Percentual de Imposto de Renda'
+      type: N(03)V02
+      pos: [ 194, 198 ]
+    codido_imposto_renda:
+      description: 'Código do Imposto de Renda'
+      type: N(01)
+      pos: [ 199, 199 ]
+    instituicao_pagadora:
+      description: 'Instituição Pagadora'
+      type: N(01)
+      pos: [ 200, 200 ]
+    tipo_provento:
+      description: 'Tipo de Provento'
+      type: N(03)
+      pos: [ 201, 203 ]
+    descricao_provento:
+      description: 'Descrição do Provento'
+      type: X(20)
+      pos: [ 204, 223 ]
+    data_aquisicao:
+      description: 'Data de Aquisição'
+      type: N(08)
+      pos: [ 224, 231 ]
+      convert: aaaammdd
+    preco_aquisicao:
+      description: 'Preço de Aquisição'
+      type: N(09)V06
+      pos: [ 232, 246 ]
+    valor_imposto_renda:
+      description: 'Valor do Imposto de Renda'
+      type: N(16)V02
+      pos: [ 247, 264 ]
+    valor_liquido_dividendo:
+      description: 'Valor Líquido do Dividendo'
+      type: N(16)V02
+      pos: [ 265, 282 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(718)
+      pos: [ 283, 1000 ]
+
+
   "27":
   "28":
   "29":
