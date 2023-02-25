@@ -22,6 +22,18 @@ def convert_yyyymmdd(parse_obj: ParseObject):
     return result
 
 
+def convert_yyyy_mm_dd(parse_obj: ParseObject):
+    """
+    Given a str like 2022-10-20
+    returns a date like date(2022,10,20)
+    """
+    if not parse_obj.value or parse_obj.value.isspace():
+        return None
+    year, month, day = parse_obj.value.split("-")
+    result = date(int(year), int(month), int(day))
+    return result
+
+
 def convert_to_int(parse_obj: ParseObject):
     """given a string-like int, convert it to int"""
     if not parse_obj.value or parse_obj.value.isspace():

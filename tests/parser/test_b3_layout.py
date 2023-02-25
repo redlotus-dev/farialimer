@@ -93,6 +93,24 @@ def test_layout_size(layout, register):
     assert result == expected
 
 
+@pytest.mark.parametrize(
+    "layout, register",
+    [
+        ("imbarq009", "00"),
+        ("imbarq009", "80"),
+        ("imbarq009", "99"),
+    ],
+)
+def test_layout_size_imbarq009(layout, register):
+    """Test the Sum of layout field sizes"""
+
+    layout = get_layout(layout)
+    result = sum_layout_fields_size(layout, register)
+    expected = 300
+
+    assert result == expected
+
+
 @lru_cache(maxsize=None)
 def get_layout(layout):
     """To avoid opening the spec file multiples times,
