@@ -2813,6 +2813,128 @@ register:
       type: X(556)
       pos: [ 445, 1000 ]
   "21":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "21"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '21'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor de Negociação Pleno ou Investidor de Liquidação'
+      type: X(15)
+      pos: [ 48, 62 ]
+    codigo_custodiante:
+      description: 'Código do Custodiante'
+      type: X(15)
+      pos: [ 63, 77 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 78, 112 ]
+    codigo_instrumento_ativo_objeto:
+      description: 'Security Id do ativo objeto'
+      type: X(35)
+      pos: [ 113, 147 ]
+    codigo_origem_identificacao_instrumento_ativo_objeto:
+      description: 'Security Id Source do ativo objeto'
+      type: X(35)
+      pos: [ 148, 182 ]
+    codigo_bolsa_valor_ativo_objeto:
+      description: 'Security Exchange do ativo objeto'
+      type: X(04)
+      pos: [ 183, 186 ]
+    isin_ativo_objeto_oferta_prioritaria:
+      description: 'ISIN do ativo objeto da oferta prioritária'
+      type: X(12)
+      pos: [ 187, 198 ]
+    codigo_distribuicao_ativo_objeto:
+      description: 'Código de Distribuição do Ativo Objeto'
+      type: N(05)
+      pos: [ 199, 203 ]
+    data_liquidacao_oferta_prioritaria:
+      description: 'Data de Liquidação da Oferta Prioritária'
+      type: X(10)
+      pos: [ 204, 213 ]
+      convert: aaaa-mm-dd
+    ultimo_dia_participacao_oferta_prioritaria:
+      description: 'Último dia de participação na Oferta Prioritária'
+      type: X(10)
+      pos: [ 214, 223 ]
+      convert: aaaa-mm-dd
+    quantidade_direitos_oferta_prioritaria_requisitados:
+      description: 'Quantidade de Direitos da Oferta Prioritária Requisitados'
+      type: N(19)V11
+      pos: [ 224, 253 ]
+    quantidade_data_atualizacao_custodia:
+      description: 'Quantidade na Data de Atualização da Custódia - Quantidade sobre a qual será aplicado o tratamento do evento corporativo'
+      type: N(19)V11
+      pos: [ 254, 283 ]
+    quantidade_direitos_oferta_prioritaria:
+      description: 'Quantidade de Direitos para participação na Oferta Prioritária'
+      type: N(19)V11
+      pos: [ 284, 313 ]
+    preco_oferta_prioritaria:
+      description: 'Preço da Oferta Prioritária'
+      type: N(19)V11
+      pos: [ 314, 343 ]
+    valor_financeiro_oferta_prioritaria:
+      description: 'Valor Financeiro da Oferta Prioritária - Valor a ser pago pelo doador e recebido pelo tomador no tratamento de oferta prioritária'
+      type: N(19)V11
+      pos: [ 344, 373 ]
+    data_inicio_participacao_oferta_prioritaria:
+      description: 'Data de Início de Participação na Oferta Prioritária'
+      type: X(10)
+      pos: [ 374, 383 ]
+      convert: aaaa-mm-dd
+    preco_maximo:
+      description: 'Preço Máximo'
+      type: N(19)V11
+      pos: [ 384, 413 ]
+    taxa_minima:
+      description: 'Taxa Mínima'
+      type: N(19)V07
+      pos: [ 414, 439 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor Custodiante'
+      type: X(15)
+      pos: [ 440, 454 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: MarketType'
+      type: N(03)
+      pos: [ 455, 457 ]
+    natureza_posicao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: Side'
+      type: X(01)
+      pos: [ 458, 458 ]
+    data_negociacao:
+      description: 'Data de Negociação'
+      type: X(10)
+      pos: [ 459, 468 ]
+      convert: aaaa-mm-dd
+    isin_ativo_objeto_destino:
+      description: 'ISIN do ativo objeto de destino'
+      type: X(12)
+      pos: [ 469, 480 ]
+    distribuicao_ativo_objeto:
+      description: 'Distribuição do Ativo Objeto'
+      type: N(05)
+      pos: [ 481, 485 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(515)
+      pos: [ 486, 1000 ]
   "22":
   "23":
   "24":
