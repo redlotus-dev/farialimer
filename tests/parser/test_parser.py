@@ -42,6 +42,10 @@ def test_get_filetype():
             "tests/specs/b3/samples/imbarq006/IMBARQ006_BV000272202204050000001000935195407.txt",
         ),
         (
+            "imbarq007",
+            "tests/specs/b3/samples/imbarq007/IMBARQ007_BV000272202108040000052019824225451.txt",
+        ),
+        (
             "imbarq014",
             "tests/specs/b3/samples/imbarq014/IMBARQ014_BV000272202205260000001000935071656.txt",
         ),
