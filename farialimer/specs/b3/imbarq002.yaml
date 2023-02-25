@@ -1,7 +1,7 @@
 provider: B3
 service: iMercado
 version: 1.04
-layout: IMBARQ014
+layout: IMBARQ002
 register:
   "00":
     tipo_registro:
