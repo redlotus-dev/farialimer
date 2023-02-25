@@ -1,0 +1,267 @@
+provider: B3
+service: iMercado
+version: 1.0
+layout: IMBARQ007
+register:
+  "00":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "00"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '00'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ007'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ007
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento - Sequencial por usuário, atribuído p/ controle dos arquivos gerados'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 62,69 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(931)
+      pos: [ 70, 1000 ]
+  "60":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "60"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '60'
+    participante_solicitante:
+      description: 'Participante solicitante'
+      type: N(15)
+      pos: [ 3,17 ]
+    categoria_participante_solicitante:
+      description: 'Categoria do participante solicitante'
+      type: N(03)
+      pos: [ 18,20 ]
+    mercadoria_grupo_instrumento_financeiro_solicitado:
+      description: 'Mercadoria, grupo ou instrumento financeiro solicitado'
+      type: X(15)
+      pos: [ 21,35 ]
+    codigo_negociacao_instrumento_financeiro:
+      description: 'Código de negociação (Instrumento Financeiro)'
+      type: X(15)
+      pos: [ 36,50 ]
+    razao_social_participante:
+      description: 'Razão social do participante'
+      type: X(100)
+      pos: [ 51,150 ]
+    conta_participante_cetip:
+      description: 'Conta do participante na Cetip (Custodiante)'
+      type: X(10)
+      pos: [ 151,160 ]
+    razao_social_agente_custodia:
+      description: 'Razão social do agente de custódia'
+      type: X(100)
+      pos: [ 161,260 ]
+    documento_participante:
+      description: 'Documento do participante (CNPJ)'
+      type: X(14)
+      pos: [ 261,274 ]
+    tipo_conta:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: AccountType'
+      type: X(02)
+      pos: [ 275,276 ]
+    razao_social_administrador_legal:
+      description: 'Razão social do administrador legal'
+      type: X(100)
+      pos: [ 277,376 ]
+    data_emissao:
+      description: 'Data de emissão - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 377,386 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 387,396 ]
+    quantidade:
+      description: 'Quantidade'
+      type: N(19)V10
+      pos: [ 397,425 ]
+    percentual:
+      description: 'Percentual'
+      type: N(03)V04
+      pos: [ 426,432 ]
+    quantidade_total:
+      description: 'Quantidade total'
+      type: N(19)V10
+      pos: [ 433,461 ]
+    tipo_regime:
+      description: 'Tipo de regime - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: RegimeType'
+      type: X(02)
+      pos: [ 462,463 ]
+    eventos_cursados:
+      description: 'Eventos cursados - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 464,464 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(536)
+      pos: [ 465, 1000 ]
+  "61":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "61"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '61'
+    participante_solicitante:
+      description: 'Participante solicitante'
+      type: N(15)
+      pos: [ 3,17 ]
+    categoria_participante_solicitante:
+      description: 'Categoria do participante solicitante'
+      type: N(03)
+      pos: [ 18,20 ]
+    mercadoria_grupo_instrumento_financeiro_solicitado:
+      description: 'Mercadoria, grupo ou instrumento financeiro solicitado'
+      type: X(15)
+      pos: [ 21,35 ]
+    codigo_negociacao_instrumento_financeiro:
+      description: 'Código de negociação (Instrumento Financeiro)'
+      type: X(15)
+      pos: [ 36,50 ]
+    razao_social_participante:
+      description: 'Razão social do participante'
+      type: X(100)
+      pos: [ 51,150 ]
+    conta_participante_cetip:
+      description: 'Conta do participante na Cetip - Informado quando aprovado registro pelo Custodiante Balcão e não houver exceção para o documento do comitente'
+      type: X(10)
+      pos: [ 151,160 ]
+    razao_social_agente_custodia:
+      description: 'Razão social do agente de custódia - Informado quando aprovado registro pelo Custodiante Balcão e não houver exceção para o documento do comitente'
+      type: X(100)
+      pos: [ 161,260 ]
+    documento_participante:
+      description: 'Documento do participante (CNPJ) - Informado quando aprovado registro pelo Custodiante Balcão e não houver exceção para o documento do comitente'
+      type: X(14)
+      pos: [ 261,274 ]
+    documento_investidor:
+      description: 'Documento do investidor'
+      type: X(20)
+      pos: [ 275,294 ]
+    nome_razao_social_investidor:
+      description: 'Nome ou razão social do investidor'
+      type: X(100)
+      pos: [ 295,394 ]
+    razao_social_administrador_legal:
+      description: 'Razão social do administrador legal'
+      type: X(100)
+      pos: [ 395,494 ]
+    data_emissao:
+      description: 'Data de emissão - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 495,504 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 505,514 ]
+    quantidade:
+      description: 'Quantidade'
+      type: N(19)V10
+      pos: [ 515,543 ]
+    percentual:
+      description: 'Percentual'
+      type: N(03)V04
+      pos: [ 544,550 ]
+    quantidade_total:
+      description: 'Quantidade total'
+      type: N(19)V10
+      pos: [ 551,579 ]
+    tipo_regime:
+      description: 'Tipo de regime - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: RegimeType'
+      type: X(02)
+      pos: [ 580,581 ]
+    eventos_cursados:
+      description: 'Eventos cursados - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 582,582 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(418)
+      pos: [ 583, 1000 ]
+  "99":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "99"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '99'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ007'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ007
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    total_registros_gerados:
+      description: ''
+      type: N(09)
+      pos: [ 62,70 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 71,78 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(922)
+      pos: [ 79, 1000 ]
