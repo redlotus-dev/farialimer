@@ -13,6 +13,7 @@ from farialimer.utils.converters import (
     convert_yyyymmdd,
     convert_to_string,
 )
+from farialimer.utils.raise_exceptions import raise_error_for_nonascii_character
 
 
 class BasicParser(ABC):
@@ -23,10 +24,12 @@ class BasicParser(ABC):
         self.spec_dict = get_spec_dict()
 
     @staticmethod
-    def read_file(filepath, encoding="utf-8"):
+    def read_file(filepath, encoding="latin1"):
         """Read the contents from a given filepath"""
+        content = []
         with open(filepath, encoding=encoding) as finput:
-            content = finput.readlines()
+            for line in finput:
+                content.append(line)
         return content
 
     @staticmethod
@@ -43,7 +46,8 @@ class BasicParser(ABC):
         """Given a content and spec document, returns a list of dict with the parsed information"""
         parsed_lines = []
         document_parser = self.get_doc_parser(spec)
-        for line in content:
+        for idx, line in enumerate(content, start=1):
+            raise_error_for_nonascii_character(idx, line)
             line_register = self._get_line_register(line)
             layout_type = document_parser[line_register]
             register = self.parse_line(line, layout_type)

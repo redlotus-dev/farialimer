@@ -2005,7 +2005,7 @@ register:
       pos: [ 105, 129 ]
     numero_contrato:
       description: 'Número do Contrato'
-      type: N(35)
+      type: X(35)
       pos: [ 130, 164 ]
     natureza_posicao:
       description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
