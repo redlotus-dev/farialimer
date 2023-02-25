@@ -3,6 +3,8 @@
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=alert_status)](https://sonarcloud.io/dashboard?id=redlotus-dev_farialimer)
 [![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=redlotus-dev_farialimer)
 [![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=redlotus-dev_farialimer)
+
+![Discord](https://img.shields.io/discord/1073033206686818304)
 # farialimer
 Parser / Writer for Brazilian Finance Documents
 ![farialimer](https://user-images.githubusercontent.com/8230037/219248391-ffad24cd-50f9-4fb5-8fc9-19a45561ab0e.png)
