@@ -58,19 +58,19 @@ register:
       default: '50'
     codigo_participante_solicitante:
       description: 'Código do participante solicitante'
-      type: N(15)
+      type: X(15)
       pos: [ 3,17 ]
     codigo_investidor_solicitante:
       description: 'Código do investidor solicitante'
-      type: N(15)
+      type: X(15)
       pos: [ 18,32 ]
     codigo_participante_solicitado:
       description: 'Código do participante solicitado'
-      type: N(15)
+      type: X(15)
       pos: [ 33,47 ]
     codigo_investidor_solicitado:
       description: 'Código do investidor solicitado'
-      type: N(15)
+      type: X(15)
       pos: [ 48,62 ]
     data_pregao:
       description: 'Data do pregão - Formato = "AAAA-MM-DD"'
@@ -96,7 +96,7 @@ register:
       pos: [ 157,220 ]
     carteira:
       description: 'Carteira'
-      type: X(10)
+      type: N(10)
       pos: [ 221,230 ]
     isin:
       description: 'ISIN'
@@ -104,7 +104,7 @@ register:
       pos: [ 231,242 ]
     distribuicao_isin:
       description: 'Distribuição ISIN'
-      type: X(10)
+      type: N(10)
       pos: [ 243,252 ]
     natureza_operacao:
       description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: LaunchType'
@@ -180,7 +180,7 @@ register:
       pos: [ 528,546 ]
     fallback_settlement_account:
       description: 'Fallback Settlement Account'
-      type: N(15)
+      type: X(15)
       pos: [ 547,561 ]
     informacao_adicional:
       description: 'Informação adicional - Informa o Lote do ETF ou o número de contrato do Empréstimo de Títulos Públicos Federais'
@@ -188,7 +188,7 @@ register:
       pos: [ 562,596 ]
     conta_selic:
       description: 'Conta SELIC'
-      type: N(09)
+      type: X(09)
       pos: [ 597,605 ]
     vencimento_titulo:
       description: 'Vencimento do título - Formato = "AAAA-MM-DD"'
