@@ -3852,6 +3852,85 @@ register:
       type: X(780)
       pos: [ 222, 1000 ]
   "30":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "30"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '30'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    digito_investidor_solicitante:
+      description: ''
+      type: X(01)
+      pos: [ 33, 33 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 34, 48 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 49, 63 ]
+    codigo_carteira:
+      description: 'Código da Carteira'
+      type: N(05)
+      pos: [ 64, 68 ]
+    descricao_carteira:
+      description: 'Descrição da Carteira'
+      type: X(15)
+      pos: [ 69, 83 ]
+    codigo_isin:
+      description: 'Código ISIN'
+      type: X(12)
+      pos: [ 84, 95 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(03)
+      pos: [ 96, 98 ]
+    nome_emissor:
+      description: 'Nome do Emissor'
+      type: X(12)
+      pos: [ 99, 110 ]
+    especificacao:
+      description: 'Especificação'
+      type: X(10)
+      pos: [ 111, 120 ]
+    quantidade_ativos_custodia:
+      description: 'Quantidade de Ativos em Custódia'
+      type: N(15)V03
+      pos: [ 121, 138 ]
+    quantidade_total_ativos_bloqueados:
+      description: 'Quantidade Total de Ativos Bloqueados'
+      type: N(15)
+      pos: [ 139, 153 ]
+    codigo_negociacao:
+      description: 'Código de Negociação'
+      type: X(12)
+      pos: [ 154, 165 ]
+    data_aquisicao:
+      description: 'Data de Aquisição'
+      type: N(08)
+      pos: [ 166, 173 ]
+      convert: aaaammdd
+    preco_aquisicao:
+      description: 'Preço de Aquisição'
+      type: N(09)V06
+      pos: [ 174, 188 ]
+    indicador_emprestimo_ativos:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 189, 189 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(811)
+      pos: [ 190, 1000 ]
   "31":
     tipo_registro:
       description: 'Tipo de registro - Fixo "31"'
@@ -3974,6 +4053,66 @@ register:
       type: X(584)
       pos: [ 417, 1000 ]
   "32":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "32"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '32'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor no Participante Solicitado'
+      type: X(15)
+      pos: [ 48,62 ]
+    data_referencia:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 63, 72 ]
+    carteira:
+      description: ''
+      type: X(35)
+      pos: [ 73, 107 ]
+    conta_selic:
+      description: ''
+      type: X(15)
+      pos: [ 108, 122 ]
+    codigo_negociacao:
+      description: ''
+      type: X(35)
+      pos: [ 123, 157 ]
+    isin:
+      description: ''
+      type: X(12)
+      pos: [ 158, 169 ]
+    codigo_identificador_titulo_selic:
+      description: ''
+      type: X(06)
+      pos: [ 170, 175 ]
+    vencimento_titulo_selic:
+      description: 'Formato = "AAAA-MM-DD'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 176, 185 ]
+    quantidade_total:
+      description: ''
+      type: N(15)V06
+      pos: [ 186, 206 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(794)
+      pos: [ 207, 1000 ]
   "33":
     tipo_registro:
       description: 'Tipo de registro - Fixo "33"'
@@ -4191,6 +4330,65 @@ register:
       type: X(146)
       pos: [ 855, 1000 ]
   "34":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "34"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '34'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: 'Código do Investidor Solicitante'
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Este campo informa o Participante de Carriyng'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Este campo informa o Investidor no Participante de Carriyng'
+      type: X(15)
+      pos: [ 48,62 ]
+    indicador_movimentacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: SecuritiesMovementRule'
+      type: X(01)
+      pos: [ 63, 63 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 64, 75 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(05)
+      pos: [ 76, 80 ]
+    data_aquisicao:
+      description: 'Data de Aquisição'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 81, 90 ]
+    preco_aquisicao:
+      description: 'Preço de Aquisição'
+      type: N(09)V06
+      pos: [ 91, 105 ]
+    indicador_saldo_emprestimo_etf:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesNoIndicator'
+      type: X(01)
+      pos: [ 106, 106 ]
+    quantidade_adquirida:
+      description: 'Quantidade Adquirida'
+      type: N(18)V03
+      pos: [ 107, 124 ]
+    situacao_saldo_etf:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: StatusAllocationAdvice'
+      type: X(02)
+      pos: [ 125, 126 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(874)
+      pos: [ 127, 1000 ]
   "36":
     tipo_registro:
       description: 'Tipo de registro - Fixo "36"'
