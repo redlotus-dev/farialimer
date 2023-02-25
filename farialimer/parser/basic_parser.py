@@ -13,6 +13,7 @@ from farialimer.utils.converters import (
     convert_yyyymmdd,
     convert_to_string,
 )
+from farialimer.utils.raise_exceptions import raise_error_for_nonascii_character
 
 
 class BasicParser(ABC):
@@ -109,12 +110,3 @@ def convert_mapper(converter):
     """map the converter to it respective function"""
     _convert_map = {"aaaammdd": convert_yyyymmdd, "string": convert_to_string}
     return _convert_map.get(converter)
-
-
-def raise_error_for_nonascii_character(idx, line):
-    """Remove non ascii characters from a line"""
-    non_ascii_chars = [char for char in line if ord(char) >= 128]
-    if non_ascii_chars:
-        raise ValueError(
-            f"Line contains non ascii characters: {non_ascii_chars} in line: {idx}"
-        )
