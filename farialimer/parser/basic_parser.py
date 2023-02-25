@@ -45,7 +45,8 @@ class BasicParser(ABC):
         """Given a content and spec document, returns a list of dict with the parsed information"""
         parsed_lines = []
         document_parser = self.get_doc_parser(spec)
-        for line in content:
+        for idx, line in enumerate(content, start=1):
+            raise_error_for_nonascii_character(idx, line)
             line_register = self._get_line_register(line)
             layout_type = document_parser[line_register]
             register = self.parse_line(line, layout_type)
@@ -83,10 +84,7 @@ class BasicParser(ABC):
             parse_item = line[item.start - 1 : item.end]
             converter = convert_mapper(item.convert) or self._data_mapper(item.datatype)
             parse_obj = ParseObject(parse_item, converter, item.datatype)
-            try:
-                parse_item = converter(parse_obj)
-            except ValueError:
-                print()
+            parse_item = converter(parse_obj)
             parse_result[item.name] = parse_item
         return parse_result
 
@@ -111,3 +109,12 @@ def convert_mapper(converter):
     """map the converter to it respective function"""
     _convert_map = {"aaaammdd": convert_yyyymmdd, "string": convert_to_string}
     return _convert_map.get(converter)
+
+
+def raise_error_for_nonascii_character(idx, line):
+    """Remove non ascii characters from a line"""
+    non_ascii_chars = [char for char in line if ord(char) >= 128]
+    if non_ascii_chars:
+        raise ValueError(
+            f"Line contains non ascii characters: {non_ascii_chars} in line: {idx}"
+        )
