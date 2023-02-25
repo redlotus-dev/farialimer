@@ -2936,6 +2936,200 @@ register:
       type: X(515)
       pos: [ 486, 1000 ]
   "22":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "22"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '22'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: ''
+      type: X(15)
+      pos: [ 48,62 ]
+    codigo_participante_conta:
+      description: 'Código do Participante por Conta'
+      type: X(15)
+      pos: [ 63, 77 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 78, 112 ]
+    natureza_lado_doador_vendedor:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: Side'
+      type: N(01)
+      pos: [ 113, 113 ]
+    codigo_custodiante:
+      description: 'Código do Custodiante'
+      type: X(15)
+      pos: [ 114, 128 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor no Custodiante'
+      type: X(15)
+      pos: [ 129, 143 ]
+    carteira:
+      description: 'Carteira'
+      type: X(35)
+      pos: [ 144, 178 ]
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 179, 188 ]
+      convert: aaaa-mm-dd
+    codigo_instrumento_ativo_objeto:
+      description: 'Security Id do ativo objeto'
+      type: X(35)
+      pos: [ 189, 223 ]
+    codgio_origem_identificacao_instrumento_ativo_objeto:
+      description: 'Security Id Source do ativo objeto'
+      type: X(35)
+      pos: [ 224, 258 ]
+    codigo_bolsa_valor_ativo_objeto:
+      description: 'Security Exchange do ativo objeto'
+      type: X(04)
+      pos: [ 259, 262 ]
+    isin_ativo_objeto:
+      description: 'ISIN do ativo objeto'
+      type: X(12)
+      pos: [ 263, 274 ]
+    codigo_distribuicao_ativo_objeto:
+      description: 'Código de Distribuição do Ativo Objeto'
+      type: N(05)
+      pos: [ 275, 279 ]
+    data_atualizacao_custodia:
+      description: 'Data de Atualização da Custódia'
+      type: X(10)
+      pos: [ 280, 289 ]
+      convert: aaaa-mm-dd
+    quantidade_data_atualizacao_custodia:
+      description: 'Quantidade na Data de Atualização da Custódia'
+      type: N(19)V11
+      pos: [ 290, 319 ]
+    fator_subscricao:
+      description: 'Fator de Subscrição'
+      type: N(19)V11
+      pos: [ 320, 349 ]
+    quantidade_direitos_subscricao_data_atualizacao_custodia:
+      description: 'Quantidade de Direitos de Subscrição na Data de Atualização da Custódia'
+      type: N(19)V11
+      pos: [ 350, 379 ]
+    data_inicial_solicitacao_direitos_subscricao:
+      description: 'Data Inicial de Solicitação de Direitos de Subscrição'
+      type: X(10)
+      pos: [ 380, 389 ]
+      convert: aaaa-mm-dd
+    data_limite_solicitacao_direitos_subscricao:
+      description: 'Data Limite de Solicitação de Direitos de Subscrição'
+      type: X(10)
+      pos: [ 390, 399 ]
+      convert: aaaa-mm-dd
+    data_precificacao_direitos_subscricao:
+      description: 'Data de Precificação de Direitos de Subscrição'
+      type: X(10)
+      pos: [ 400, 409 ]
+      convert: aaaa-mm-dd
+    data_evolucao_direitos_subscricao:
+      description: 'Data de Evolução de Direitos de Subscrição'
+      type: X(10)
+      pos: [ 410, 419 ]
+      convert: aaaa-mm-dd
+    quantidade_solicitada_direitos_subscricao:
+      description: 'Quantidade Solicitada de Direitos de Subscrição'
+      type: N(19)V11
+      pos: [ 420, 449 ]
+    quantidade_direitos_subscricao_devolvidos_doador:
+      description: 'Quantidade de Direitos de Subscrição Devolvidos ao Doador'
+      type: N(19)V11
+      pos: [ 450, 479 ]
+    quantidade_direitos_subscricao_nao_devolvidos_doador:
+      description: 'Quantidade de Direitos de Subscrição Não Devolvidos ao Doador'
+      type: N(19)V11
+      pos: [ 480, 509 ]
+    isin_direito_subscricao:
+      description: 'ISIN do Direito de Subscrição'
+      type: X(12)
+      pos: [ 510, 521 ]
+    codigo_distriuicao_direito_subscricao:
+      description: 'Código de Distribuição do Direito de Subscrição'
+      type: N(05)
+      pos: [ 522, 526 ]
+    codigo_negociacao_direito_subscricao:
+      description: 'Código de Negociação do Direito de Subscrição'
+      type: X(35)
+      pos: [ 527, 561 ]
+    preco_ativo_subscricao:
+      description: 'Preço por Ativo de Subscrição'
+      type: N(19)V11
+      pos: [ 562, 591 ]
+    data_solicitacao_contratos_filhote:
+      description: 'Data de Solicitação de Contratos Filhote'
+      type: X(10)
+      pos: [ 592, 601 ]
+      convert: aaaa-mm-dd
+    quantidade_solicitada_contratos_filhote:
+      description: 'Quantidade Solicitada de Contratos Filhote'
+      type: N(19)V11
+      pos: [ 602, 631 ]
+    quantidade_solicitada_criacao_contratos_filhote:
+      description: 'Quantidade Solicitada de Criação de Contratos Filhote'
+      type: N(19)V11
+      pos: [ 632, 661 ]
+    isin_recibo:
+      description: 'ISIN do Recibo'
+      type: X(12)
+      pos: [ 662, 673 ]
+    codigo_distribuicao_recibo:
+      description: 'Código de Distribuição do Recibo'
+      type: N(05)
+      pos: [ 674, 678 ]
+    codigo_negociacao_recibo:
+      description: 'Código de Negociação do Recibo'
+      type: X(35)
+      pos: [ 679, 713 ]
+    preco_pago_subscricao:
+      description: 'Preço a ser Pago para Subscrição'
+      type: N(19)V11
+      pos: [ 714, 743 ]
+    data_efetivacao_subscricao:
+      description: 'Data de Efetivação da Subscrição'
+      type: X(10)
+      pos: [ 744, 753 ]
+      convert: aaaa-mm-dd
+    valor_financeiro_subscricao:
+      description: 'Valor Financeiro da Subscrição'
+      type: N(19)V11
+      pos: [ 754, 783 ]
+    opcao_subscricao_parcial:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:PartialSubscriptionOptionl'
+      type: X(01)
+      pos: [ 784, 784 ]
+    opcao_participacao_sobras:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 785, 785 ]
+    numero_contrato_filhote:
+      description: 'Número do Contrato Filhote'
+      type: X(35)
+      pos: [ 786, 820 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(03)
+      pos: [ 821, 823 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(177)
+      pos: [ 824, 1000 ]
   "23":
   "24":
   "25":
