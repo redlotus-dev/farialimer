@@ -3232,6 +3232,125 @@ register:
       type: X(572)
       pos: [ 429, 1000 ]
   "24":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "24"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '24'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48, 62 ]
+    codigo_participante_conta:
+      description: 'Código do Participante da Conta'
+      type: X(15)
+      pos: [ 63, 77 ]
+    tipo_provento:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CorporateActionsType'
+      type: X(05)
+      pos: [ 78, 82 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 83, 117 ]
+    natureza_lado_doador_vendedor:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: N(01)
+      pos: [ 118, 118 ]
+    codigo_custodiante:
+      description: 'Código do Custodiante'
+      type: X(15)
+      pos: [ 119, 133 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor no Custodiante'
+      type: X(15)
+      pos: [ 134, 148 ]
+    carteira:
+      description: 'Código da Carteira'
+      type: X(35)
+      pos: [ 149, 183 ]
+    codigo_negociacao_ativo_objeto_ex:
+      description: 'Código de Negociação do Ativo Objeto EX'
+      type: X(35)
+      pos: [ 184, 218 ]
+    isin_ativo_objeto_ex:
+      description: 'ISIN do Ativo Objeto EX'
+      type: X(12)
+      pos: [ 219, 230 ]
+    codigo_distribuicao_ativo_objeto_ex:
+      description: 'Código de Distribuição do Ativo Objeto EX'
+      type: N(05)
+      pos: [ 231, 235 ]
+    quantidade_data_atualizacao_custodia:
+      description: 'Quantidade na Data de Atualização da Custódia'
+      type: N(19)V11
+      pos: [ 236, 265 ]
+    preco_referencia_ex:
+      description: 'Preço de Referência EX'
+      type: N(19)V11
+      pos: [ 266, 295 ]
+    valor_contrato_ex:
+      description: 'Valor do Contrato EX'
+      type: N(19)V11
+      pos: [ 296, 325 ]
+    numero_contrato_apos_evento_corporativo:
+      description: 'Número do Contrato Após o Evento Corporativo'
+      type: X(35)
+      pos: [ 326, 360 ]
+    codigo_negociacao_ativo_objeto_com:
+      description: 'Código de Negociação do Ativo Objeto COM'
+      type: X(35)
+      pos: [ 361, 395 ]
+    isin_ativo_objeto_com:
+      description: 'ISIN do Ativo Objeto COM'
+      type: X(12)
+      pos: [ 396, 407 ]
+    codigo_distribuicao_ativo_objeto_com:
+      description: 'Código de Distribuição do Ativo Objeto COM'
+      type: N(05)
+      pos: [ 408, 412 ]
+    quantidade_atual_com:
+      description: 'Quantidade Atual COM'
+      type: N(19)V11
+      pos: [ 413, 442 ]
+    preco_referencia_com:
+      description: 'Preço de Referência COM'
+      type: N(19)V11
+      pos: [ 443, 472 ]
+    valor_contrato_com:
+      description: 'Valor do Contrato COM'
+      type: N(19)V11
+      pos: [ 473, 502 ]
+    quantidade_fracoes:
+      description: 'Quantidade de Frações (após eventos corporativos)'
+      type: N(19)V11
+      pos: [ 503, 532 ]
+    data_atualizacao_custodia:
+      description: 'Data de Atualização da Custódia'
+      type: X(10)
+      pos: [ 533, 542 ]
+      convert: aaaa-mm-dd
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(03)
+      pos: [ 543, 545 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(455)
+      pos: [ 546, 1000 ]
   "25":
   "26":
   "27":
