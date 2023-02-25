@@ -1,8 +1,9 @@
 """Parser Tests"""
-
 import datetime
 from collections import OrderedDict
 from decimal import Decimal
+
+import pytest
 
 from farialimer.parser.b3parser import B3Parser as Parser
 
@@ -18,6 +19,29 @@ def test_get_filetype():
     expected = "IMBARQ014"
 
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    "spec, path",
+    [
+        (
+            "imbarq001",
+            "tests/specs/b3/samples/imbarq001/IMBARQ001_BV000272201610130000001000489051801.txt",
+        ),
+        (
+            "imbarq014",
+            "tests/specs/b3/samples/imbarq014/IMBARQ014_BV000272202205260000001000935071656.txt",
+        ),
+    ],
+)
+def test_parse_load_without_issues(path, spec):
+    """Load a sample file and parse it without issues"""
+    parser = Parser(spec)
+    content = parser.read_file(path)
+
+    result = parser.parse(content, spec=spec)
+
+    assert len(result) > 0
 
 
 def test_parse_imbarq014():

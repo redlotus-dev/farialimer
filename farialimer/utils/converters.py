@@ -32,6 +32,8 @@ def convert_to_string(parse_obj: ParseObject):
 
 def b3_convert_to_numeric(parse_obj: ParseObject):
     """given a parse_obj, convert to a numerico value with its decimal places"""
+    if parse_obj.value.isspace():
+        return None
     str_int_len, str_dec_len = re.search(
         r"N\((\d+)\)V(\d+)", parse_obj.datatype
     ).groups()

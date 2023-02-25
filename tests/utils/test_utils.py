@@ -3,6 +3,8 @@
 from datetime import date
 from decimal import Decimal
 
+import pytest
+
 from farialimer.parser.models import ParseObject
 from farialimer.utils.converters import convert_yyyymmdd, b3_convert_to_numeric
 
@@ -16,10 +18,16 @@ def test_convert_yyyymmdd():
     assert result == expected
 
 
-def test_b3_convert_to_numeric():
+@pytest.mark.parametrize(
+    "value, datatype, expected",
+    [
+        ("0000000028701475025900000000", "N(18)V10", Decimal("2870147502.59")),
+        ("                            ", "N(18)V10", None),
+    ],
+)
+def test_b3_convert_to_numeric(value, datatype, expected):
     """Test given a raw numeric string and datatype, returns the correct decimal value"""
-    base = ParseObject("0000000028701475025900000000", "", "N(18)V10")
+    base = ParseObject(value, "", datatype)
     result = b3_convert_to_numeric(base)
-    expected = Decimal("2870147502.59")
 
     assert result == expected

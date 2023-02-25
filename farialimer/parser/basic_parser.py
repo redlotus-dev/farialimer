@@ -23,10 +23,12 @@ class BasicParser(ABC):
         self.spec_dict = get_spec_dict()
 
     @staticmethod
-    def read_file(filepath, encoding="utf-8"):
+    def read_file(filepath, encoding="latin1"):
         """Read the contents from a given filepath"""
+        content = []
         with open(filepath, encoding=encoding) as finput:
-            content = finput.readlines()
+            for line in finput:
+                content.append(line)
         return content
 
     @staticmethod
@@ -81,7 +83,10 @@ class BasicParser(ABC):
             parse_item = line[item.start - 1 : item.end]
             converter = convert_mapper(item.convert) or self._data_mapper(item.datatype)
             parse_obj = ParseObject(parse_item, converter, item.datatype)
-            parse_item = converter(parse_obj)
+            try:
+                parse_item = converter(parse_obj)
+            except ValueError:
+                print()
             parse_result[item.name] = parse_item
         return parse_result
 
