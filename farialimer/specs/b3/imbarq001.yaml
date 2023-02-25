@@ -3769,6 +3769,88 @@ register:
       type: X(833)
       pos: [ 170, 1000 ]
   "29":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "29"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '29'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    digito_investidor_solicitante:
+      description: ''
+      type: X(01)
+      pos: [ 33, 33 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 34, 48 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 49, 63 ]
+    codigo_carteira:
+      description: 'Código da Carteira'
+      type: N(05)
+      pos: [ 64, 68 ]
+    codigo_isin:
+      description: 'Código ISIN'
+      type: X(12)
+      pos: [ 69, 80 ]
+    distribuicao:
+      description: 'Distribuição'
+      type: N(03)
+      pos: [ 81, 83 ]
+    tipo_bloqueio:
+      description: 'Tipo de Bloqueio'
+      type: N(05)
+      pos: [ 84, 88 ]
+    descricao_bloqueio:
+      description: 'Descrição do Bloqueio'
+      type: X(60)
+      pos: [ 89, 148 ]
+    data_pregao_compra:
+      description: 'Data do Pregão de Compra'
+      type: N(08)
+      pos: [ 149, 156 ]
+      convert: aaaammdd
+    data_inicio_bloqueio:
+      description: 'Data de Início do Bloqueio'
+      type: N(08)
+      pos: [ 157, 164 ]
+      convert: aaaammdd
+    data_fim_bloqueio:
+      description: 'Data de Fim do Bloqueio'
+      type: N(08)
+      pos: [ 165, 172 ]
+      convert: aaaammdd
+    quantidade_acoes_bloqueadas:
+      description: 'Quantidade de Ações Bloqueadas'
+      type: N(15)
+      pos: [ 173, 187 ]
+    codigo_agente_compensacao:
+      description: 'Código do Agente de Compensação'
+      type: N(05)
+      pos: [ 188, 192 ]
+    data_aquisicao:
+      description: 'Data de Aquisição'
+      type: N(08)
+      pos: [ 193, 200 ]
+      convert: aaaammdd
+    preco_aquisicao:
+      description: 'Preço de Aquisição'
+      type: N(15)V06
+      pos: [ 201, 221 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(780)
+      pos: [ 222, 1000 ]
   "30":
   "31":
     tipo_registro:
