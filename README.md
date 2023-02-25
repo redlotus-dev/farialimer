@@ -1,5 +1,5 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/redlotus-dev/farialimer/faria-limer-tests.yaml)
-[![codecov](https://codecov.io/github/redlotus-dev/farialimer/branch/main/graph/badge.svg?token=DT5E8GHT8Q)](https://codecov.io/github/redlotus-dev/farialimer)
+[![codecov](https://codecov.io/gh/redlotus-dev/farialimer/branch/main/graph/badge.svg?token=DT5E8GHT8Q)](https://codecov.io/gh/redlotus-dev/farialimer)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=alert_status)](https://sonarcloud.io/dashboard?id=redlotus-dev_farialimer)
 [![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=redlotus-dev_farialimer)
 [![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=redlotus-dev_farialimer&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=redlotus-dev_farialimer)
