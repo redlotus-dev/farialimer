@@ -259,5 +259,5 @@ register:
       pos: [ 69,76 ]
     reserva:
       description: 'Preenchido com brancos'
-      type: X(922)
-      pos: [ 78, 1000 ]
+      type: X(924)
+      pos: [ 77,1000 ]
