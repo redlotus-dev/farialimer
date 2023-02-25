@@ -1064,7 +1064,7 @@ register:
       pos: [ 883, 886 ]
     preco_titulo_publico_atualizado:
       description: 'Preço do Título Público Atualizado'
-      type: N(19)V07  # verify with B3, probably wrong value
+      type: N(19)V08  # to verify with B3, probably wrong value
       pos: [ 887, 913 ]
     reserva:
       description: 'Reserva'
