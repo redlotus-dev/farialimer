@@ -11,7 +11,7 @@ register:
       convert: string
       default: '00'
     codigo_arquivo:
-      description: 'Código do arquivo - Fixo "IMBARQ014'
+      description: 'Código do arquivo - Fixo "IMBARQ001'
       type: X(09)
       pos: [ 3,11 ]
       default: IMBARQ001
@@ -4526,7 +4526,7 @@ register:
       description: 'Código do arquivo - Fixo "IMBARQ001'
       type: X(09)
       pos: [ 3,11 ]
-      default: IMBARQ014
+      default: IMBARQ001
     codigo_categoria_usuario:
       description: 'Código da categoria do usuário'
       type: N(03)
