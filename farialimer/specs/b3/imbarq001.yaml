@@ -3131,6 +3131,106 @@ register:
       type: X(177)
       pos: [ 824, 1000 ]
   "23":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "23"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '23'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48, 62 ]
+    codigo_participante_conta:
+      description: 'Código do Participante da Conta'
+      type: X(15)
+      pos: [ 63, 77 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 78, 112 ]
+    natureza_lado_doador_vendedor:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: N(01)
+      pos: [ 113, 113 ]
+    codigo_custodiante:
+      description: 'Código do Custodiante'
+      type: X(15)
+      pos: [ 114, 128 ]
+    codigo_investidor_custodiante:
+      description: 'Código do Investidor no Custodiante'
+      type: X(15)
+      pos: [ 129, 143 ]
+    carteira:
+      description: 'Código da Carteira'
+      type: X(35)
+      pos: [ 144, 178 ]
+    codigo_negociacao_ativo_objeto:
+      description: 'Código de Negociação do Ativo Objeto'
+      type: X(35)
+      pos: [ 179, 213 ]
+    isin_ativo_objeto:
+      description: 'ISIN do Ativo Objeto'
+      type: X(12)
+      pos: [ 214, 225 ]
+    codigo_distribuicao_ativo_objeto:
+      description: 'Código de Distribuição do Ativo Objeto'
+      type: N(05)
+      pos: [ 226, 230 ]
+    codigo_evento_corporativo:
+      description: 'Código do Evento Corporativo'
+      type: X(50)
+      pos: [ 231, 280 ]
+    data_atualizacao_custodia:
+      description: 'Data de Atualização da Custódia'
+      type: X(10)
+      pos: [ 281, 290 ]
+      convert: aaaa-mm-dd
+    quantidade_data_atualizacao_custodia:
+      description: 'Quantidade na Data de Atualização da Custódia'
+      type: N(19)V11
+      pos: [ 291, 320 ]
+    valor_bruto_evento_corporativo:
+      description: 'Valor Bruto do Evento Corporativo'
+      type: N(19)V11
+      pos: [ 321, 350 ]
+    valor_imposto_evento_corporativo:
+      description: 'Valor do Imposto do Evento Corporativo'
+      type: N(19)V11
+      pos: [ 351, 380 ]
+    valor_liquido_evento_corporativo:
+      description: 'Valor Líquido do Evento Corporativo'
+      type: N(19)V11
+      pos: [ 381, 410 ]
+    data_pagamento_evento_corporativo:
+      description: 'Data de Pagamento do Evento Corporativo'
+      type: X(10)
+      pos: [ 411, 420 ]
+      convert: aaaa-mm-dd
+    situacao_evento:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CorporateActionsStatus'
+      type: X(05)
+      pos: [ 421, 425 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:MarketType'
+      type: N(03)
+      pos: [ 426, 428 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(572)
+      pos: [ 429, 1000 ]
   "24":
   "25":
   "26":
