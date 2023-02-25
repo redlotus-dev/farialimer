@@ -1,4 +1,5 @@
 """Parser Tests"""
+
 import datetime
 from collections import OrderedDict
 from decimal import Decimal
