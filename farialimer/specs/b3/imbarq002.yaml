@@ -1,0 +1,263 @@
+provider: B3
+service: iMercado
+version: 1.04
+layout: IMBARQ014
+register:
+  "00":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "00"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '00'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ002'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ002
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(05)
+      pos: [ 15,19 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 20,27 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 28,42 ]
+    numero_movimento:
+      description: 'Número do movimento - Sequencial por usuário, atribuído p/ controle dos arquivos gerados'
+      type: N(09)
+      pos: [ 43,51 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 52,59 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 60,67 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(933)
+      pos: [ 68, 1000 ]
+  "50":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "50"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '50'
+    codigo_participante_solicitante:
+      description: 'Código do participante solicitante'
+      type: N(15)
+      pos: [ 3,17 ]
+    codigo_investidor_solicitante:
+      description: 'Código do investidor solicitante'
+      type: N(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do participante solicitado'
+      type: N(15)
+      pos: [ 33,47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do investidor solicitado'
+      type: N(15)
+      pos: [ 48,62 ]
+    data_pregao:
+      description: 'Data do pregão - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 63,72 ]
+    data_liquidacao:
+      description: 'Data da liquidação - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 73,82 ]
+    tipo_liquidacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: SettelementType'
+      type: N(10)
+      pos: [ 83,92 ]
+    numero_instrucao_liquidacao:
+      description: 'Número da instrução de liquidação'
+      type: X(64)
+      pos: [ 93,156 ]
+    numero_instrucao_liquidacao_original:
+      description: 'Número da instrução de liquidação original'
+      type: X(64)
+      pos: [ 157,220 ]
+    carteira:
+      description: 'Carteira'
+      type: X(10)
+      pos: [ 221,230 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 231,242 ]
+    distribuicao_isin:
+      description: 'Distribuição ISIN'
+      type: X(10)
+      pos: [ 243,252 ]
+    natureza_operacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: LaunchType'
+      type: X(01)
+      pos: [ 253,253 ]
+    preco_medio_referencia:
+      description: 'Preço médio de referência'
+      type: N(23)V07
+      pos: [ 254,283 ]
+    quantidade_total_instrucao_liquidacao:
+      description: 'Quantidade total da instrução de liquidação'
+      type: N(13)V06
+      pos: [ 284,302 ]
+    volume_total_instrucao_liquidacao:
+      description: 'Volume total da instrução de liquidação'
+      type: N(23)V07
+      pos: [ 303,332 ]
+    tipo_restricao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: RestrictionType'
+      type: X(02)
+      pos: [ 333,334 ]
+    situacao_resultado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: NetSettlementResultStatus'
+      type: X(05)
+      pos: [ 335,339 ]
+    quantidade_liquidada:
+      description: 'Quantidade liquidada'
+      type: N(13)V06
+      pos: [ 340,358 ]
+    volume_financeiro_liquidado:
+      description: 'Volume financeiro liquidado'
+      type: N(23)V07
+      pos: [ 359,388 ]
+    quantidade_nao_liquidada:
+      description: 'Quantidade não liquidada'
+      type: N(13)V06
+      pos: [ 389,407 ]
+    volume_financeiro_nao_liquidado:
+      description: 'Volume financeiro não liquidado'
+      type: N(23)V07
+      pos: [ 408,437 ]
+    quantidade_para_ser_liquidada:
+      description: 'Quantidade para ser liquidada'
+      type: N(13)V06
+      pos: [ 438,456 ]
+    volume_financeiro_para_ser_liquidado:
+      description: 'Volume financeiro para ser liquidado'
+      type: N(23)V07
+      pos: [ 457,486 ]
+    quantidade_aceita_custodiante:
+      description: 'Quantidade aceita pelo custodiante'
+      type: N(13)V06
+      pos: [ 487,505 ]
+    quantidade_restringivel:
+      description: 'Quantidade restringível'
+      type: N(13)V06
+      pos: [ 506,524 ]
+    delivery_restricted_position_account_level:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 525,525 ]
+    delivery_restricted_tp_dp_level:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 526,526 ]
+    delivery_restricted_cm_level:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 527,527 ]
+    quantidade_falha:
+      description: 'Quantidade da falha'
+      type: N(13)V06
+      pos: [ 528,546 ]
+    fallback_settlement_account:
+      description: 'Fallback Settlement Account'
+      type: N(15)
+      pos: [ 547,561 ]
+    informacao_adicional:
+      description: 'Informação adicional - Informa o Lote do ETF ou o número de contrato do Empréstimo de Títulos Públicos Federais'
+      type: X(35)
+      pos: [ 562,596 ]
+    conta_selic:
+      description: 'Conta SELIC'
+      type: N(09)
+      pos: [ 597,605 ]
+    vencimento_titulo:
+      description: 'Vencimento do título - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 606,615 ]
+    codigo_identificador_titulo_selic:
+      description: 'Código identificador do título na Selic'
+      type: X(06)
+      pos: [ 616,621 ]
+    prazo_liquidacao:
+      description: 'Prazo de liquidação - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: SettlementGroup'
+      type: X(01)
+      pos: [ 622,622 ]
+    tipo_resultado_liquido:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: NettingType'
+      type: X(01)
+      pos: [ 623,623 ]
+    reservado:
+      description: 'Preenchido com brancos'
+      type: X(377)
+      pos: [ 624,1000 ]
+  "99":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "99"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '99'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ002'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ002
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(05)
+      pos: [ 15,19 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 20,27 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 28,42 ]
+    numero_movimento:
+      description: 'Número do movimento'
+      type: N(09)
+      pos: [ 43,51 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 52,59 ]
+    total_registros_gerados:
+      description: ''
+      type: N(09)
+      pos: [ 60,68 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 69,76 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(922)
+      pos: [ 78, 1000 ]
