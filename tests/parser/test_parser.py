@@ -55,7 +55,7 @@ def test_get_filetype():
         ),
     ],
 )
-def test_parse_load_without_issues(path, spec):
+def test_parse_load_without_issues(spec, path):
     """Load a sample file and parse it without issues"""
     parser = Parser(spec)
     content = parser.read_file(path)
