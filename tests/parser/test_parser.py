@@ -1,8 +1,10 @@
 """Parser Tests"""
 
 import datetime
+import os
 from collections import OrderedDict
 from decimal import Decimal
+from os import walk
 
 import pytest
 
@@ -20,6 +22,23 @@ def test_get_filetype():
     expected = "IMBARQ014"
 
     assert result == expected
+
+
+def test_get_testfiles():
+    """Collect the sample text files and return a dict with the specs as keys"""
+    spec_dict = {}
+    for dirpath, _, filenames in walk("tests/specs"):
+        sample_list = []
+        spec_key = ""
+        for filename in filenames:
+            if filename.endswith("txt"):
+                if not spec_key:
+                    spec_key = dirpath.split("/")[-1]
+                filepath = os.path.join(dirpath, filename)
+                sample_list.append(filepath)
+        if spec_key:
+            spec_dict[spec_key] = sample_list
+    return spec_dict
 
 
 @pytest.mark.parametrize(
