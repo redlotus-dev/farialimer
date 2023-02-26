@@ -11,6 +11,7 @@ import yaml
 from farialimer.parser.models import Field, ParseObject
 from farialimer.utils.converters import (
     convert_yyyymmdd,
+    convert_yyyy_mm_dd,
     convert_to_string,
 )
 from farialimer.utils.raise_exceptions import raise_error_for_nonascii_character
@@ -108,5 +109,9 @@ def get_spec_dict():
 
 def convert_mapper(converter):
     """map the converter to it respective function"""
-    _convert_map = {"aaaammdd": convert_yyyymmdd, "string": convert_to_string}
+    _convert_map = {
+        "aaaammdd": convert_yyyymmdd,
+        "aaaa-mm-dd": convert_yyyy_mm_dd,
+        "string": convert_to_string,
+    }
     return _convert_map.get(converter)

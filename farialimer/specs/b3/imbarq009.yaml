@@ -1,0 +1,182 @@
+provider: B3
+service: iMercado
+version: 1.2
+layout: IMBARQ009
+register:
+  "00":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "00"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '00'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ009'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ009
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "B3'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na B3'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento - Sequencial por usuário, atribuído p/ controle dos arquivos gerados'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 62,69 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(231)
+      pos: [ 70, 300 ]
+  "80":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "80"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '80'
+    participante_solicitante:
+      description: 'Participante solicitante'
+      type: N(15)
+      pos: [ 3,17 ]
+    codigo_investidor_solicitante:
+      description: 'Código do investidor solicitante'
+      type: N(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do participante solicitado'
+      type: N(15)
+      pos: [ 33,47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do investidor solicitado'
+      type: N(15)
+      pos: [ 48,62 ]
+    indicador_day_trade:
+      description: 'Indicador de Day Trade - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 63,63 ]
+    grupo_ativo:
+      description: 'Grupo de Ativo - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: AssetGroup'
+      type: X(03)
+      pos: [ 64,66 ]
+    tipo_mercado:
+      description: 'Tipo de Mercado - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: MarketType'
+      type: N(03)
+      pos: [ 67,69 ]
+    mercadoria:
+      description: 'mercadoria'
+      type: X(30)
+      pos: [ 70,99 ]
+    codigo_vencimento:
+      description: 'Código do vencimento'
+      type: X(04)
+      pos: [ 100,103 ]
+    tipo_negocio:
+      description: 'Tipo de negócio - ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: TradeTransaType'
+      type: X(02)
+      pos: [ 104,105 ]
+    data_inicio_vigencia:
+      description: 'Data de início de vigência - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 106,115 ]
+    data_final_vigencia:
+      description: 'Data de fim de vigência - Formato = "AAAA-MM-DD"'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 116,125 ]
+    valor_adtv:
+      description: 'Valor ADTV'
+      type: N(19)
+      pos: [ 126,144 ]
+    emolumento:
+      description: 'Emolumento (P médio)'
+      type: N(19)V7
+      pos: [ 145,170 ]
+    taxa_registro_p_medio:
+      description: 'Taxa de registro (P médio)'
+      type: N(19)V7
+      pos: [ 171,196 ]
+    emolumento_custo_unitario:
+      description: 'Emolumento (Custo unitário)'
+      type: N(19)V7
+      pos: [ 197,222 ]
+    taxa_registro_custo_unitario:
+      description: 'Taxa de registro (Custo unitário)'
+      type: N(19)V7
+      pos: [ 223,248 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(52)
+      pos: [ 249, 300 ]
+  "99":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "99"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '99'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ009'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ009
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "B3'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na B3'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    total_registros_gerados:
+      description: ''
+      type: N(09)
+      pos: [ 62,70 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 71,78 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(222)
+      pos: [ 79, 300 ]

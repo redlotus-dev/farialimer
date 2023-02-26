@@ -8,6 +8,7 @@ import pytest
 from farialimer.parser.models import ParseObject
 from farialimer.utils.converters import (
     convert_yyyymmdd,
+    convert_yyyy_mm_dd,
     b3_convert_to_numeric,
     convert_to_int,
 )
@@ -26,6 +27,14 @@ def test_convert_yyyymmdd(value, datatype, expected):
     result = convert_yyyymmdd(base)
 
     assert result == expected
+
+
+def test_convert_yyyy_mm_dd():
+    """Test year-month-date string conversion do datetime.date"""
+    base = ParseObject("2022-05-26", "X(10)", "")
+    result = convert_yyyy_mm_dd(base)
+
+    assert result == date(2022, 5, 26)
 
 
 @pytest.mark.parametrize(
