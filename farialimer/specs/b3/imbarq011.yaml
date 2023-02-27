@@ -1,0 +1,697 @@
+provider: B3
+service: iMercado
+version: 1.0
+layout: IMBARQ011
+register:
+  "00":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "00"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '00'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ011'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ011
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento - Sequencial por usuário, atribuído p/ controle dos arquivos gerados'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 62,69 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(931)
+      pos: [ 70, 1000 ]
+  "07":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "07"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '07'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor do Participante de Negociação Pleno ou Participante de Liquidação'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    data_negociacao:
+      description: 'Data da Negociação'
+      type: X(10)
+      pos: [ 98, 107 ]
+      convert: aaaa-mm-dd
+    data_registro:
+      description: 'Data do Registro'
+      type: X(10)
+      pos: [ 108, 117 ]
+      convert: aaaa-mm-dd
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 118, 127 ]
+      convert: aaaa-mm-dd
+    valor_cotacao:
+      description: 'Valor da Cotação'
+      type: N(09)V07
+      pos: [ 128, 143 ]
+    codigo_variavel:
+      description: 'Exemplos: DOL - Dólar comercial; REU – Tx. de reais/EUR; YDO - JPY X USD'
+      type: X(12)
+      pos: [ 144, 155 ]
+    descricao_codigo_variavel:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 156, 215 ]
+    codigo_tipo_variavel:
+      description: 'Exemplos: T1 - PTAX800 venda; T2 - PTAX800 compra'
+      type: X(02)
+      pos: [ 216, 217 ]
+    descricao_tipo_variavel:
+      description: 'Descrição do Tipo da Variável'
+      type: X(60)
+      pos: [ 218, 277 ]
+    tamanho_base:
+      description: 'Tamanho da Base'
+      type: N(15)V02
+      pos: [ 278, 294 ]
+    natureza_posicao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: X(01)
+      pos: [ 295, 295 ]
+    indicador_garantias:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CollateralIndicator'
+      type: X(01)
+      pos: [ 296, 296 ]
+    codigo_negociador_contraparte:
+      description: 'Código do Negociador da Contraparte'
+      type: X(15)
+      pos: [ 297, 311 ]
+    indicador_garantias_contraparte:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CollateralIndicator'
+      type: X(01)
+      pos: [ 312, 312 ]
+    codigo_contrato:
+      description: 'Exemplos: TMC - Termo tx.cambio; TMM - Termo de metal'
+      type: X(06)
+      pos: [ 313, 318 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(682)
+      pos: [ 319, 1000 ]
+  "08":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "08"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '08'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    data_negociacao:
+      description: 'Data da Negociação'
+      type: X(10)
+      pos: [ 98, 107 ]
+      convert: aaaa-mm-dd
+    data_registro:
+      description: 'Data do Registro'
+      type: X(10)
+      pos: [ 108, 117 ]
+      convert: aaaa-mm-dd
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 118, 127 ]
+      convert: aaaa-mm-dd
+    codigo_variavel:
+      description: 'Exemplos: DOL - Dólar comercial; IBV - Ind. BOVESPA; IDI – Ind. Taxa DI1'
+      type: X(12)
+      pos: [ 128, 139 ]
+    descricao_codigo_variavel:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 140, 199 ]
+    codigo_contrato:
+      description: 'Exemplos: FBC - OPC FLEX CP BOV;FBP - OPC FLEX VD BOV;OFC - OPCAO FLEX COMP;OFV - OPCAO FLEX VEND'
+      type: X(06)
+      pos: [ 200, 205 ]
+    descricao_codigo_contrato:
+      description: 'Descrição do Código do Contrato'
+      type: X(60)
+      pos: [ 206, 265 ]
+    codigo_tipo_variavel:
+      description: 'Exemplos: PF - PCO Fechamento;PL - PCO Liquidação;PM - PCO Médio;T1 - PTAX800 venda;T2 - PTAX800 compra;T3 - PTAX800 media'
+      type: X(02)
+      pos: [ 266, 267 ]
+    descricao_tipo_variavel:
+      description: 'Descrição do Tipo da Variável'
+      type: X(60)
+      pos: [ 268, 327 ]
+    tipo_opcao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:OptionStyle'
+      type: X(01)
+      pos: [ 328, 328 ]
+    preco_exercicio:
+      description: 'Preço de Exercício'
+      type: N(15)V07
+      pos: [ 329, 350 ]
+    descricao_preco_exercicio:
+      description: 'Descrição do Preço de Exercício'
+      type: X(60)
+      pos: [ 351, 410 ]
+    tamanho_base:
+      description: 'Tamanho da Base'
+      type: N(15)V02
+      pos: [ 411, 427 ]
+    titulo_lancador:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: Side'
+      type: X(01)
+      pos: [ 428, 428 ]
+    codigo_negociador_contraparte:
+      description: 'Código do Negociador da Contraparte'
+      type: X(15)
+      pos: [ 429, 443 ]
+    premio_unitario:
+      description: 'Prêmio Unitário'
+      type: N(15)V07
+      pos: [ 444, 465 ]
+    indicador_barreiras:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:BarrierIndicator'
+      type: X(01)
+      pos: [ 466, 466 ]
+    tipo_preco_exercicio:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:ExercisePriceType'
+      type: X(01)
+      pos: [ 467, 467 ]
+    indicador_garantias:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CollateralIndicator'
+      type: X(01)
+      pos: [ 468, 468 ]
+    rebate_unitario:
+      description: 'Rebate Unitário'
+      type: N(15)V07
+      pos: [ 469, 490 ]
+    monitoramento_barreiras:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:BarrierMonitoring'
+      type: X(01)
+      pos: [ 491, 491 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(509)
+      pos: [ 492, 1000 ]
+  "09":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "09"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '09'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    titulo_lancador:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: Side'
+      type: X(01)
+      pos: [ 98, 98 ]
+    codigo_barreira:
+      description: 'ID – KNOCK IN N DOWN; IU – KNOCK IN AND UP;OD – KNOCK OUT N DOW;OU – KNOCK OUT N UP;PB – Barreira limite'
+      type: X(05)
+      pos: [ 99, 103 ]
+    descricao_barreira:
+      description: 'Descrição da Barreira'
+      type: X(60)
+      pos: [ 104, 163 ]
+    preco_barreira:
+      description: 'Preço da Barreira'
+      type: N(15)V07
+      pos: [ 164, 185 ]
+    data_acionamento_barreira:
+      description: 'Formato = "AAAA-MM-DD"'
+      type: X(10)
+      pos: [ 186, 195 ]
+      convert: aaaa-mm-dd
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(805)
+      pos: [ 196, 1000 ]
+  "10":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "10"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '10'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado_parte:
+      description: 'Código do Participante Solicitado - Parte'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado_parte:
+      description: 'Código do Investidor Solicitado - Parte'
+      type: X(15)
+      pos: [ 48, 62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    data_negociacao:
+      description: 'Data da Negociação'
+      type: X(10)
+      pos: [ 98, 107 ]
+      convert: aaaa-mm-dd
+    data_registro:
+      description: 'Data do Registro'
+      type: X(10)
+      pos: [ 108, 117 ]
+      convert: aaaa-mm-dd
+    data_base:
+      description: 'Data Base'
+      type: X(10)
+      pos: [ 118, 127 ]
+      convert: aaaa-mm-dd
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      pos: [ 128, 137 ]
+      convert: aaaa-mm-dd
+    codigo_tipo_variavel_parte:
+      description: 'Exemplos: PF - PCO Fechamento;PL - PCO Liquidação;PM - PCO Médio;T1 - PTAX800 venda;T2 - PTAX800 compra;T3 - PTAX800 media'
+      type: X(02)
+      pos: [ 138, 139 ]
+    descricao_tipo_variavel_parte:
+      description: 'Descrição do Tipo de Variável - Parte'
+      type: X(60)
+      pos: [ 140, 199 ]
+    codigo_variavel_parte:
+      description: 'Exemplos: DI1 - Taxa do CDI;DOL - Dólar comercial;IGM - IGP-M'
+      type: X(12)
+      pos: [ 200, 211 ]
+    descricao_codigo_tipo_variavel_parte:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 212, 271 ]
+    percentual_variavel:
+      description: 'Percentual da Variável'
+      type: N(04)V07
+      pos: [ 272, 282 ]
+    tamanho_base_parte:
+      description: 'Tamanho da Base'
+      type: N(15)V02
+      pos: [ 283, 299 ]
+    valor_atual_ponta_ativa:
+      description: 'Valor Atual - Ponta Ativa'
+      type: N(15)V02
+      pos: [ 300, 316 ]
+    valor_atual_contraparte:
+      description: 'Valor Atual - Contraparte'
+      type: N(15)V02
+      pos: [ 317, 333 ]
+    codigo_tipo_variavel_contraparte:
+      description: 'Exemplos: PF - PCO Fechamento;PL - PCO Liquidação;PM - PCO Médio;T1 - PTAX800 venda;T2 - PTAX800 compra;T3 - PTAX800 media'
+      type: X(02)
+      pos: [ 334, 335 ]
+    descricao_tipo_variavel_contraparte:
+      description: 'Descrição do Tipo de Variável - Contraparte'
+      type: X(60)
+      pos: [ 336, 395 ]
+    codigo_variavel_contraparte:
+      description: 'Exemplos: DI1 - Taxa do CDI;DOL - Dólar comercial;FGV - FGV 100'
+      type: X(12)
+      pos: [ 396, 407 ]
+    descricao_codigo_variavel_contraparte:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 408, 467 ]
+    percentual_variavel_contraparte:
+      description: 'Percentual da Variável'
+      type: N(04)V07
+      pos: [ 468, 478 ]
+    codigo_participante_contraparte:
+      description: 'Código do Participante Contraparte'
+      type: X(15)
+      pos: [ 479, 493 ]
+    sinal:
+      description: 'Sinal'
+      type: X(01)
+      pos: [ 494, 494 ]
+    valor_juros_parte:
+      description: 'Valor dos Juros - Parte'
+      type: N(06)V07
+      pos: [ 495, 507 ]
+    indicador_garantias_parte:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: CollateralIndicator'
+      type: X(01)
+      pos: [ 508, 508 ]
+    indicador_garantias_contraparte:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: CollateralIndicator'
+      type: X(01)
+      pos: [ 509, 509 ]
+    sinal2:
+      description: 'Sinal'
+      type: X(01)
+      pos: [ 510, 510 ]
+    mtm_fair_value:
+      description: 'MTM - Fair Value (Diferencial das curvas) Somente será valorizado qunado for SWAP'
+      type: N(15)V02
+      pos: [ 511, 527 ]
+    codigo_contrato:
+      description: 'EXEMPLOS: “SCP” - DOL X PRE; “SDC” - DI1 X DOL; “SDP” - DI1 X PRE'
+      type: X(06)
+      pos: [ 528, 533 ]
+    sinal3:
+      description: 'Sinal'
+      type: X(01)
+      pos: [ 534, 534 ]
+    valor_juros_contraparte:
+      description: 'Valor dos Juros - Contraparte'
+      type: N(06)V07
+      pos: [ 535, 547 ]
+    cotacao_inicial_parte:
+      description: 'Cotação Inicial - Parte'
+      type: N(06)V07
+      pos: [ 548, 560 ]
+    cotacao_inicial_contraparte:
+      description: 'Cotação Inicial - Contraparte'
+      type: N(06)V07
+      pos: [ 561, 573 ]
+    data_cotacao_parte:
+      description: 'Data da Cotação - Parte'
+      type: X(03)
+      pos: [ 574, 576 ]
+    data_cotacao_contraparte:
+      description: 'Data da Cotação - Contraparte'
+      type: X(03)
+      pos: [ 577, 579 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(421)
+      pos: [ 580, 1000 ]
+  "11":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "11"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '11'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado_ponta_ativa:
+      description: 'Código do Participante Solicitado - Ponta Ativa'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado_ponta_ativa:
+      description: 'Código do Investidor Solicitado - Ponta Ativa'
+      type: X(15)
+      pos: [ 48,62 ]
+    numero_contrato:
+      description: 'Número do Contrato'
+      type: X(35)
+      pos: [ 63, 97 ]
+    codigo_variavel:
+      description: 'Exemplos: DI1 - Taxa do CDI;DOL - Dólar comercial;IGM - IGP-M'
+      type: X(12)
+      pos: [ 98, 109 ]
+    descricao_codigo_variavel:
+      description: 'Descrição do Código da Variável'
+      type: X(60)
+      pos: [ 110, 169 ]
+    codigo_negociacao:
+      description: 'Código da Negociação'
+      type: X(12)
+      pos: [ 170, 181 ]
+    percentual_participacao_acao_carteira:
+      description: 'Percentual de Participação na Ação da Carteira'
+      type: N(10)V2
+      pos: [ 182, 193 ]
+    quantidade_atualizada_acao:
+      description: 'Quantidade Atualizada da Ação'
+      type: N(22)
+      pos: [ 194, 215 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(785)
+      pos: [ 216, 1000 ]
+  "36":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "36"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '36'
+    participante_solicitante:
+      description: 'Participante Solicitante'
+      type: X(15)
+      pos: [ 3, 17 ]
+    informacao_solicitada_codigo_participante:
+      description: 'Informação Solicitada / Código do Participante'
+      type: X(15)
+      pos: [ 18, 32 ]
+    nome_simplificado:
+      description: 'Nome Simplificado'
+      type: X(20)
+      pos: [ 33, 52 ]
+    sistema:
+      description: 'Sistema'
+      type: X(02)
+      pos: [ 53, 54 ]
+      default: 21
+    tipo_instrumento_financeiro:
+      description: 'Tipo de Instrumento Financeiro'
+      type: X(05)
+      pos: [ 55, 59 ]
+    instrumento_financeiro:
+      description: 'Instrumento Financeiro'
+      type: X(20)
+      pos: [ 60, 79 ]
+    isin:
+      description: 'ISIN'
+      type: X(12)
+      pos: [ 80, 91 ]
+    emissor_registrador:
+      description: 'Emissor Registrador'
+      type: X(40)
+      pos: [ 92, 131 ]
+    data_emissao:
+      description: 'Data de Emissão'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 132, 141 ]
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 142, 151 ]
+    informacao_nao_disponivel:
+      description: 'Informação não disponível'
+      type: X(06)
+      pos: [ 152, 157 ]
+      default: "000000"
+    fir:
+      description: 'FIR'
+      type: X(11)
+      pos: [ 158, 168 ]
+    tipo_posicao_custodia:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:OTCCustodyPositionType'
+      type: X(03)
+      pos: [ 169, 171 ]
+    quantidade:
+      description: 'Quantidade'
+      type: N(19)V10
+      pos: [ 172, 200 ]
+    valor_nominal:
+      description: 'Valor Nominal'
+      type: N(19)V10
+      pos: [ 201, 229 ]
+    pu_curva:
+      description: 'PU Curva'
+      type: N(19)V10
+      pos: [ 230, 258 ]
+    data_curva:
+      description: 'Data Curva'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 259, 268 ]
+    juros_vencidos_nao_pagos:
+      description: 'Juros Vencidos Não Pagos'
+      type: N(19)V10
+      pos: [ 269, 297 ]
+    juros_pro_rata:
+      description: 'Juros Pro Rata'
+      type: N(19)V10
+      pos: [ 298, 326 ]
+    data_resgate:
+      description: 'Data de Resgate'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 327, 336 ]
+    condicao_resgate_antecipa:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:EarlyRedemptionCondition'
+      type: X(01)
+      pos: [ 337, 337 ]
+    data_inicio_resgate_antecipado:
+      description: 'Data de Início do Resgate Antecipado'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 338, 347 ]
+    tipo_regime:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:RegimeType'
+      type: X(01)
+      pos: [ 348, 348 ]
+    eventos_cursados_cetip:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 349, 349 ]
+    destinacao_recurso_lei_12_431:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:YesOrNoIndicator'
+      type: X(01)
+      pos: [ 350, 350 ]
+    artigo_lei_12_431:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:TypeOfArticle'
+      type: X(01)
+      pos: [ 351, 351 ]
+    tipo_emissao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:CreationType'
+      type: X(01)
+      pos: [ 352, 352 ]
+    reserva:
+      description: 'Reserva'
+      type: X(648)
+      pos: [ 353, 1000 ]
+  "99":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "99"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '99'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ011'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ011
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    total_registros_gerados:
+      description: ''
+      type: N(09)
+      pos: [ 62,70 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 71,78 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(922)
+      pos: [ 79, 1000 ]
