@@ -20,9 +20,9 @@ from farialimer.utils.raise_exceptions import raise_error_for_nonascii_character
 class BasicParser(ABC):
     """Base Class for reading and parsing txt files"""
 
-    def __init__(self, spec):
-        self.spec = spec
-        self.spec_dict = get_spec_dict()
+    def __init__(self, provider):
+        self.provider = provider
+        self.spec_dict = get_spec_dict(self.provider)
 
     @staticmethod
     def read_file(filepath, encoding="latin1"):
@@ -46,7 +46,7 @@ class BasicParser(ABC):
     def parse(self, content, spec):
         """Given a content and spec document, returns a list of dict with the parsed information"""
         parsed_lines = []
-        document_parser = self.get_doc_parser(spec)
+        document_parser = self.get_spec_parser(spec)
         for idx, line in enumerate(content, start=1):
             raise_error_for_nonascii_character(idx, line)
             line_register = self._get_line_register(line)
@@ -55,7 +55,7 @@ class BasicParser(ABC):
             parsed_lines.append(register)
         return parsed_lines
 
-    def get_doc_parser(self, spec):
+    def get_spec_parser(self, spec):
         """Given a spec, returns namedtuple list with its props"""
         filepath = self.spec_dict[spec]
         with open(filepath, encoding="utf-8") as yinput:
@@ -91,14 +91,14 @@ class BasicParser(ABC):
         return parse_result
 
 
-def get_spec_dict():
+def get_spec_dict(provider):
     """
     Load a spec dict:
     key: spec name
     value: spec yaml filepath
     """
     spec_dict = {}
-    for dirpath, _, filenames in walk("farialimer/specs"):
+    for dirpath, _, filenames in walk(f"farialimer/specs/{provider}"):
         for filename in filenames:
             if filename.endswith("yaml"):
                 spec_key = filename.split(".")[0]

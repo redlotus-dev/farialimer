@@ -17,8 +17,8 @@ Field = namedtuple(
 class B3Parser(BasicParser):
     """Read, parse and write"""
 
-    def __init__(self, spec):
-        super().__init__(spec=spec)
+    def __init__(self, provider):
+        super().__init__(provider=provider)
 
     @staticmethod
     def _get_line_register(line: str):
