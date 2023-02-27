@@ -23,7 +23,7 @@ def _get_testfiles():
 
 
 def _get_spec_list():
-    """Given a provider, return a list of specs"""
+    """Collect the yaml specs and return a list of tuples (provider, spec)"""
     spec_list = []
     for dirpath, _, filenames in walk("farialimer/specs"):
         for filename in filenames:
