@@ -1,0 +1,291 @@
+provider: B3
+service: iMercado
+version: 1.0
+layout: IMBARQ013
+register:
+  "00":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "00"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '00'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ013'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ013
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento - Sequencial por usuário, atribuído p/ controle dos arquivos gerados'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 62,69 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(931)
+      pos: [ 70, 1000 ]
+  "20":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "20"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '20'
+    codigo_participante_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 3, 17 ]
+    codigo_investidor_solicitante:
+      description: ''
+      type: X(15)
+      pos: [ 18,32 ]
+    codigo_participante_solicitado:
+      description: 'Código do Participante Solicitado'
+      type: X(15)
+      pos: [ 33, 47 ]
+    codigo_investidor_solicitado:
+      description: 'Código do Investidor Solicitado'
+      type: X(15)
+      pos: [ 48,62 ]
+    numero_oferta:
+      description: 'Número da Oferta'
+      type: N(19)
+      pos: [ 63, 81 ]
+    situacao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: SecLendingOfferStatus'
+      type: N(02)
+      pos: [ 82, 83 ]
+    tipo_oferta:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela:Side'
+      type: N(02)
+      pos: [ 84, 85 ]
+    data_criacao_oferta:
+      description: 'Data de Criação da Oferta'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 86, 95 ]
+    participante_doador:
+      description: 'Código do Participante Doador'
+      type: X(07)
+      pos: [ 96, 102 ]
+    investidor_participante_doador:
+      description: 'Código do Investidor do Participante Doador'
+      type: X(15)
+      pos: [ 103, 117 ]
+    custodiante_doador:
+      description: 'Código do Custodiante Doador'
+      type: X(07)
+      pos: [ 118, 124 ]
+    investidor_custodiante_doador:
+      description: 'Investidor Custodiante Doador'
+      type: X(15)
+      pos: [ 125, 139 ]
+    participante_tomador_executor:
+      description: 'Código do Participante Tomador Executor'
+      type: X(07)
+      pos: [ 140, 146 ]
+    investidor_participante_tomador_executor:
+      description: 'Código do Investidor do Participante Tomador Executor'
+      type: X(15)
+      pos: [ 147, 161 ]
+    custodiante_tomador:
+      description: 'Código do Custodiante Tomador'
+      type: X(07)
+      pos: [ 162, 168 ]
+    investidor_custodiante_tomador:
+      description: 'Código do Investidor do Custodiante Tomador'
+      type: X(15)
+      pos: [ 169, 183 ]
+    participante_carrying:
+      description: 'Código do Participante Carrying'
+      type: X(07)
+      pos: [ 184, 190 ]
+    investidor_participante_carrying:
+      description: 'Código do Investidor do Participante Carrying'
+      type: X(15)
+      pos: [ 191, 205 ]
+    codigo_instrumento_ativo_objeto:
+      description: 'Security Id do ativo objeto'
+      type: X(35)
+      pos: [ 206, 240 ]
+    codigo_origem_identificacao_instrumento_ativo_objeto:
+      description: 'Security Id source do ativo objeto'
+      type: X(35)
+      pos: [ 241, 275 ]
+    codigo_bolsa_valor_ativo_objeto:
+      description: 'Código da Bolsa de Valores do ativo objeto'
+      type: X(04)
+      pos: [ 276, 279 ]
+    isin_ativo_objeto:
+      description: 'ISIN do ativo objeto'
+      type: X(12)
+      pos: [ 280, 291 ]
+    distribuicao_ativo_objeto:
+      description: 'Distribuição do ativo objeto'
+      type: N(04)
+      pos: [ 292, 295 ]
+    codigo_negociacao_ativo_objeto:
+      description: 'Código de Negociação do ativo objeto'
+      type: X(12)
+      pos: [ 296, 307 ]
+    quantidade_original:
+      description: 'Quantidade Original'
+      type: N(19)
+      pos: [ 308, 326 ]
+    quantidade_disponivel:
+      description: 'Quantidade Disponível'
+      type: N(19)
+      pos: [ 327, 345 ]
+    carteira_doador_tomador:
+      description: 'Carteira Doador/Tomador'
+      type: N(05)
+      pos: [ 346, 350 ]
+    taxa:
+      description: 'Taxa'
+      type: N(06)V05
+      pos: [ 351, 361 ]
+    data_carencia:
+      description: 'Data de Carência'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 362, 371 ]
+    data_vencimento:
+      description: 'Data de Vencimento'
+      type: X(10)
+      convert: aaaa-mm-dd
+      pos: [ 372, 381 ]
+    indicador_reversivel_doador:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 382, 382 ]
+    indicador_reversivel_doador_caso_opa:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 383, 383 ]
+    indicador_contrato_diferenciado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 384, 384 ]
+    participante_para_fechar:
+      description: 'Código do Participante para Fechar'
+      type: X(07)
+      pos: [ 385, 391 ]
+    tipo_liquidacao_bruto_ou_liquido:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: SettlementType'
+      type: X(01)
+      pos: [ 392, 392 ]
+    prazo_liquidacao:
+      description: 'Prazo de Liquidação'
+      type: X(01)
+      pos: [ 393, 393 ]
+    indicador_buy_side:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 394, 394 ]
+    indicador_certificada:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 395, 395 ]
+    indicador_permissao_liquidacao_antecipada_tomador:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: YesOrNoIndicator'
+      type: X(01)
+      pos: [ 396, 396 ]
+    mercado:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: MarketType'
+      type: N(03)
+      pos: [ 397, 399 ]
+    indexador_correcao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: IndexTypeCode'
+      type: N(02)
+      pos: [ 400, 401 ]
+    percentual_indice_correcao:
+      description: 'Percentual do Índice de Correção'
+      type: N(12)V04
+      pos: [ 402, 417 ]
+    tipo_correcao:
+      description: 'ExternalCodeList_iMercado_MóduloArquivos.xls - Tabela: CorrectionTypeCode'
+      type: X(01)
+      pos: [ 418, 418 ]
+    volume_negociado:
+      description: 'Volume Negociado'
+      type: N(19)V07
+      pos: [ 419, 444 ]
+    reserva:
+      description: 'Reserva'
+      type: X(556)
+      pos: [ 445, 1000 ]
+  "99":
+    tipo_registro:
+      description: 'Tipo de registro - Fixo "99"'
+      type: N(02)
+      pos: [ 1,2 ]
+      convert: string
+      default: '99'
+    codigo_arquivo:
+      description: 'Código do arquivo - Fixo "IMBARQ013'
+      type: X(09)
+      pos: [ 3,11 ]
+      default: IMBARQ013
+    codigo_categoria_usuario:
+      description: 'Código da categoria do usuário'
+      type: N(03)
+      pos: [ 12,14 ]
+    codigo_usuario:
+      description: 'Código do usuário - Código do usuário na BVMF'
+      type: N(07)
+      pos: [ 15,21 ]
+    codigo_origem:
+      description: 'Código da origem - Fixo "BVMF'
+      type: X(08)
+      pos: [ 22,29 ]
+    codigo_destino:
+      description: 'Código do destino - Código do usuário na BVMF'
+      type: N(15)
+      pos: [ 30, 44 ]
+    numero_movimento:
+      description: 'Número do movimento'
+      type: N(09)
+      pos: [ 45,53 ]
+    data_geracao_arquivo:
+      description: 'Data da geração do arquivo - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 54,61 ]
+    total_registros_gerados:
+      description: ''
+      type: N(09)
+      pos: [ 62,70 ]
+    data_movimento:
+      description: 'Data do movimento - Formato = "AAAAMMDD"'
+      type: N(08)
+      convert: aaaammdd
+      pos: [ 71,78 ]
+    reserva:
+      description: 'Preenchido com brancos'
+      type: X(922)
+      pos: [ 79, 1000 ]
