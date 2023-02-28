@@ -182,8 +182,8 @@ register:
       description: 'Nome da Empresa'
       pos: [ 73,102 ]
       type: X(030)
-    filler_2:
-      description: 'Filler'
+    informacao_1_mensagem:
+      description: 'Informação 1 - Mensagem'
       pos: [ 103,142 ]
       type: X(040)
     endereco:
@@ -214,7 +214,7 @@ register:
       description: 'UF'
       pos: [ 221,222 ]
       type: X(002)
-    filler_3:
+    filler_2:
       description: 'Filler'
       pos: [ 223,230 ]
       type: X(008)
@@ -304,11 +304,11 @@ register:
     quantidade_moeda:
       description: 'Quantidade de Moeda'
       pos: [ 105,119 ]
-      type: 9(015)
+      type: 9(015)V(05)
     valor_pagamento:
       description: 'Valor do Pagamento'
       pos: [ 120,134 ]
-      type: 9(013)V2
+      type: 9(015)V(05)
     numero_documento_banco:
       description: 'Número de Documento Banco (Nosso Número)'
       pos: [ 135,154 ]
@@ -321,19 +321,31 @@ register:
     valor_real_pagamento:
       description: 'Valor Real do Pagamento'
       pos: [ 163,177 ]
-      type: 9(013)V2
-    outras_informacoes:
-      description: 'Outras Informações'
+      type: 9(015)V(05)
+    informacao_2_mensagem:
+      description: 'Informação 2 - Mensagem'
       pos: [ 178,217 ]
       type: X(040)
-    finalidade_doc_ted_cip_ted_str:
-      description: 'Finalidade do DOC/TED CIP/TED STR'
+    finalidade_doc_:
+      description: 'Finalidade do DOC'
       pos: [ 218,219 ]
       type: X(002)
-    filler_2:
-      description: 'Filler'
-      pos: [ 220,230 ]
+    finalidade_ted:
+      description: 'Finalidade de TED'
+      pos: [ 220,224 ]
       type: X(011)
+    codigo_finalidade_complementar:
+      description: 'Código da Finalidade Complementar'
+      pos: [ 225,226 ]
+      type: X(002)
+    filler:
+      description: 'Filler'
+      pos: [ 227,229 ]
+      type: X(003)
+    emissao_aviso_favorecido:
+      description: 'Emissão de Aviso ao Favorecido'
+      pos: [ 230,230 ]
+      type: X(001)
     ocorrencias_retorno:
       description: 'Ocorrências'
       pos: [ 231,240 ]
@@ -371,8 +383,8 @@ register:
       description: 'Tipo de Inscrição do Favorecido'
       pos: [ 18,18 ]
       type: 9(001)
-    cpf_favorecido:
-      description: 'CPF do Favorecido'
+    cnpj_cpf_favorecido:
+      description: 'CNPJ/CPF do Favorecido'
       pos: [ 19,32 ]
       type: 9(014)
     logradouro_favorecido:
@@ -411,23 +423,23 @@ register:
     valor_documento:
       description: 'Valor do Documento'
       pos: [ 136,150 ]
-      type: 9(013)V2
+      type: 9(013)V(05)
     valor_abatimento:
       description: 'Valor do Abatimento'
       pos: [ 151,165 ]
-      type: 9(013)V2)
+      type: 9(015)V(05)
     valor_desconto:
       description: 'Valor do Desconto'
       pos: [ 166,180 ]
-      type: 9(013)V2
+      type: 9(015)V(05)
     valor_mora:
       description: 'Valor da Mora'
       pos: [ 181,195 ]
-      type: 9(013)V2)
+      type: 9(015)V(05)
     valor_multa:
       description: 'Valor da Multa'
       pos: [ 196,210 ]
-      type: 9(013)V2
+      type: 9(015)V(05)
     horario_envio_ted_str:
       description: 'Horário de Envio do TED STR'
       pos: [ 211,214 ]
@@ -471,11 +483,11 @@ register:
     somatoria_valores:
       description: 'Somatória dos Valores'
       pos: [ 24,41 ]
-      type: 9(018)V2
+      type: 9(018)V(02)
     somatoria_quantidade_moeda:
       description: 'Somatória da Quantidade Moeda'
       pos: [ 42,59 ]
-      type: 9(018)
+      type: 9(018)V(02)
     numero_aviso_debito:
       description: 'Número do Aviso de Débito'
       pos: [ 60,65 ]
