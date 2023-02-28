@@ -1,5 +1,5 @@
 """Parse module"""
-from collections import namedtuple
+
 import re
 
 from farialimer.parser.basic_parser import BasicParser
@@ -7,10 +7,6 @@ from farialimer.utils.converters import (
     convert_to_int,
     convert_to_string,
     b3_convert_to_numeric,
-)
-
-Field = namedtuple(
-    "field", ["name", "description", "datatype", "convert", "start", "end"]
 )
 
 
@@ -21,7 +17,7 @@ class B3Parser(BasicParser):
         super().__init__(provider=provider)
 
     @staticmethod
-    def _get_line_register(line: str):
+    def get_line_register(line: str):
         return line[:2]
 
     @staticmethod

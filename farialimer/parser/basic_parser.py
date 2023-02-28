@@ -35,8 +35,8 @@ class BasicParser(ABC):
 
     @staticmethod
     @abstractmethod
-    def _get_line_register(line):
-        pass  # pragma: no cover
+    def get_line_register(line):
+        """Given a line, returns the register type"""
 
     @staticmethod
     @abstractmethod
@@ -49,7 +49,7 @@ class BasicParser(ABC):
         document_parser = self.get_spec_parser(spec)
         for idx, line in enumerate(content, start=1):
             raise_error_for_nonascii_character(idx, line)
-            line_register = self._get_line_register(line)
+            line_register = self.get_line_register(line)
             layout_type = document_parser[line_register]
             register = self.parse_line(line, layout_type)
             parsed_lines.append(register)
