@@ -1,6 +1,9 @@
 """Parse module"""
+from collections import namedtuple
 
 from farialimer.parser.santander.base_santander import SantanderParser
+
+Type3 = namedtuple("Type3", ["line", "register_type", "segment", "register_group"])
 
 _identifier_map = {
     "01": "1CRE",
@@ -68,9 +71,9 @@ class PagamentoFornecedoresParser(SantanderParser):
 
         register_type = line[7]
         operation_type = line[8]
+
         if register_type == "1":
             return self._get_register_type_1(line, operation_type)
-
         if register_type == "3":
             return self._get_register_type_3(line, register_type)
         return register_type + self.current_register_header[1:]
@@ -87,47 +90,55 @@ class PagamentoFornecedoresParser(SantanderParser):
 
     def _get_register_type_3(self, line, register_type):
         segment = line[13]
-        if segment == "J":
-            return self._get_segment_j(line, register_type, segment)
-        if segment == "N":
-            return self._get_segment_n(line, register_type, segment)
-        if segment == "W":
-            return self._get_segment_w(line, register_type, segment)
-        if segment == "Y":
-            return self._get_segment_y(line, register_type, segment)
-        return register_type + segment + self.current_register_header[1:]
+        register_group = self.current_register_header[1:]
+        args = Type3(line, register_type, segment, register_group)
+        _type_3_map = {
+            "J": _get_segment_j,
+            "N": _get_segment_n,
+            "W": _get_segment_w,
+            "Y": _get_segment_y,
+        }
+        func_method = _type_3_map.get(segment, _default_segment)
+        return func_method(args)
 
-    def _get_segment_y(self, line, register_type, segment):
-        if line[17:19] == "53":
-            segment += "53"
-        return register_type + segment + self.current_register_header[1:]
 
-    def _get_segment_w(self, line, register_type, segment):
-        identifier = line[176:178]
-        if identifier == "01":
-            segment += "1"
-        return register_type + segment + self.current_register_header[1:]
+def _default_segment(args: Type3):
+    return args.register_type + args.segment + args.register_group
 
-    def _get_segment_n(self, line, register_type, segment):
-        identifier = line[132:134]
-        if identifier == "17":
-            segment += "1"
-        if identifier == "16":
-            segment += "2"
-        if identifier in ("22", "23", "24"):
-            segment += "4"
-        if identifier == "25":
-            segment += "5"
-        if identifier == "27":
-            segment += "6"
-        if identifier == "26":
-            segment += "7"
-        return register_type + segment + self.current_register_header[1:]
 
-    def _get_segment_j(self, line, register_type, segment):
-        identifier = line[17:19]
-        if identifier == "52":
-            return (
-                register_type + segment + identifier + self.current_register_header[1:]
-            )
-        return register_type + segment + self.current_register_header[1:]
+def _get_segment_y(args: Type3):
+    segment = args.segment
+    if args.line[17:19] == "53":
+        segment += "53"
+    return args.register_type + segment + args.register_group
+
+
+def _get_segment_w(args):
+    identifier = args.line[176:178]
+    segment = args.segment
+    if identifier == "01":
+        segment += "1"
+    return args.register_type + segment + args.register_group
+
+
+def _get_segment_n(args: Type3):
+    identifier = args.line[132:134]
+    segment = args.segment
+    _n_map = {
+        "17": "1",
+        "16": "2",
+        "22": "4",
+        "23": "4",
+        "24": "4",
+        "25": "5",
+        "27": "6",
+        "26": "7",
+    }
+    return args.register_type + segment + _n_map[identifier] + args.register_group
+
+
+def _get_segment_j(args: Type3):
+    identifier = args.line[17:19]
+    if identifier == "52":
+        return args.register_type + args.segment + identifier + args.register_group
+    return args.register_type + args.segment + args.register_group
