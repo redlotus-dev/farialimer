@@ -63,3 +63,22 @@ def b3_convert_to_numeric(parse_obj: ParseObject):
     numeric_value_str = ".".join([integer_part, decimal_part])
     numeric_value = Decimal(numeric_value_str)
     return numeric_value
+
+
+def santander_convert_to_numeric(parse_obj: ParseObject):
+    """given a parse_obj, convert to a numerico value with its decimal places"""
+    if not parse_obj.value or parse_obj.value.isspace():
+        return None
+    str_int_len, str_dec_len = re.search(
+        r"9\((\d+)\)V(\d+)", parse_obj.datatype
+    ).groups()
+    int_len = int(str_int_len)
+    dec_len = int(str_dec_len)
+
+    value = parse_obj.value.zfill(int_len + dec_len)
+
+    integer_part = str(int(value[:int_len]))
+    decimal_part = str(int(value[-dec_len:]))
+    numeric_value_str = ".".join([integer_part, decimal_part])
+    numeric_value = Decimal(numeric_value_str)
+    return numeric_value

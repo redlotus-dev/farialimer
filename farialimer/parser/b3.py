@@ -1,5 +1,5 @@
 """Parse module"""
-from collections import namedtuple
+
 import re
 
 from farialimer.parser.basic_parser import BasicParser
@@ -9,10 +9,6 @@ from farialimer.utils.converters import (
     b3_convert_to_numeric,
 )
 
-Field = namedtuple(
-    "field", ["name", "description", "datatype", "convert", "start", "end"]
-)
-
 
 class B3Parser(BasicParser):
     """Read, parse and write"""
@@ -20,8 +16,7 @@ class B3Parser(BasicParser):
     def __init__(self, provider):
         super().__init__(provider=provider)
 
-    @staticmethod
-    def _get_line_register(line: str):
+    def get_line_register(self, line: str):
         return line[:2]
 
     @staticmethod
@@ -30,9 +25,9 @@ class B3Parser(BasicParser):
         return line[2:11]
 
     @staticmethod
-    def _data_mapper(datatype):
+    def data_mapper(datatype):
         """for the spec datatype, return its respective converter"""
-        core_type = _get_core_type(datatype)
+        core_type = B3Parser.get_core_type(datatype)
 
         _data_map = {
             "X": convert_to_string,
@@ -41,7 +36,7 @@ class B3Parser(BasicParser):
         }
         return _data_map[core_type]
 
-
-def _get_core_type(datatype):
-    result = re.sub(r"[^A-Z]", "", datatype)
-    return result
+    @staticmethod
+    def get_core_type(datatype):
+        result = re.sub(r"[^A-Z]", "", datatype)
+        return result
