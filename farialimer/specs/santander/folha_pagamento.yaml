@@ -471,7 +471,7 @@ register:
     somatoria_valores:
       description: 'Somatória dos Valores'
       pos: [ 24,41 ]
-      type: 9(018)V2
+      type: 9(016)V2
     somatoria_quantidade_moeda:
       description: 'Somatória da Quantidade Moeda'
       pos: [ 42,59 ]

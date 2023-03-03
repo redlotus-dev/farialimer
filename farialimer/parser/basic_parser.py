@@ -33,15 +33,19 @@ class BasicParser(ABC):
                 content.append(line)
         return content
 
-    @staticmethod
     @abstractmethod
-    def get_line_register(line):
+    def get_line_register(self, line):
         """Given a line, returns the register type"""
 
     @staticmethod
     @abstractmethod
-    def _data_mapper(datatype):
-        pass  # pragma: no cover
+    def data_mapper(datatype):
+        """Given a datatype, returns the respective converter"""
+
+    @staticmethod
+    @abstractmethod
+    def get_core_type(datatype):
+        """Given a datatype, returns the respective converter"""
 
     def parse(self, content, spec):
         """Given a content and spec document, returns a list of dict with the parsed information"""
@@ -84,7 +88,7 @@ class BasicParser(ABC):
         parse_result = OrderedDict()
         for item in fields:
             parse_item = line[item.start - 1 : item.end]
-            converter = convert_mapper(item.convert) or self._data_mapper(item.datatype)
+            converter = convert_mapper(item.convert) or self.data_mapper(item.datatype)
             parse_obj = ParseObject(parse_item, converter, item.datatype)
             parse_item = converter(parse_obj)
             parse_result[item.name] = parse_item

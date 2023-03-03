@@ -1,7 +1,27 @@
+#  G002. Forma de Lançamento
+#  01 = Crédito em Conta Corrente
+#  03 = Transferências para outros bancos (DOC, TED CIP e TED STR)
+#  05 = Crédito em Conta Poupança
+#  10 = Ordem de Pagamento / Recibo
+#  11 = Pagamento de Contas e Tributos com Código de Barras¹
+#  16 = DARF Normal – sem código de barras
+#  17 = GPS - Guia da Previdência Social – sem código de barras
+#  20 = Caixa “Autenticação”
+#  22 = GARE SP ICMS – sem código de barras
+#  23 = GARE SP DR – sem código de barras
+#  24 = GARE SP ITCMD – sem código de barras
+#  25 = IPVA SP, PR e MG – Pagamento com o RENAVAM
+#  26 = LICENCIAMENTO SP, PR e MG – Pagamento com o RENAVAM
+#  27 = DPVAT SP, PR e MG – Pagamento com o RENAVAM
+#  30 = Liquidação de títulos em carteira de cobrança próprio Santander
+#  31 = Liquidação de títulos outros Bancos
+#  35 = Ordem de Crédito por Teleprocessamento – OCT
+#  45 = Pix Transferência – Obrigatório o preenchimento dos Segmentos A e B, Segmento C em caso de conta pagamento.
+
 provider: Santander
-service: 'Folha de Pagamento'
-version: 11
-layout: folha_pagamento
+service: 'Pagamento a Fornecedores'
+version: 11.3.1
+layout: pagamento_fornecedores
 register:
   "0":
     codigo_banco:
@@ -109,7 +129,7 @@ register:
       description: 'Ocorrências'
       pos: [ 231,240 ]
       type: X(010)
-  "1":
+  "1_PAG_CREDITO":
     codigo_banco:
       description: 'Código do Banco'
       pos: [ 1,3 ]
@@ -304,11 +324,11 @@ register:
     quantidade_moeda:
       description: 'Quantidade de Moeda'
       pos: [ 105,119 ]
-      type: 9(015)V(05)
+      type: 9(010)V5
     valor_pagamento:
       description: 'Valor do Pagamento'
       pos: [ 120,134 ]
-      type: 9(015)V(05)
+      type: 9(013)V2
     numero_documento_banco:
       description: 'Número de Documento Banco (Nosso Número)'
       pos: [ 135,154 ]
@@ -321,7 +341,7 @@ register:
     valor_real_pagamento:
       description: 'Valor Real do Pagamento'
       pos: [ 163,177 ]
-      type: 9(015)V(05)
+      type: 9(013)V2
     informacao_2_mensagem:
       description: 'Informação 2 - Mensagem'
       pos: [ 178,217 ]
@@ -333,7 +353,7 @@ register:
     finalidade_ted:
       description: 'Finalidade de TED'
       pos: [ 220,224 ]
-      type: X(011)
+      type: X(005)
     codigo_finalidade_complementar:
       description: 'Código da Finalidade Complementar'
       pos: [ 225,226 ]
@@ -423,23 +443,23 @@ register:
     valor_documento:
       description: 'Valor do Documento'
       pos: [ 136,150 ]
-      type: 9(013)V(05)
+      type: 9(013)V2
     valor_abatimento:
       description: 'Valor do Abatimento'
       pos: [ 151,165 ]
-      type: 9(015)V(05)
+      type: 9(013)V2
     valor_desconto:
       description: 'Valor do Desconto'
       pos: [ 166,180 ]
-      type: 9(015)V(05)
+      type: 9(013)V2
     valor_mora:
       description: 'Valor da Mora'
       pos: [ 181,195 ]
-      type: 9(015)V(05)
+      type: 9(013)V2
     valor_multa:
       description: 'Valor da Multa'
       pos: [ 196,210 ]
-      type: 9(015)V(05)
+      type: 9(013)V2
     horario_envio_ted_str:
       description: 'Horário de Envio do TED STR'
       pos: [ 211,214 ]
@@ -450,10 +470,144 @@ register:
       type: X(011)
     codigo_historico_credito:
       description: 'Código do Histórico de Crédito'
-      pos: [ 226,230 ]
+      pos: [ 226,229 ]
+      type: 9(004)
+    emissao_aviso_favorecido:
+      description: 'Emissão de Aviso ao Favorecido'
+      pos: [ 230,230 ]
+      type: X(001)
+    filler_3:
+      description: 'Filler'
+      pos: [ 231,231 ]
+      type: X(001)
+    ted_instituicao_financeira:
+      description: 'TED - Instituição Financeira'
+      pos: [ 232,232 ]
+      type: X(001)
+    identificacao_if_spb:
+      description: 'Identificação da IF no SPB'
+      pos: [ 233,240 ]
+      type: X(008)
+  "3C":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+      default: '0001'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
       type: 9(005)
-    ocorrencia_retorno:
-      description: 'Ocorrência de Retorno'
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'C'
+    filler:
+      description: 'Filler'
+      pos: [ 15,17 ]
+      type: X(003)
+    valor_ir:
+      description: 'Valor do IR'
+      pos: [ 18,32 ]
+      type: 9(013)V2
+    valor_iss:
+      description: 'Valor do ISS'
+      pos: [ 33,47 ]
+      type: 9(013)V2
+    valor_iof:
+      description: 'Valor do IOF'
+      pos: [ 48,62 ]
+      type: 9(013)V2
+    valor_outras_deducoes:
+      description: 'Valor de Outras Deduções'
+      pos: [ 63,77 ]
+      type: 9(013)V2
+    valor_outros_acrescimos:
+      description: 'Valor de Outros Acréscimos'
+      pos: [ 78,92 ]
+      type: 9(013)V2
+    codigo_agencia_favorecido:
+      description: 'Código da Agência do Favorecido'
+      pos: [ 93,97 ]
+      type: 9(005)
+    digito_verificador_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 98,98 ]
+      type: X(001)
+    conta_corrente_favorecido:
+      description: 'Conta Corrente do Favorecido'
+      pos: [ 99,110 ]
+      type: 9(012)
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 111,111 ]
+      type: X(001)
+    digito_verificador_agencia_conta:
+      description: 'Dígito Verificador da Agência/Conta'
+      pos: [ 112,112 ]
+      type: X(001)
+    valor_inss:
+      description: 'Valor do INSS'
+      pos: [ 113,127 ]
+      type: 9(013)V2
+    numero_conta_pagamento_creditada:
+      description: 'Número da Conta para Pagamento Creditada'
+      pos: [ 128,147 ]
+      type: 9(020)
+    filler_2:
+      description: 'Filler'
+      pos: [ 148,240 ]
+      type: X(093)
+  "3Z":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+      default: '9999'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'Z'
+    autenticacao_pagamento:
+      description: 'Autenticação do Pagamento'
+      pos: [ 15,78 ]
+      type: X(064)
+    protocolo_pagamento:
+      description: 'Protocolo de Pagamento'
+      pos: [ 79,103 ]
+      type: X(025)
+    filler_2:
+      description: 'Filler'
+      pos: [ 104,230 ]
+      type: X(127)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
       pos: [ 231,240 ]
       type: X(010)
   "5":
@@ -466,7 +620,6 @@ register:
       description: 'Lote de Serviço'
       pos: [ 4,7 ]
       type: 9(004)
-      default: '0000'
     tipo_registro:
       description: 'Tipo de Registro'
       pos: [ 8,8 ]
@@ -483,11 +636,11 @@ register:
     somatoria_valores:
       description: 'Somatória dos Valores'
       pos: [ 24,41 ]
-      type: 9(018)V(02)
+      type: 9(016)V(02)
     somatoria_quantidade_moeda:
       description: 'Somatória da Quantidade Moeda'
       pos: [ 42,59 ]
-      type: 9(018)V(02)
+      type: 9(013)V5
     numero_aviso_debito:
       description: 'Número do Aviso de Débito'
       pos: [ 60,65 ]
