@@ -994,15 +994,15 @@ register:
       type: X(001)
     conta_corrente_favorecido:
       description: 'Conta Corrente do Favorecido'
-      pos: [ 99,113 ]
-      type: 9(013)
+      pos: [ 99,110 ]
+      type: 9(012)
     digito_verificador_conta:
       description: 'Dígito Verificador da Conta'
-      pos: [ 114,114 ]
+      pos: [ 111,111 ]
       type: X(001)
     digito_verificador_agencia_conta:
       description: 'Dígito Verificador da Agência/Conta'
-      pos: [ 115,115 ]
+      pos: [ 112,112 ]
       type: X(001)
     valor_inss:
       description: 'Valor do INSS'
@@ -1376,665 +1376,2451 @@ register:
       description: 'Ocorrências para Retorno'
       pos: [ 231,240 ]
       type: X(010)
-    "3IOCT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '3'
-      numero_sequencial_registro_lote:
-        description: 'Número do Registro do Lote'
-        pos: [ 9,13 ]
-        type: 9(005)
-      codigo_segmento_registro_detalhe:
-        description: 'Código do Segmento do Registro Detalhe'
-        pos: [ 14,14 ]
-        type: X(001)
-        default: 'I'
-      tipo_movimento:
-        description: 'Tipo de Movimento'
-        pos: [ 15,15 ]
-        type: 9(001)
-      codigo_instrucao_movimento:
-        description: 'Código da Instrução de Movimento'
-        pos: [ 16,17 ]
-        type: 9(002)
-      codigo_instrucao_oct:
-        description: 'Código da Instrução de Movimento'
-        pos: [ 18,32 ]
-        type: 9(001)
-      descricao_remetente:
-        description: 'Descrição do Remetente'
-        pos: [ 33,72 ]
-        type: X(040)
-      descricao_finalidade:
-        description: 'Descrição da Finalidade'
-        pos: [ 73,112 ]
-        type: X(040)
-      valor_pagamento:
-        description: 'Valor do Pagamento'
-        pos: [ 113,127 ]
-        type: 9(013)V2
-      data_pagamento:
-        description: 'Data do Pagamento'
-        pos: [ 128,135 ]
-        type: 9(006)
-        convert: ddmmaa
-      numero_documento_cliente:
-        description: 'Número do Documento do Cliente'
-        pos: [ 136,155 ]
-        type: X(020)
-      numero_documento_banco:
-        description: 'Número do Documento do Banco'
-        pos: [ 156,175 ]
-        type: X(020)
-      codigo_convenio_cobranca_psk:
-        description: 'Código do Convênio de Cobrança'
-        pos: [ 176,184 ]
-        type: 9(009)
-      filler:
-        description: 'Filler'
-        pos: [ 185,230 ]
-        type: X(046)
-      ocorrencia_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
-    "3ZOCT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '3'
-      numero_sequencial_registro_lote:
-        description: 'Número do Registro do Lote'
-        pos: [ 9,13 ]
-        type: 9(005)
-      codigo_segmento_registro_detalhe:
-        description: 'Código do Segmento do Registro Detalhe'
-        pos: [ 14,14 ]
-        type: X(001)
-        default: 'Z'
-      autenticacao_pagamento:
-        description: 'Autenticação do Pagamento'
-        pos: [ 15,78 ]
-        type: X(064)
-      protocolo_pagamento:
-        description: 'Protocolo do Pagamento'
-        pos: [ 79,103 ]
-        type: X(014)
-      filler:
-        description: 'Filler'
-        pos: [ 104,230 ]
-        type: X(127)
-      ocorrencias_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
-    "5OCT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '5'
-      filler:
-        description: 'Filler'
-        pos: [ 9,17 ]
-        type: X(009)
-      quantidade_registros_lote:
-        description: 'Quantidade de Registros do Lote'
-        pos: [ 18,23 ]
-        type: 9(006)
-      somatorio_valores:
-        description: 'Somatório dos Valores'
-        pos: [ 24,41 ]
-        type: 9(016)V2
-      somatorio_quantidade_moedas:
-        description: 'Somatório da Quantidade de Moedas'
-        pos: [ 42,59 ]
-        type: 9(013)V5
-      numero_aviso_debito:
-        description: 'Número do Aviso de Débito'
-        pos: [ 60,65 ]
-        type: 9(006)
-      filler_2:
-        description: 'Filler'
-        pos: [ 66,230 ]
-        type: X(165)
-      ocorrencias_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
-    # PAGAMENTO ATRAVÉS DE TITULOS BANCÁRIOS
-    "1TIT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '1'
-      tipo_operacao:
-        description: 'Tipo de Operação'
-        pos: [ 9,9 ]
-        type: X(001)
-        default: 'C'
-      tipo_servico:
-        description: 'Tipo de Serviço'
-        pos: [ 10,11 ]
-        type: 9(002)
-        default: '01'
-      forma_lancamento:
-        description: 'Forma de Lançamento'
-        pos: [ 12,13 ]
-        type: 9(002)
-      numero_versao_lote:
-        description: 'Número da Versão do Lote'
-        pos: [ 14,16 ]
-        type: 9(003)
-      filler:
-        description: 'Filler'
-        pos: [ 17,17 ]
-        type: X(001)
-      tipo_inscricao_empresa:
-        description: 'Tipo de Inscrição da Empresa'
-        pos: [ 18,18 ]
-        type: 9(001)
-      numero_inscricao_empresa:
-        description: 'Número de Inscrição da Empresa'
-        pos: [ 19,32 ]
-        type: 9(014)
-      codigo_convenio_banco:
-        description: 'Código do Convênio no Banco'
-        pos: [ 33,52 ]
-        type: 9(020)
-      agencia_mantenedora_conta:
-        description: 'Agência Mantenedora da Conta'
-        pos: [ 53,57 ]
-        type: 9(005)
-      digito_verificador_agencia:
-        description: 'Dígito Verificador da Agência'
-        pos: [ 58,58 ]
-        type: X(001)
-      numero_conta_corrente:
-        description: 'Número da Conta Corrente'
-        pos: [ 59,70 ]
-        type: 9(012)
-      digito_verificador_conta:
-        description: 'Dígito Verificador da Conta'
-        pos: [ 71,71 ]
-        type: X(001)
-      digito_verificador_agencia_conta:
-        description: 'Dígito Verificador da Agência/Conta'
-        pos: [ 72,72 ]
-        type: X(001)
-      nome_empresa:
-        description: 'Nome da Empresa'
-        pos: [ 73,102 ]
-        type: X(030)
-      informacao_1_mensagem:
-        description: 'Informação 1 - Mensagem'
-        pos: [ 103,142 ]
-        type: X(040)
-      endereco:
-        description: 'Endereço'
-        pos: [ 143,172 ]
-        type: X(030)
-      numero:
-        description: 'Número'
-        pos: [ 173,177 ]
-        type: X(005)
-      complemento_endereco:
-        description: 'Complemento do Endereço'
-        pos: [ 178,192 ]
-        type: X(015)
-      cidade:
-        description: 'Cidade'
-        pos: [ 193,212 ]
-        type: X(020)
-      cep:
-        description: 'CEP'
-        pos: [ 213,217 ]
-        type: 9(005)
-      complemento_cep:
-        description: 'Complemento do CEP'
-        pos: [ 218,220 ]
-        type: X(003)
-      uf:
-        description: 'UF'
-        pos: [ 221,222 ]
-        type: X(002)
-      filler_2:
-        description: 'Filler'
-        pos: [ 223,230 ]
-        type: X(008)
-      ocorrencias_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
-    "3JTIT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '3'
-      numero_sequencial_registro_lote:
-        description: 'Número Sequencial do Registro no Lote'
-        pos: [ 9,13 ]
-        type: 9(005)
-      codigo_segmento_registro_detalhe:
-        description: 'Código de Segmento do Registro Detalhe'
-        pos: [ 14,14 ]
-        type: X(001)
-        default: 'J'
-      tipo_movimento:
-        description: 'Tipo de Movimento'
-        pos: [ 15,15 ]
-        type: 9(001)
-      codigo_instrucao_movimento:
-        description: 'Código da Instrução de Movimento'
-        pos: [ 16,17 ]
-        type: 9(002)
-      codigo_barras:
-        description: 'Código de Barras'
-        pos: [ 18,61 ]
-        type: X(040)
-      nome_beneficiario:
-        description: 'Nome do Beneficiário'
-        pos: [ 62,91 ]
-        type: X(040)
-      data_vencimento:
-        description: 'Data de Vencimento'
-        pos: [ 92,99 ]
-        type: 9(008)
-        convert: ddmmaaaa
-      valor_nominal_titulo:
-        description: 'Valor Nominal do Título'
-        pos: [ 100,114 ]
-        type: 9(013)V2
-      valor_desconto_abatimento:
-        description: 'Valor do Desconto/Abatimento'
-        pos: [ 115,129 ]
-        type: 9(013)V2
-      valor_multa_juros:
-        description: 'Valor da Multa/Juros'
-        pos: [ 130,144 ]
-        type: 9(013)V2
-      data_pagamento:
-        description: 'Data do Pagamento'
-        pos: [ 145,152 ]
-        type: 9(008)
-        convert: ddmmaaaa
-      valor_pagamento:
-        description: 'Valor do Pagamento'
-        pos: [ 153,167 ]
-        type: 9(013)V2
-      quantidade_moeda:
-        description: 'Quantidade de Moeda'
-        pos: [ 168,182 ]
-        type: 9(010)V5
-      numero_documento_cliente:
-        description: 'Número do Documento do Cliente'
-        pos: [ 183,202 ]
-        type: X(020)
-      numero_documento_banco:
-        description: 'Número do Documento do Banco'
-        pos: [ 203,222 ]
-        type: X(020)
-      codigo_moeda:
-        description: 'Código da Moeda'
-        pos: [ 223,224 ]
-        type: 9(002)
-      filler:
-        description: 'Filler'
-        pos: [ 225,230 ]
-        type: X(006)
-      ocorrencias_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
-    "3J52TIT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '3'
-      numero_sequencial_registro_lote:
-        description: 'Número Sequencial do Registro no Lote'
-        pos: [ 9,13 ]
-        type: 9(005)
-      codigo_segmento_registro_detalhe:
-        description: 'Código de Segmento do Registro Detalhe'
-        pos: [ 14,14 ]
-        type: X(001)
-        default: 'J'
-      filler:
-        description: 'Filler'
-        pos: [ 15,15 ]
-        type: X(003)
-      codigo_movimento_remessa:
-        description: 'Código do Movimento na Remessa'
-        pos: [ 16,17 ]
-        type: 9(002)
-      identificacao_registro:
-        description: 'Identificação do Registro'
-        pos: [ 18,19 ]
-        type: 9(002)
-      tipo_inscricao_pagador:
-        description: 'Tipo de Inscrição do Pagador'
-        pos: [ 20,20 ]
-        type: 9(001)
-      cpf_cnpj_pagador:
-        description: 'CPF/CNPJ do Pagador'
-        pos: [ 21,35 ]
-        type: 9(015)
-      nome_pagador:
-        description: 'Nome do Pagador'
-        pos: [ 36,75 ]
-        type: X(040)
-      tipo_inscricao_beneficiario:
-        description: 'Tipo de Inscrição do Beneficiário'
-        pos: [ 76,76 ]
-        type: 9(001)
-      cpf_cnpj_beneficiario:
-        description: 'CPF/CNPJ do Beneficiário'
-        pos: [ 77,91 ]
-        type: 9(015)
-      nome_beneficiario:
-        description: 'Nome do Beneficiário'
-        pos: [ 92,131 ]
-        type: X(040)
-      tipo_inscricao_sacador:
-        description: 'Tipo de Inscrição do Sacador'
-        pos: [ 132,132 ]
-        type: 9(001)
-      cpf_cnpj_sacador:
-        description: 'CPF/CNPJ do Sacador'
-        pos: [ 133,147 ]
-        type: 9(015)
-      nome_sacador:
-        description: 'Nome do Sacador'
-        pos: [ 148,187 ]
-        type: X(040)
-      filler_2:
-        description: 'Filler'
-        pos: [ 188,240 ]
-        type: X(053)
-    "3BTIT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '3'
-      numero_sequencial_registro_lote:
-        description: 'Número Sequencial do Registro no Lote'
-        pos: [ 9,13 ]
-        type: 9(005)
-      codigo_segmento_registro_detalhe:
-        description: 'Código de Segmento do Registro Detalhe'
-        pos: [ 14,14 ]
-        type: X(001)
-        default: 'B'
-      filler:
-        description: 'Filler'
-        pos: [ 15,17 ]
-        type: X(003)
-      tipo_inscricao:
-        description: 'Tipo de Inscrição'
-        pos: [ 18,18 ]
-        type: 9(001)
-      cpf_cnpj_favorecido:
-        description: 'CPF/CNPJ do Favorecido'
-        pos: [ 19,32 ]
-        type: 9(014)
-      logradouro_favorecido:
-        description: 'Logradouro do Favorecido'
-        pos: [ 33,62 ]
-        type: X(030)
-      numero_local_favorecido:
-        description: 'Número do Local do Favorecido'
-        pos: [ 63,67 ]
-        type: X(005)
-      complemento_local_favorecido:
-        description: 'Complemento do Local do Favorecido'
-        pos: [ 68,82 ]
-        type: X(015)
-      bairro_favorecido:
-        description: 'Bairro do Favorecido'
-        pos: [ 83,97 ]
-        type: X(015)
-      cidade_favorecido:
-        description: 'Cidade do Favorecido'
-        pos: [ 98,117 ]
-        type: X(020)
-      cep_favorecido:
-        description: 'CEP do Favorecido'
-        pos: [ 118,125 ]
-        type: 9(008)
-      estado_favorecido:
-        description: 'Estado do Favorecido'
-        pos: [ 126,127 ]
-        type: X(002)
-      data_vencimento:
-        description: 'Data de Vencimento'
-        pos: [ 128,135 ]
-        type: 9(008)
-      valor_documento:
-        description: 'Valor do Documento'
-        pos: [ 136,150 ]
-        type: 9(013)V9(02)
-      valor_abatimento:
-        description: 'Valor do Abatimento'
-        pos: [ 151,165 ]
-        type: 9(013)V2
-      valor_desconto:
-        description: 'Valor do Desconto'
-        pos: [ 166,180 ]
-        type: 9(013)V2
-      valor_mora:
-        description: 'Valor da Mora'
-        pos: [ 181,195 ]
-        type: 9(013)V2
-      valor_multa:
-        description: 'Valor da Multa'
-        pos: [ 196,210 ]
-        type: 9(013)V2
-      horario_envio_ted:
-        description: 'Horário de Envio da TED'
-        pos: [ 211,214 ]
-        type: 9(004)
-      filler_2:
-        description: 'Filler'
-        pos: [ 215,225 ]
-        type: X(011)
-      codigo_historico_credito:
-        description: 'Código do Histórico de Crédito'
-        pos: [ 226,229 ]
-        type: 9(004)
-      emissao_aviso_favorecido:
-        description: 'Emissão do Aviso ao Favorecido'
-        pos: [ 230,230 ]
-        type: 9(001)
-      filler_3:
-        description: 'Filler'
-        pos: [ 231,231 ]
-        type: X(010)
-      ted_instituicao_financeira:
-        description: 'TED – Instituição Financeira'
-        pos: [ 232,232 ]
-        type: X(001)
-      identificacao_if_spb:
-        description: 'Identificação da IF/SPB'
-        pos: [ 233,240 ]
-        type: X(008)
-    "3ZTIT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '3'
-      numero_sequencial_registro_lote:
-        description: 'Número Sequencial do Registro no Lote'
-        pos: [ 9,13 ]
-        type: 9(005)
-      codigo_segmento_registro_detalhe:
-        description: 'Código de Segmento do Registro Detalhe'
-        pos: [ 14,14 ]
-        type: X(001)
-        default: 'Z'
-      autenticacao_pagamento:
-        description: 'Autenticação do Pagamento'
-        pos: [ 15,78 ]
-        type: X(064)
-      protocolo_pagamento:
-        description: 'Protocolo do Pagamento'
-        pos: [ 79,103 ]
-        type: X(025)
-      filler:
-        description: 'Filler'
-        pos: [ 104,230 ]
-        type: X(127)
-      ocorrencias_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
-    "5TIT":
-      codigo_banco:
-        description: 'Código do Banco'
-        pos: [ 1,3 ]
-        type: 9(003)
-        default: '033'
-      lote_servico:
-        description: 'Lote de Serviço'
-        pos: [ 4,7 ]
-        type: 9(004)
-      tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: 9(001)
-        default: '5'
-      filler:
-        description: 'Filler'
-        pos: [ 9,17 ]
-        type: X(009)
-      quantidade_registros_lote:
-        description: 'Quantidade de Registros do Lote'
-        pos: [ 18,23 ]
-        type: 9(006)
-      somatoria_valores:
-        description: 'Somatória dos Valores'
-        pos: [ 24,41 ]
-        type: 9(016)V2
-      somatoria_quantidade_moedas:
-        description: 'Somatória da Quantidade de Moedas'
-        pos: [ 42,59 ]
-        type: 9(016)V2
-      numero_aviso_debito:
-        description: 'Número do Aviso de Débito'
-        pos: [ 60,65 ]
-        type: 9(006)
-      filler_2:
-        description: 'Filler'
-        pos: [ 66,230 ]
-        type: X(165)
-      ocorrencias_retorno:
-        description: 'Ocorrências para Retorno'
-        pos: [ 231,240 ]
-        type: X(010)
+  "3IOCT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número do Registro do Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'I'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    codigo_instrucao_oct:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 18,32 ]
+      type: 9(001)
+    descricao_remetente:
+      description: 'Descrição do Remetente'
+      pos: [ 33,72 ]
+      type: X(040)
+    descricao_finalidade:
+      description: 'Descrição da Finalidade'
+      pos: [ 73,112 ]
+      type: X(040)
+    valor_pagamento:
+      description: 'Valor do Pagamento'
+      pos: [ 113,127 ]
+      type: 9(013)V2
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 128,135 ]
+      type: 9(006)
+      convert: ddmmaa
+    numero_documento_cliente:
+      description: 'Número do Documento do Cliente'
+      pos: [ 136,155 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento do Banco'
+      pos: [ 156,175 ]
+      type: X(020)
+    codigo_convenio_cobranca_psk:
+      description: 'Código do Convênio de Cobrança'
+      pos: [ 176,184 ]
+      type: 9(009)
+    filler:
+      description: 'Filler'
+      pos: [ 185,230 ]
+      type: X(046)
+    ocorrencia_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3ZOCT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número do Registro do Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'Z'
+    autenticacao_pagamento:
+      description: 'Autenticação do Pagamento'
+      pos: [ 15,78 ]
+      type: X(064)
+    protocolo_pagamento:
+      description: 'Protocolo do Pagamento'
+      pos: [ 79,103 ]
+      type: X(014)
+    filler:
+      description: 'Filler'
+      pos: [ 104,230 ]
+      type: X(127)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "5OCT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    filler:
+      description: 'Filler'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatorio_valores:
+      description: 'Somatório dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V2
+    somatorio_quantidade_moedas:
+      description: 'Somatório da Quantidade de Moedas'
+      pos: [ 42,59 ]
+      type: 9(013)V5
+    numero_aviso_debito:
+      description: 'Número do Aviso de Débito'
+      pos: [ 60,65 ]
+      type: 9(006)
+    filler_2:
+      description: 'Filler'
+      pos: [ 66,230 ]
+      type: X(165)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  # PAGAMENTO ATRAVÉS DE TITULOS BANCÁRIOS
+  "1TIT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: X(001)
+      default: 'C'
+    tipo_servico:
+      description: 'Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: 9(002)
+      default: '01'
+    forma_lancamento:
+      description: 'Forma de Lançamento'
+      pos: [ 12,13 ]
+      type: 9(002)
+    numero_versao_lote:
+      description: 'Número da Versão do Lote'
+      pos: [ 14,16 ]
+      type: 9(003)
+    filler:
+      description: 'Filler'
+      pos: [ 17,17 ]
+      type: X(001)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    codigo_convenio_banco:
+      description: 'Código do Convênio no Banco'
+      pos: [ 33,52 ]
+      type: 9(020)
+    agencia_mantenedora_conta:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    digito_verificador_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    digito_verificador_agencia_conta:
+      description: 'Dígito Verificador da Agência/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    informacao_1_mensagem:
+      description: 'Informação 1 - Mensagem'
+      pos: [ 103,142 ]
+      type: X(040)
+    endereco:
+      description: 'Endereço'
+      pos: [ 143,172 ]
+      type: X(030)
+    numero:
+      description: 'Número'
+      pos: [ 173,177 ]
+      type: X(005)
+    complemento_endereco:
+      description: 'Complemento do Endereço'
+      pos: [ 178,192 ]
+      type: X(015)
+    cidade:
+      description: 'Cidade'
+      pos: [ 193,212 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 213,217 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento do CEP'
+      pos: [ 218,220 ]
+      type: X(003)
+    uf:
+      description: 'UF'
+      pos: [ 221,222 ]
+      type: X(002)
+    filler_2:
+      description: 'Filler'
+      pos: [ 223,230 ]
+      type: X(008)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3JTIT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'J'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    codigo_barras:
+      description: 'Código de Barras'
+      pos: [ 18,61 ]
+      type: X(040)
+    nome_beneficiario:
+      description: 'Nome do Beneficiário'
+      pos: [ 62,91 ]
+      type: X(040)
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 92,99 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_nominal_titulo:
+      description: 'Valor Nominal do Título'
+      pos: [ 100,114 ]
+      type: 9(013)V2
+    valor_desconto_abatimento:
+      description: 'Valor do Desconto/Abatimento'
+      pos: [ 115,129 ]
+      type: 9(013)V2
+    valor_multa_juros:
+      description: 'Valor da Multa/Juros'
+      pos: [ 130,144 ]
+      type: 9(013)V2
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 145,152 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_pagamento:
+      description: 'Valor do Pagamento'
+      pos: [ 153,167 ]
+      type: 9(013)V2
+    quantidade_moeda:
+      description: 'Quantidade de Moeda'
+      pos: [ 168,182 ]
+      type: 9(010)V5
+    numero_documento_cliente:
+      description: 'Número do Documento do Cliente'
+      pos: [ 183,202 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento do Banco'
+      pos: [ 203,222 ]
+      type: X(020)
+    codigo_moeda:
+      description: 'Código da Moeda'
+      pos: [ 223,224 ]
+      type: 9(002)
+    filler:
+      description: 'Filler'
+      pos: [ 225,230 ]
+      type: X(006)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3J52TIT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'J'
+    filler:
+      description: 'Filler'
+      pos: [ 15,15 ]
+      type: X(003)
+    codigo_movimento_remessa:
+      description: 'Código do Movimento na Remessa'
+      pos: [ 16,17 ]
+      type: 9(002)
+    identificacao_registro:
+      description: 'Identificação do Registro'
+      pos: [ 18,19 ]
+      type: 9(002)
+    tipo_inscricao_pagador:
+      description: 'Tipo de Inscrição do Pagador'
+      pos: [ 20,20 ]
+      type: 9(001)
+    cpf_cnpj_pagador:
+      description: 'CPF/CNPJ do Pagador'
+      pos: [ 21,35 ]
+      type: 9(015)
+    nome_pagador:
+      description: 'Nome do Pagador'
+      pos: [ 36,75 ]
+      type: X(040)
+    tipo_inscricao_beneficiario:
+      description: 'Tipo de Inscrição do Beneficiário'
+      pos: [ 76,76 ]
+      type: 9(001)
+    cpf_cnpj_beneficiario:
+      description: 'CPF/CNPJ do Beneficiário'
+      pos: [ 77,91 ]
+      type: 9(015)
+    nome_beneficiario:
+      description: 'Nome do Beneficiário'
+      pos: [ 92,131 ]
+      type: X(040)
+    tipo_inscricao_sacador:
+      description: 'Tipo de Inscrição do Sacador'
+      pos: [ 132,132 ]
+      type: 9(001)
+    cpf_cnpj_sacador:
+      description: 'CPF/CNPJ do Sacador'
+      pos: [ 133,147 ]
+      type: 9(015)
+    nome_sacador:
+      description: 'Nome do Sacador'
+      pos: [ 148,187 ]
+      type: X(040)
+    filler_2:
+      description: 'Filler'
+      pos: [ 188,240 ]
+      type: X(053)
+  "3BTIT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'B'
+    filler:
+      description: 'Filler'
+      pos: [ 15,17 ]
+      type: X(003)
+    tipo_inscricao:
+      description: 'Tipo de Inscrição'
+      pos: [ 18,18 ]
+      type: 9(001)
+    cpf_cnpj_favorecido:
+      description: 'CPF/CNPJ do Favorecido'
+      pos: [ 19,32 ]
+      type: 9(014)
+    logradouro_favorecido:
+      description: 'Logradouro do Favorecido'
+      pos: [ 33,62 ]
+      type: X(030)
+    numero_local_favorecido:
+      description: 'Número do Local do Favorecido'
+      pos: [ 63,67 ]
+      type: X(005)
+    complemento_local_favorecido:
+      description: 'Complemento do Local do Favorecido'
+      pos: [ 68,82 ]
+      type: X(015)
+    bairro_favorecido:
+      description: 'Bairro do Favorecido'
+      pos: [ 83,97 ]
+      type: X(015)
+    cidade_favorecido:
+      description: 'Cidade do Favorecido'
+      pos: [ 98,117 ]
+      type: X(020)
+    cep_favorecido:
+      description: 'CEP do Favorecido'
+      pos: [ 118,125 ]
+      type: 9(008)
+    estado_favorecido:
+      description: 'Estado do Favorecido'
+      pos: [ 126,127 ]
+      type: X(002)
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 128,135 ]
+      type: 9(008)
+    valor_documento:
+      description: 'Valor do Documento'
+      pos: [ 136,150 ]
+      type: 9(013)V9(02)
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 151,165 ]
+      type: 9(013)V2
+    valor_desconto:
+      description: 'Valor do Desconto'
+      pos: [ 166,180 ]
+      type: 9(013)V2
+    valor_mora:
+      description: 'Valor da Mora'
+      pos: [ 181,195 ]
+      type: 9(013)V2
+    valor_multa:
+      description: 'Valor da Multa'
+      pos: [ 196,210 ]
+      type: 9(013)V2
+    horario_envio_ted:
+      description: 'Horário de Envio da TED'
+      pos: [ 211,214 ]
+      type: 9(004)
+    filler_2:
+      description: 'Filler'
+      pos: [ 215,225 ]
+      type: X(011)
+    codigo_historico_credito:
+      description: 'Código do Histórico de Crédito'
+      pos: [ 226,229 ]
+      type: 9(004)
+    emissao_aviso_favorecido:
+      description: 'Emissão do Aviso ao Favorecido'
+      pos: [ 230,230 ]
+      type: 9(001)
+    filler_3:
+      description: 'Filler'
+      pos: [ 231,231 ]
+      type: X(010)
+    ted_instituicao_financeira:
+      description: 'TED – Instituição Financeira'
+      pos: [ 232,232 ]
+      type: X(001)
+    identificacao_if_spb:
+      description: 'Identificação da IF/SPB'
+      pos: [ 233,240 ]
+      type: X(008)
+  "3ZTIT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'Z'
+    autenticacao_pagamento:
+      description: 'Autenticação do Pagamento'
+      pos: [ 15,78 ]
+      type: X(064)
+    protocolo_pagamento:
+      description: 'Protocolo do Pagamento'
+      pos: [ 79,103 ]
+      type: X(025)
+    filler:
+      description: 'Filler'
+      pos: [ 104,230 ]
+      type: X(127)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "5TIT":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    filler:
+      description: 'Filler'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatoria_valores:
+      description: 'Somatória dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V2
+    somatoria_quantidade_moedas:
+      description: 'Somatória da Quantidade de Moedas'
+      pos: [ 42,59 ]
+      type: 9(016)V2
+    numero_aviso_debito:
+      description: 'Número do Aviso de Débito'
+      pos: [ 60,65 ]
+      type: 9(006)
+    filler_2:
+      description: 'Filler'
+      pos: [ 66,230 ]
+      type: X(165)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
   # PAGAMENTO DE TRIBUTOS E IMPOSTOS SEM CODIGO DE BARRAS
-  #  "1TRS"
-  #  "3BTRS"
-  #  "3ZTRS"
-  #  "3N1TRS"
-  #  "3N2TRS"
-  #  "3N4TRS"
-  #  "3N5TRS"
-  #  "3N6TRS"
-  #  "3N7TRS"
-  #  "3W1TRS"
-  #  "5TRS"
+  "1TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: X(001)
+      default: 'C'
+    tipo_servico:
+      description: 'Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: 9(002)
+      default: '01'
+    forma_lancamento:
+      description: 'Forma de Lançamento'
+      pos: [ 12,13 ]
+      type: 9(002)
+    numero_versao_lote:
+      description: 'Número da Versão do Lote'
+      pos: [ 14,16 ]
+      type: 9(003)
+    filler:
+      description: 'Filler'
+      pos: [ 17,17 ]
+      type: X(001)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    codigo_convenio_banco:
+      description: 'Código do Convênio no Banco'
+      pos: [ 33,52 ]
+      type: 9(020)
+    agencia_mantenedora_conta:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    digito_verificador_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    digito_verificador_agencia_conta:
+      description: 'Dígito Verificador da Agência/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    informacao_1_mensagem:
+      description: 'Informação 1 - Mensagem'
+      pos: [ 103,142 ]
+      type: X(040)
+    endereco:
+      description: 'Endereço'
+      pos: [ 143,172 ]
+      type: X(030)
+    numero:
+      description: 'Número'
+      pos: [ 173,177 ]
+      type: X(005)
+    complemento_endereco:
+      description: 'Complemento do Endereço'
+      pos: [ 178,192 ]
+      type: X(015)
+    cidade:
+      description: 'Cidade'
+      pos: [ 193,212 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 213,217 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento do CEP'
+      pos: [ 218,220 ]
+      type: 9(003)
+    uf:
+      description: 'UF'
+      pos: [ 221,222 ]
+      type: X(002)
+    filler_2:
+      description: 'Filler'
+      pos: [ 223,230 ]
+      type: X(008)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3N1TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'N'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    numero_documento_cliente:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 18,37 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento Banco'
+      pos: [ 38,57 ]
+      type: X(020)
+    nome_contribuinte:
+      description: 'Nome do Contribuinte'
+      pos: [ 58,87 ]
+      type: X(030)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 88,95 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 96,110 ]
+      type: 9(013)V2
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 111,116 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 117,118 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 119,132 ]
+      type: X(014)
+    codigo_identificacao_tributo:
+      description: 'Código de Identificação do Tributo'
+      pos: [ 133,134 ]
+      type: X(002
+      default: '17'
+    mes_ano_competencia:
+      description: 'Mês/Ano de Competência'
+      pos: [ 135,140 ]
+      type: 9(006)
+    valor_previsto_pagamento_inss:
+      description: 'Valor Previsto para Pagamento do INSS'
+      pos: [ 141,155 ]
+      type: 9(013)V2
+    valor_outras_entidades:
+      description: 'Valor Outras Entidades'
+      pos: [ 156,170 ]
+      type: 9(013)V2
+    atualizacao_monetaria:
+      description: 'Atualização Monetária'
+      pos: [ 171,185 ]
+      type: 9(013)V2
+    filler:
+      description: 'Filler'
+      pos: [ 186,230 ]
+      type: X(045)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3N2TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'N'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    numero_documento_cliente:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 18,37 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento Banco'
+      pos: [ 38,57 ]
+      type: X(020)
+    nome_contribuinte:
+      description: 'Nome do Contribuinte'
+      pos: [ 58,87 ]
+      type: X(030)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 88,95 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 96,110 ]
+      type: 9(013)V2
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 111,116 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 117,118 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 119,132 ]
+      type: X(014)
+    codigo_identificacao_tributo:
+      description: 'Código de Identificação do Tributo'
+      pos: [ 133,134 ]
+      type: X(002
+      default: '16'
+    periodo_apuracao:
+      description: 'Período de Apuração'
+      pos: [ 135,142 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    numero_referencia:
+      description: 'Número de Referência'
+      pos: [ 143,159 ]
+      type: 9(010)
+    valor_principal:
+      description: 'Valor Principal'
+      pos: [ 160,174 ]
+      type: 9(013)V2
+    valor_multa:
+      description: 'Valor Multa'
+      pos: [ 175,189 ]
+      type: 9(013)V2
+    valor_juros_encargos:
+      description: 'Valor Juros Encargos'
+      pos: [ 190,204 ]
+      type: 9(013)V2
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 205,212 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    filler_2:
+      description: 'Filler'
+      pos: [ 213,230 ]
+      type: X(018)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3N4TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'N'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    numero_documento_cliente:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 18,37 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento Banco'
+      pos: [ 38,57 ]
+      type: X(020)
+    nome_contribuinte:
+      description: 'Nome do Contribuinte'
+      pos: [ 58,87 ]
+      type: X(030)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 88,95 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 96,110 ]
+      type: 9(013)V2
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 111,116 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 117,118 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 119,132 ]
+      type: X(014)
+    codigo_identificacao_tributo:
+      description: 'Código de Identificação do Tributo'
+      pos: [ 133,134 ]
+      type: X(002
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 135,142 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    inscricao_estadual_codigo_municipio_numero_declaracao:
+      description: 'Inscrição Estadual/Código do Município/Número da Declaração'
+      pos: [ 143,154 ]
+      type: 9(012)
+    divida_ativa_numero_etiqueta:
+      description: 'Dívida Ativa/Número da Etiqueta'
+      pos: [ 155,167 ]
+      type: 9(013)
+    periodo_referencia:
+      description: 'Período de Referência'
+      pos: [ 168,173 ]
+      type: 9(006)
+    numero_parcela_notificacao:
+      description: 'Número da Parcela/Notificação'
+      pos: [ 174,186 ]
+      type: 9(013)
+    valor_receita:
+      description: 'Valor da Receita'
+      pos: [ 187,201 ]
+      type: 9(013)V2
+    valor_juros_encargos:
+      description: 'Valor dos Juros'
+      pos: [ 202,215 ]
+      type: 9(012)V2
+    valor_multa:
+      description: 'Valor da Multa'
+      pos: [ 216,229 ]
+      type: 9(012)V2
+    filler:
+      description: 'Filler'
+      pos: [ 230,230 ]
+      type: X(001)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3N5TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'N'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    numero_documento_cliente:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 18,37 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento Banco'
+      pos: [ 38,57 ]
+      type: X(020)
+    nome_contribuinte:
+      description: 'Nome do Contribuinte'
+      pos: [ 58,87 ]
+      type: X(030)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 88,95 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 96,110 ]
+      type: 9(013)V2
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 111,116 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 117,118 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 119,132 ]
+      type: X(014)
+    codigo_identificacao_tributo:
+      description: 'Código de Identificação do Tributo'
+      pos: [ 133,134 ]
+      type: X(002)
+      default: '25'
+    ano_base_exercicio:
+      description: 'Ano Base/Exercício'
+      pos: [ 135,138 ]
+      type: 9(004)
+    codigo_renavam:
+      description: 'Código RENAVAM'
+      pos: [ 139,147 ]
+      type: 9(009)
+    unidade_federacao:
+      description: 'Unidade da Federação'
+      pos: [ 148,149 ]
+      type: X(002)
+    codigo_municipio:
+      description: 'Código do Município'
+      pos: [ 150,154 ]
+      type: 9(005)
+    placa_veiculo:
+      description: 'Placa do Veículo'
+      pos: [ 155,161 ]
+      type: X(007)
+    opcao_pagamento:
+      description: 'Opção de Pagamento'
+      pos: [ 162,162 ]
+      type: 9(001)
+    novo_renavam:
+      description: 'Novo RENAVAM'
+      pos: [ 163,174 ]
+      type: 9(012)
+    uso_exclusivo_febraban_cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 175,230 ]
+      type: X(056)  # Layout do santander está errado X(055)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3N6TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'N'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    numero_documento_cliente:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 18,37 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento Banco'
+      pos: [ 38,57 ]
+      type: X(020)
+    nome_contribuinte:
+      description: 'Nome do Contribuinte'
+      pos: [ 58,87 ]
+      type: X(030)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 88,95 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 96,110 ]
+      type: 9(013)V2
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 111,116 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 117,118 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 119,132 ]
+      type: X(014)
+    codigo_identificacao_tributo:
+      description: 'Código de Identificação do Tributo'
+      pos: [ 133,134 ]
+      type: X(002)
+      default: '27'
+    ano_base_exercicio:
+      description: 'Ano Base/Exercício'
+      pos: [ 135,138 ]
+      type: 9(004)
+    codigo_renavam:
+      description: 'Código RENAVAM'
+      pos: [ 139,147 ]
+      type: 9(009)
+    unidade_federacao:
+      description: 'Unidade da Federação'
+      pos: [ 148,149 ]
+      type: X(002)
+    codigo_municipio:
+      description: 'Código do Município'
+      pos: [ 150,154 ]
+      type: 9(005)
+    placa_veiculo:
+      description: 'Placa do Veículo'
+      pos: [ 155,161 ]
+      type: X(007)
+    opcao_pagamento:
+      description: 'Opção de Pagamento'
+      pos: [ 162,162 ]
+      type: 9(001)
+    novo_renavam:
+      description: 'Novo RENAVAM'
+      pos: [ 163,174 ]
+      type: 9(012)
+    uso_exclusivo_febraban_cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 175,230 ]
+      type: X(056)  # Layout do santander está errado X(055)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3N7TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'N'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    numero_documento_cliente:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 18,37 ]
+      type: X(020)
+    numero_documento_banco:
+      description: 'Número do Documento Banco'
+      pos: [ 38,57 ]
+      type: X(020)
+    nome_contribuinte:
+      description: 'Nome do Contribuinte'
+      pos: [ 58,87 ]
+      type: X(030)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 88,95 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 96,110 ]
+      type: 9(013)V2
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 111,116 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 117,118 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 119,132 ]
+      type: X(014)
+    codigo_identificacao_tributo:
+      description: 'Código de Identificação do Tributo'
+      pos: [ 133,134 ]
+      type: X(002)
+      default: '26'
+    ano_base_exercicio:
+      description: 'Ano Base/Exercício'
+      pos: [ 135,138 ]
+      type: 9(004)
+    codigo_renavam:
+      description: 'Código RENAVAM'
+      pos: [ 139,147 ]
+      type: 9(009)
+    unidade_federacao:
+      description: 'Unidade da Federação'
+      pos: [ 148,149 ]
+      type: X(002)
+    codigo_municipio:
+      description: 'Código do Município'
+      pos: [ 150,154 ]
+      type: 9(005)
+    placa_veiculo:
+      description: 'Placa do Veículo'
+      pos: [ 155,161 ]
+      type: X(007)
+    opcao_pagamento:
+      description: 'Opção de Pagamento'
+      pos: [ 162,162 ]
+      type: 9(001)
+    opcao_retirada_crlv:
+      description: 'Opção de Retirada do CRLV'
+      pos: [ 163,163 ]
+      type: 9(001)
+    novo_renavam:
+      description: 'Novo RENAVAM'
+      pos: [ 164,175 ]
+      type: 9(012)
+    uso_exclusivo_febraban_cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 176,230 ]
+      type: X(055)  # Layout do santander está errado X(055)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3W1TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'W'
+    numero_seq_registro_complementar:
+      description: 'Número Sequencial do Registro Complementar'
+      pos: [ 15,15 ]
+      type: 9(001)
+    identifica_uso_informacoes_1_2:
+      description: 'Identifica Uso das Informações 1 e 2'
+      pos: [ 16,16 ]
+      type: 9(001)
+    informacao_complementar_1:
+      description: 'Informação Complementar 1'
+      pos: [ 17,96 ]
+      type: X(080)
+    informacao_complementar_2:
+      description: 'Informação Complementar 2'
+      pos: [ 97,176 ]
+      type: X(080)
+    identificacao_tributo:
+      description: 'Identificação do Tributo'
+      pos: [ 177,178 ]
+      type: X(002)
+    codigo_receita_tributo:
+      description: 'Código da Receita Tributo'
+      pos: [ 179,184 ]
+      type: 9(006)
+    tipo_identificacao_contribuinte:
+      description: 'Tipo de Identificação do Contribuinte'
+      pos: [ 185,186 ]
+      type: 9(002)
+    identificacao_contribuinte:
+      description: 'Identificação do Contribuinte'
+      pos: [ 187,200 ]
+      type: X(014)
+    identificador_fgts:
+      description: 'Identificador FGTS'
+      pos: [ 201,216 ]
+      type: X(016)
+    lacre_conectividade_social:
+      description: 'Lacre de Conectividade Social'
+      pos: [ 217,225 ]
+      type: X(009)
+    digito_lacre_conectividade_social:
+      description: 'Dígito do Lacre de Conectividade Social'
+      pos: [ 226,227 ]
+      type: X(001)
+    filler:
+      description: 'Filler'
+      pos: [ 228,228 ]
+      type: X(001)
+    filler_2:
+      description: 'Filler'
+      pos: [ 229,230 ]
+      type: X(002)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3BTRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'B'
+    filler:
+      description: 'Filler'
+      pos: [ 15,17 ]
+      type: X(001)
+    tipo_inscricao_favorecido:
+      description: 'Tipo de Inscrição do Favorecido'
+      pos: [ 18,18 ]
+      type: 9(001)
+    cnpj_cpf_favorecido:
+      description: 'CNPJ/CPF do Favorecido'
+      pos: [ 19,32 ]
+      type: 9(014)
+    logradouro_favorecido:
+      description: 'Logradouro do Favorecido'
+      pos: [ 33,62 ]
+      type: X(030)
+    numero_local_favorecido:
+      description: 'Número do Local do Favorecido'
+      pos: [ 63,67 ]
+      type: X(005)
+    complemento_local_favorecido:
+      description: 'Complemento do Local do Favorecido'
+      pos: [ 68,82 ]
+      type: X(015)
+    bairro_favorecido:
+      description: 'Bairro do Favorecido'
+      pos: [ 83,97 ]
+      type: X(015)
+    cidade_favorecido:
+      description: 'Cidade do Favorecido'
+      pos: [ 98,117 ]
+      type: X(020)
+    cep_favorecido:
+      description: 'CEP do Favorecido'
+      pos: [ 118,125 ]
+      type: 9(008)
+    estado_favorecido:
+      description: 'Estado do Favorecido'
+      pos: [ 126,127 ]
+      type: X(002)
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 128,135 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_documento:
+      description: 'Valor do Documento'
+      pos: [ 136,150 ]
+      type: 9(013)V2
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 151,165 ]
+      type: 9(013)V2
+    valor_desconto:
+      description: 'Valor do Desconto'
+      pos: [ 166,180 ]
+      type: 9(013)V2
+    valor_mora:
+      description: 'Valor da Mora'
+      pos: [ 181,195 ]
+      type: 9(013)V2
+    valor_multa:
+      description: 'Valor da Multa'
+      pos: [ 196,210 ]
+      type: 9(013)V2
+    horario_envio_ted:
+      description: 'Horário de Envio da TED'
+      pos: [ 211,214 ]
+      type: 9(004)
+    filler_2:
+      description: 'Filler'
+      pos: [ 215,225 ]
+      type: X(011)
+    codigo_historico_credito:
+      description: 'Código do Histórico do Crédito'
+      pos: [ 226,229 ]
+      type: 9(004)
+    emissao_aviso_favorecido:
+      description: 'Emissão de Aviso ao Favorecido'
+      pos: [ 230,230 ]
+      type: 9(001)
+    filler_3:
+      description: 'Filler'
+      pos: [ 231,231 ]
+      type: X(010)
+    ted_instituicao_financeira:
+      description: 'TED – Instituição Financeira'
+      pos: [ 232,232 ]
+      type: 9(004)
+    identificacao_if_spb:
+      description: 'Identificação da IF no SPB'
+      pos: [ 233,240 ]
+      type: X(008)
+  "3ZTRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'Z'
+    autenticacao_pagamento:
+      description: 'Autenticação do Pagamento'
+      pos: [ 15,78 ]
+      type: X(001)
+    protocolo_pagamento:
+      description: 'Protocolo de Pagamento'
+      pos: [ 79,103 ]
+      type: X(025)
+    filler:
+      description: 'Filler'
+      pos: [ 104,230 ]
+      type: X(127)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "5TRS":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    filler:
+      description: 'Filler'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatoria_valores:
+      description: 'Somatória dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V2
+    somatoria_quantidade_moeda:
+      description: 'Somatória da Quantidade Moeda'
+      pos: [ 42,59 ]
+      type: 9(013)V5
+    numero_aviso_debito:
+      description: 'Número do Aviso de Débito'
+      pos: [ 60,65 ]
+      type: 9(006)
+    filler_2:
+      description: 'Filler'
+      pos: [ 66,230 ]
+      type: X(165)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
   # PAGAMENTO DE TRIBUTOS COM CODIGO DE BARRAS
-  #  "1TRC"
-  #  "3OTRC"
-  #  "3BTRC"
-  #  "3ZTRC"
-  #  "5TRC"
+  "1TRC":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: X(001)
+      default: 'C'
+    tipo_servico:
+      description: 'Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: 9(002)
+      default: '01'
+    forma_lancamento:
+      description: 'Forma de Lançamento'
+      pos: [ 12,13 ]
+      type: 9(002)
+    numero_versao_lote:
+      description: 'Número da Versão do Layout do Lote'
+      pos: [ 14,16 ]
+      type: 9(003)
+      default: '010'
+    filler:
+      description: 'Filler'
+      pos: [ 17,17 ]
+      type: X(001)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    codigo_convenio_banco:
+      description: 'Código do Convênio no Banco'
+      pos: [ 33,52 ]
+      type: 9(020)
+    agencia_mantenedora_conta:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    digito_verificador_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    digito_verificador_agencia_conta:
+      description: 'Dígito Verificador da Agência/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    informacao_1_mensagem:
+      description: 'Informação 1 (Mensagem)'
+      pos: [ 103,142 ]
+      type: X(040)
+    endereco:
+      description: 'Endereço'
+      pos: [ 143,172 ]
+      type: X(030)
+    numero:
+      description: 'Número'
+      pos: [ 173,177 ]
+      type: X(005)
+    complemento_endereco:
+      description: 'Complemento do Endereço'
+      pos: [ 178,192 ]
+      type: X(015)
+    cidade:
+      description: 'Cidade'
+      pos: [ 193,212 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 213,217 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento do CEP'
+      pos: [ 218,220 ]
+      type: 9(003)
+    uf:
+      description: 'UF'
+      pos: [ 221,222 ]
+      type: X(002)
+    filler_2:
+      description: 'Filler'
+      pos: [ 223,230 ]
+      type: X(008)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3OTRC":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'O'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_instrucao_movimento:
+      description: 'Código da Instrução de Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    codigo_barras:
+      description: 'Código de Barras'
+      pos: [ 18,61 ]
+      type: X(044)
+    nome_concessionaria_orgao_publico:
+      description: 'Nome da Concessionária/Orgão Público'
+      pos: [ 62,91 ]
+      type: X(030)
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 92,99 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    data_pagamento:
+      description: 'Data de Pagamento'
+      pos: [ 100,107 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_total_pagamento:
+      description: 'Valor Total do Pagamento'
+      pos: [ 108,122 ]
+      type: 9(013)V2
+    nro_documento_cliente:
+      description: 'Número do Documento do Cliente'
+      pos: [ 123,142 ]
+      type: X(020)
+    nro_documento_banco:
+      description: 'Número do Documento do Banco'
+      pos: [ 143,162 ]
+      type: X(020)
+    filler:
+      description: 'Filler'
+      pos: [ 163,230 ]
+      type: X(008)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "3BTRC":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'B'
+    filler:
+      description: 'Filler'
+      pos: [ 15,17 ]
+      type: X(003)
+    tipo_inscricao_favorecido:
+      description: 'Tipo de Inscrição do Favorecido'
+      pos: [ 18,18 ]
+      type: 9(001)
+    cnpj_cpf_favorecido:
+      description: 'CNPJ/CPF do Favorecido'
+      pos: [ 19,32 ]
+      type: 9(014)
+    logradouro_favorecido:
+      description: 'Logradouro do Favorecido'
+      pos: [ 33,62 ]
+      type: X(030)
+    numero_local_favorecido:
+      description: 'Número do Local do Favorecido'
+      pos: [ 63,67 ]
+      type: X(005)
+    complemento_local_favorecido:
+      description: 'Complemento do Local do Favorecido'
+      pos: [ 68,82 ]
+      type: X(015)
+    bairro_favorecido:
+      description: 'Bairro do Favorecido'
+      pos: [ 83,97 ]
+      type: X(015)
+    cidade_favorecido:
+      description: 'Cidade do Favorecido'
+      pos: [ 98,117 ]
+      type: X(020)
+    cep_favorecido:
+      description: 'CEP do Favorecido'
+      pos: [ 118,125 ]
+      type: 9(008)
+    estado_favorecido:
+      description: 'Estado do Favorecido'
+      pos: [ 126,127 ]
+      type: X(002)
+    data_vencimento:
+      description: 'Data de Vencimento'
+      pos: [ 128,135 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_documento:
+      description: 'Valor do Documento'
+      pos: [ 136,150 ]
+      type: 9(013)V2
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 151,165 ]
+      type: 9(013)V2
+    valor_desconto:
+      description: 'Valor do Desconto'
+      pos: [ 166,180 ]
+      type: 9(013)V2
+    valor_mora:
+      description: 'Valor da Mora'
+      pos: [ 181,195 ]
+      type: 9(013)V2
+    valor_multa:
+      description: 'Valor da Multa'
+      pos: [ 196,210 ]
+      type: 9(013)V2
+    horario_envio_ted:
+      description: 'Horário de Envio da TED'
+      pos: [ 211,214 ]
+      type: 9(004)
+    filler_2:
+      description: 'Filler'
+      pos: [ 215,225 ]
+      type: X(011)
+    codigo_historico_credito:
+      description: 'Código do Histórico de Crédito'
+      pos: [ 226,229 ]
+      type: 9(004)
+    emissao_aviso_favorecido:
+      description: 'Emissão de Aviso ao Favorecido'
+      pos: [ 230,230 ]
+      type: X(001)
+    filler_3:
+      description: 'Filler'
+      pos: [ 231,231 ]
+      type: X(001)
+    ted_instituicao_financeira:
+      description: 'TED para Instituição Financeira'
+      pos: [ 232,232 ]
+      type: X(001)
+    identificacao_if_spb:
+      description: 'Identificação da IF/SPB'
+      pos: [ 233,240 ]
+      type: X(008)
+  "3ZTRC":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'Z'
+    autenticacao_pagamento:
+      description: 'Autenticação do Pagamento'
+      pos: [ 15,78 ]
+      type: X(001)
+    protocolo_pagamento:
+      description: 'Protocolo de Pagamento'
+      pos: [ 79,103 ]
+      type: X(025)
+    filler:
+      description: 'Filler'
+      pos: [ 104,230 ]
+      type: X(137)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+  "5TRC":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    filler:
+      description: 'Filler'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatorio_valores:
+      description: 'Somatório dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V2
+    somatorio_quantidade_moedas:
+      description: 'Somatório da Quantidade de Moedas'
+      pos: [ 42,59 ]
+      type: 9(013)V5
+    numero_aviso_debito:
+      description: 'Número do Aviso de Débito'
+      pos: [ 60,65 ]
+      type: 9(006)
+    filler_2:
+      description: 'Filler'
+      pos: [ 66,230 ]
+      type: X(165)
+    ocorrencias_retorno:
+      description: 'Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
   # CAPTURA DE TITULOS DE COBRANÇA – ARQUIVO RETORNO
-  #  "1CAP"
-  #  "3GCAP"
-  #  "3HCAP"
-  #  "3Y53CAP"
-  #  "5CAP"
+  "1CAP":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: X(001)
+      default: 'I'
+    tipo_servico:
+      description: 'Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: 9(002)
+      default: '01'
+    filler:
+      description: 'Filler'
+      pos: [ 12,13 ]
+      type: X(002)
+    numero_versao_lote:
+      description: 'Número da Versão do Layout do Lote'
+      pos: [ 14,16 ]
+      type: 9(003)
+      default: '040'
+    filler_2:
+      description: 'Filler'
+      pos: [ 17,17 ]
+      type: X(001)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,33 ]
+      type: 9(015)
+    codigo_convenio_banco:
+      description: 'Código do Convênio no Banco'
+      pos: [ 34,53 ]
+      type: 9(020)
+    agencia_mantenedora_conta:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 54,58 ]
+      type: 9(005)
+    digito_verificador_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 59,59 ]
+      type: X(001)
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 60,71 ]
+      type: 9(012)
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 72,72 ]
+      type: 9(001)
+    digito_verificador_agencia_conta:
+      description: 'Dígito Verificador da Agência/Conta'
+      pos: [ 73,73 ]
+      type: X(001)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 74,103 ]
+      type: X(030)
+    filler_3:
+      description: 'Filler'
+      pos: [ 104,240 ]
+      type: X(137)
+  "3GCAP":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'G'
+    filler:
+      description: 'Filler'
+      pos: [ 15,15 ]
+      type: X(001)
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: 9(002)
+    codigo_barras:
+      description: 'Código de Barras'
+      pos: [ 18,61 ]
+      type: X(044)
+    tipo_inscricao_cedente:
+      description: 'Tipo de Inscrição do Cedente'
+      pos: [ 62,62 ]
+      type: 9(001)
+    numero_inscricao_cedente:
+      description: 'Número de Inscrição do Cedente'
+      pos: [ 63,77 ]
+      type: 9(015)
+    nome_cedente:
+      description: 'Nome do Cedente'
+      pos: [ 78,107 ]
+      type: X(030)
+    data_vencimento_titulo:
+      description: 'Data de Vencimento do Título'
+      pos: [ 108,115 ]
+      type: 9(008)
+    valor_nominal_titulo:
+      description: 'Valor Nominal do Título'
+      pos: [ 116,130 ]
+      type: 9(013)V2
+    quantidade_moeda:
+      description: 'Quantidade de Moeda'
+      pos: [ 131,145 ]
+      type: 9(010)V5
+    codigo_moeda:
+      description: 'Código da Moeda'
+      pos: [ 146,147 ]
+      type: 9(005)
+    numero_documento_cobranca:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 148,162 ]
+      type: X(010)
+    agencia_encarregada_cobranca:
+      description: 'Agência Encarregada da Cobrança'
+      pos: [ 163,167 ]
+      type: 9(005)
+    digito_verificador_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 168,168 ]
+      type: X(001)
+    praca_cobradora:
+      description: 'Praça Cobradora'
+      pos: [ 169,178 ]
+      type: X(010)
+    codigo_carteira:
+      description: 'Código da Carteira'
+      pos: [ 179,179 ]
+      type: X(001)
+    especie_titulo:
+      description: 'Espécie do Título'
+      pos: [ 180,181 ]
+      type: 9(002)
+    data_emissao_titulo:
+      description: 'Data de Emissão do Título'
+      pos: [ 182,189 ]
+      type: 9(008)
+    juros_mora_dia:
+      description: 'Juros de Mora ao Dia'
+      pos: [ 190,204 ]
+      type: 9(013)V2
+    codigo_desconto_1:
+      description: 'Código do Desconto'
+      pos: [ 205,205 ]
+      type: 9(001)
+    data_desconto_1:
+      description: 'Data do Desconto'
+      pos: [ 206,213 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_percentual_desconto:
+      description: 'Valor/Percentual a ser Concedido'
+      pos: [ 214,228 ]
+      type: 9(013)V2
+    codigo_protesto:
+      description: 'Código para Protesto'
+      pos: [ 229,229 ]
+      type: 9(001)
+    numero_dias_protesto:
+      description: 'Número de Dias para Protesto'
+      pos: [ 230,231 ]
+      type: 9(002)
+    data_limite_pagamento_titulo:
+      description: 'Data Limite para Recebimento do Título'
+      pos: [ 232,239 ]
+      type: 9(008)
+    tipo_titulo:
+      description: 'Tipo de Título'
+      pos: [ 240,240 ]
+      type: X(001)
+  "3HCAP":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'H'
+    filler:
+      description: 'Filler'
+      pos: [ 15,15 ]
+      type: X(001)
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: 9(002)
+    tipo_inscricao_sacador_avalista:
+      description: 'Tipo de Inscrição do Sacador/Avalista'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_sacador_avalista:
+      description: 'Número de Inscrição do Sacador/Avalista'
+      pos: [ 19,33 ]
+      type: 9(015)
+    nome_sacador_avalista:
+      description: 'Nome do Sacador/Avalista'
+      pos: [ 34,73 ]
+      type: X(040)
+    codigo_desconto_2:
+      description: 'Código do Desconto'
+      pos: [ 74,74 ]
+      type: 9(001)
+    data_desconto_2:
+      description: 'Data do Desconto'
+      pos: [ 75,82 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_percentual_desconto_2:
+      description: 'Valor/Percentual a ser Concedido'
+      pos: [ 83,97 ]
+      type: 9(013)V2
+    codigo_desconto_3:
+      description: 'Código do Desconto'
+      pos: [ 98,98 ]
+      type: 9(001)
+    data_desconto_3:
+      description: 'Data do Desconto'
+      pos: [ 99,106 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_percentual_desconto_3:
+      description: 'Valor/Percentual a ser Concedido'
+      pos: [ 107,121 ]
+      type: 9(013)V2
+    codigo_multa:
+      description: 'Código da Multa'
+      pos: [ 122,122 ]
+      type: 9(001)
+    data_inicio_vigencia_multa:
+      description: 'Data Início da Vigência da Multa'
+      pos: [ 123,130 ]
+      type: 9(008)
+      convert: ddmmaaaa
+    valor_aplicado_multa:
+      description: 'Valor a ser Aplicado de Multa'
+      pos: [ 131,145 ]
+      type: 9(013)V2
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 146,160 ]
+      type: 9(013)V2
+    mensagem_1:
+      description: 'Mensagem 1'
+      pos: [ 161,200 ]
+      type: X(040)
+    mensagem_2:
+      description: 'Mensagem 2'
+      pos: [ 201,240 ]
+      type: X(040)
+  "3Y53CAP":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'Y'
+    filler:
+      description: 'Filler'
+      pos: [ 15,15 ]
+      type: X(001)
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: 9(002)
+    identificacao_registro_opcional:
+      description: 'Identificação do Registro Opcional'
+      pos: [ 18,19 ]
+      type: 9(002)
+      default: '53'
+    identificacao_tipo_pagamento:
+      description: 'Identificação do Tipo de Pagamento'
+      pos: [ 20,21 ]
+      type: 9(002)
+    quantidade_pagamentos_possiveis:
+      description: 'Quantidade de Pagamentos Possíveis'
+      pos: [ 22,23 ]
+      type: 9(002)
+    tipo_valor_informado:
+      description: 'Tipo de Valor Informado'
+      pos: [ 24,24 ]
+      type: 9(001)
+    valor_maximo_ou_percentual:
+      description: 'Valor Máximo ou Percentual'
+      pos: [ 25,39 ]
+      type: X(015)
+      convert: y53
+    tipo_valor_informado_2:
+      description: 'Tipo de Valor Informado'
+      pos: [ 40,40 ]
+      type: 9(001)
+    valor_minimo_ou_percentual:
+      description: 'Valor Mínimo ou Percentual'
+      pos: [ 41,55 ]
+      type: X(015)
+      convert: y53
+    filler_2:
+      description: 'Filler'
+      pos: [ 56,240 ]
+      type: X(185)
+  "5CAP":
+    codigo_banco:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    filler:
+      description: 'Filler'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatorio_valores:
+      description: 'Somatório dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V2
+    somatorio_quantidade_moedas:
+      description: 'Somatório da Quantidade de Moedas'
+      pos: [ 42,59 ]
+      type: 9(013)V5
+    filler_2:
+      description: 'Filler'
+      pos: [ 60,240 ]
+      type: X(181)
   # TRAILER DE LOTE
   "9":
     codigo_banco:
