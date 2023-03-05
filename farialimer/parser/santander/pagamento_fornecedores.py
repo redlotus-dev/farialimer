@@ -72,18 +72,14 @@ class PagamentoFornecedoresParser(SantanderParser):
         register_type = line[7]
         operation_type = line[8]
 
-        try:
-            if register_type in ("0", "9"):
-                self.current_register_header = register_type
-                return self.current_register_header
-            if register_type == "1":
-                return self._get_register_type_1(line, operation_type)
-            if register_type == "3":
-                return self._get_register_type_3(line, register_type)
-            return register_type + self.current_register_header[1:]
-        except TypeError as err:
-            print(line)
-            raise TypeError from err
+        if register_type in ("0", "9"):
+            self.current_register_header = register_type
+            return self.current_register_header
+        if register_type == "1":
+            return self._get_register_type_1(line, operation_type)
+        if register_type == "3":
+            return self._get_register_type_3(line, register_type)
+        return register_type + self.current_register_header[1:]
 
     def _get_register_type_1(self, line, operation_type):
         """Return the register type 1"""
