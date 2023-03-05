@@ -15,7 +15,5 @@ def test_spec_size(provider, spec):
     for register, fields in spec_parser.items():
         result = sum_layout_fields_size(spec_parser, register)
         expected = fields[-1].end
-        if result != expected:
-            print(f"Register: {register} - {result} != {expected}")
 
         assert result == expected
