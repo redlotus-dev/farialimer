@@ -73,6 +73,9 @@ class PagamentoFornecedoresParser(SantanderParser):
         operation_type = line[8]
 
         try:
+            if register_type in ("0", "9"):
+                self.current_register_header = register_type
+                return self.current_register_header
             if register_type == "1":
                 return self._get_register_type_1(line, operation_type)
             if register_type == "3":

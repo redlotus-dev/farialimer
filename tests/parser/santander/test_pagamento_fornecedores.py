@@ -156,15 +156,3 @@ def test_get_line_register(header, line, expected):
     result = parser.get_line_register(line)
 
     assert result == expected
-
-
-@pytest.mark.skip(reason="Not implemented yet")
-def test_parse_pagamento_fornecedor():
-    """Test the parser for cnab240 sample file"""
-    path = "tests/specs/samples/santander/cnab240_santander.ret"
-    parser = PagamentoFornecedoresParser("santander")
-    content = parser.read_file(path)
-
-    result = parser.parse(content, spec="pagamento_fornecedores")
-
-    assert result == ""
