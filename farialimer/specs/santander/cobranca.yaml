@@ -820,9 +820,100 @@ register:
       description: 'Reservado (uso Banco)'
       pos: [ 30,240 ]
       type: A211
-
-# Arquivo Retorno
-#0RET
+  # Arquivo Retorno
+  "0RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '0'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 9,16 ]
+      type: A008
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 17,17 ]
+      type: N001
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 18,32 ]
+      type: N015
+    agencia_beneficiario:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 33,36 ]
+      type: N004
+    digito_agencia_beneficiario:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 37,37 ]
+      type: A001
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 38,46 ]
+      type: N009
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 47,47 ]
+      type: A001
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 48,52 ]
+      type: A005
+    codigo_beneficiario:
+      description: 'Código do Beneficiário'
+      pos: [ 53,61 ]
+      type: A009
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 62,72 ]
+      type: A011
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: A030
+    nome_banco:
+      description: 'Nome do Banco'
+      pos: [ 103,132 ]
+      type: A030
+      default: 'BANCO SANTANDER'
+    reservado_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 133,142 ]
+      type: A010
+    codigo_remessa_retorno:
+      description: 'Código Remessa/Retorno'
+      pos: [ 143,143 ]
+      type: N001
+      default: '2'
+    data_geracao_arquivo:
+      description: 'Data de Geração do Arquivo'
+      pos: [ 144,151 ]
+      type: N008
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 152,157 ]
+      type: A006
+    numero_sequencial_arquivo:
+      description: 'Número Sequencial do Arquivo'
+      pos: [ 158,163 ]
+      type: N006
+    numero_versao_layout_arquivo:
+      description: 'Número da Versão do Layout do Arquivo'
+      pos: [ 164,166 ]
+      type: N003
+      default: '040'
+    reservado:
+      description: 'Reservado'
+      pos: [ 167,240 ]
+      type: A074
 #1RET
 #3TRET
 #3URET
