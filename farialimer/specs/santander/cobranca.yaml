@@ -1,0 +1,1439 @@
+provider: Santander
+service: 'Cobrança'
+version: 4
+layout: cobranca
+register:
+  # Arquivo Remessa
+  "0REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco'
+      pos: [ 1,3 ]
+      type: N003
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+      default: '0000'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '0'
+    reservado_uso_banco:
+      description: 'Reservado para Uso do Banco'
+      pos: [ 9,16 ]
+      type: A008
+      default: ' '
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 17,17 ]
+      type: N001
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 18,32 ]
+      type: N015
+    codigo_transmissao:
+      description: 'Código de Transmissão'
+      pos: [ 33,47 ]
+      type: N015
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 48,72 ]
+      type: A025
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: A030
+    nome_banco:
+      description: 'Nome do Banco'
+      pos: [ 103,132 ]
+      type: A030
+      default: 'BANCO SANTANDER'
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 133,142 ]
+      type: A010
+    codigo_remessa:
+      description: 'Código Remessa'
+      pos: [ 143,143 ]
+      type: N001
+      default: '1'
+    data_geracao_arquivo:
+      description: 'Data de Geração do Arquivo'
+      pos: [ 144,151 ]
+      type: N008
+      convert: ddmmaaaa
+    reservado_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 152,157 ]
+      type: A006
+    numero_sequencial_arquivo:
+      description: 'Número Sequencial do Arquivo'
+      pos: [ 158,163 ]
+      type: N006
+    numero_versao_layout_arquivo:
+      description: 'Número da Versão do Layout do Arquivo'
+      pos: [ 164,166 ]
+      type: N003
+      default: '040'
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 167,240 ]
+      type: A074
+  "1REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na compensação'
+      pos: [ 1,3 ]
+      type: N003
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+      default: '0001'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: A001
+      default: 'R'
+    tipo_servico:
+      description: 'Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: N002
+      default: '01'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 12,13 ]
+      type: A002
+    numero_versao_layout_lote:
+      description: 'Número da Versão do Layout do Lote'
+      pos: [ 14,16 ]
+      type: N003
+      default: '030'
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 17,17 ]
+      type: A001
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: N001
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,33 ]
+      type: N015
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 34,53 ]
+      type: A020
+    codigo_transmissao:
+      description: 'Código de Transmissão'
+      pos: [ 54,68 ]
+      type: N015
+    reservado_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 69,73 ]
+      type: A005
+    nome_beneficiario:
+      description: 'Nome do Beneficiário'
+      pos: [ 74,103 ]
+      type: A030
+    mensagem_1:
+      description: 'Mensagem 1'
+      pos: [ 104,143 ]
+      type: A040
+    mensagem_2:
+      description: 'Mensagem 2'
+      pos: [ 144,183 ]
+      type: A040
+    numero_remessa_retorno:
+      description: 'Número Remessa/Retorno'
+      pos: [ 184,191 ]
+      type: N008
+    data_gravacao_remessa_retorno:
+      description: 'Data de Gravação Remessa/Retorno'
+      pos: [ 192,199 ]
+      type: N008
+      convert: ddmmaaaa
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 200,240 ]
+      type: A041
+  "3PREM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na compensação'
+      pos: [ 1,3 ]
+      type: N003
+      default: '033'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+      default: '0001'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código de Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'P'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    agencia_destinataria:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 18,21 ]
+      type: N004
+    digito_ag_destinataria:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 22,22 ]
+      type: N001
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 23,31 ]
+      type: N009
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 32,32 ]
+      type: N001
+    conta_cobranca_destinataria_fidc:
+      description: 'Conta Cobrança Destinatária FIDC'
+      pos: [ 33,41 ]
+      type: N009
+    digito_conta_cobranca_destinataria_fidc:
+      description: 'Dígito Verificador da Conta Cobrança Destinatária FIDC'
+      pos: [ 42,42 ]
+      type: N001
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 43,44 ]
+      type: A002
+    identificacao_boleto_banco:
+      description: 'Identificação do Título no Banco'
+      pos: [ 45,57 ]
+      type: A013
+    tipo_cobranca:
+      description: 'Tipo de Cobrança'
+      pos: [ 58,58 ]
+      type: N001
+    forma_cadastramento:
+      description: 'Forma de Cadastramento'
+      pos: [ 59,59 ]
+      type: N001
+    tipo_documento:
+      description: 'Tipo de Documento'
+      pos: [ 60,60 ]
+      type: N001
+    reservador_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 61,61 ]
+      type: A001
+    reservador_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 62,62 ]
+      type: A001
+    numero_documento:
+      description: 'Número do Documento'
+      pos: [ 63,77 ]
+      type: A015
+    data_vencimento_boleto:
+      description: 'Data de Vencimento do boleto'
+      pos: [ 78,85 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_nominal_boleto:
+      description: 'Valor Nominal do boleto'
+      pos: [ 86,100 ]
+      type: N013V2
+    agencia_encarregada_cobranca_fidc:
+      description: 'Agência Encarregada da Cobrança FIDC'
+      pos: [ 101,104 ]
+      type: N004
+    digito_agencia_beneficiario_fidc:
+      description: 'Dígito Verificador da Agência Beneficiário FIDC'
+      pos: [ 105,105 ]
+      type: N001
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 106,106 ]
+      type: A001
+    especie_boleto:
+      description: 'Espécie do boleto'
+      pos: [ 107,108 ]
+      type: N002
+    identificacao_boleto_aceito_nao_aceito:
+      description: 'Identificação do boleto Aceito/Não Aceito'
+      pos: [ 109,109 ]
+      type: A001
+    data_emissao_boleto:
+      description: 'Data de Emissão do boleto'
+      pos: [ 110,117 ]
+      type: N008
+      convert: ddmmaaaa
+    codigo_juros_mora:
+      description: 'Código do Juros de Mora'
+      pos: [ 118,118 ]
+      type: N001
+    data_juros_mora:
+      description: 'Data do Juros de Mora'
+      pos: [ 119,126 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_mora_dia_ou_taxa_mensal:
+      description: 'Valor da mora/dia ou Taxa mensal'
+      pos: [ 127,141 ]
+      type: N013V2
+    codigo_desconto_1:
+      description: 'Código do Desconto 1'
+      pos: [ 142,142 ]
+      type: N001
+    data_desconto_1:
+      description: 'Data do Desconto 1'
+      pos: [ 143,150 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_ou_percentual_desconto_concedido:
+      description: 'Valor ou Percentual a ser Concedido'
+      pos: [ 151,165 ]
+      type: N013V2
+    percentual_iof_recolhido:
+      description: 'Percentual de IOF a ser Recolhido'
+      pos: [ 166,180 ]
+      type: N013V2
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 181,195 ]
+      type: N013V2
+    identificacao_boleto_empresa:
+      description: 'Identificação do boleto na Empresa'
+      pos: [ 196,220 ]
+      type: A025
+    codigo_protesto:
+      description: 'Código para Protesto'
+      pos: [ 221,221 ]
+      type: N001
+    numero_dias_protesto:
+      description: 'Número de Dias para Protesto'
+      pos: [ 222,223 ]
+      type: N002
+    codigo_baixa_devolucao:
+      description: 'Código para Baixa/Devolução'
+      pos: [ 224,224 ]
+      type: N001
+    reservado_uso_banco_6:
+      description: 'Reservado (uso Banco)'
+      pos: [ 225,225 ]
+      type: A006
+    numero_dias_baixa_devolucao:
+      description: 'Número de Dias para Baixa/Devolução'
+      pos: [ 226,227 ]
+      type: N002
+    codigo_moeda:
+      description: 'Código da Moeda'
+      pos: [ 228,229 ]
+      type: N002
+    reservado_uso_banco_7:
+      description: 'Reservado (uso Banco)'
+      pos: [ 230,240 ]
+      type: A011
+  "3QREM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Número do Lote remessa'
+      pos: [ 4,7 ]
+      type: N004
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 8,13 ]
+      type: N006
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'Q'
+    reservado_uso_banco_1:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    tipo_inscricao_pagador:
+      description: 'Tipo de Inscrição do Pagador'
+      pos: [ 18,18 ]
+      type: N001
+    numero_inscricao_pagador:
+      description: 'Número de Inscrição do Pagador'
+      pos: [ 19,33 ]
+      type: N015
+    nome_pagador:
+      description: 'Nome do Pagador'
+      pos: [ 34,73 ]
+      type: A040
+    endereco_pagador:
+      description: 'Endereço do Pagador'
+      pos: [ 74,113 ]
+      type: A040
+    bairro_pagador:
+      description: 'Bairro do Pagador'
+      pos: [ 114,128 ]
+      type: A015
+    cep_pagador:
+      description: 'CEP do Pagador'
+      pos: [ 129,133 ]
+      type: N005
+    sufixo_cep_pagador:
+      description: 'Sufixo do CEP do Pagador'
+      pos: [ 134,136 ]
+      type: N003
+    cidade_pagador:
+      description: 'Cidade do Pagador'
+      pos: [ 137,151 ]
+      type: A015
+    unidade_federacao_pagador:
+      description: 'Unidade da Federação do Pagador'
+      pos: [ 152,153 ]
+      type: A002
+    tipo_inscricao_beneficiario_final:
+      description: 'Tipo de Inscrição do Beneficiário Final'
+      pos: [ 154,154 ]
+      type: N001
+    numero_inscricao_beneficiario_final:
+      description: 'Número de Inscrição do Beneficiário Final'
+      pos: [ 155,169 ]
+      type: N015
+    nome_beneficiario_final:
+      description: 'Nome do Beneficiário Final'
+      pos: [ 170,209 ]
+      type: A040
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 210,212 ]
+      type: A003
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 213,215 ]
+      type: A003
+    reservado_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 216,218 ]
+      type: A003
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 219,221 ]
+      type: A003
+    reservado_uso_banco_6:
+      description: 'Reservado (uso Banco)'
+      pos: [ 222,240 ]
+      type: A019
+  "3RREM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Número do Lote remessa'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_resgitro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: A001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'R'
+    reservado_uso_banco_1:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    codigo_desconto_2:
+      description: 'Código de Desconto 2'
+      pos: [ 18,18 ]
+      type: N001
+    data_desconto_2:
+      description: 'Data de Desconto 2'
+      pos: [ 19,26 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_percentual_concedido_2:
+      description: 'Valor/Percentual a ser Concedido'
+      pos: [ 27,41 ]
+      type: N013V2
+    codigo_desconto_3:
+      description: 'Código de Desconto 3'
+      pos: [ 42,42 ]
+      type: N001
+    data_desconto_3:
+      description: 'Data de Desconto 3'
+      pos: [ 43,50 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_percentual_concedido_3:
+      description: 'Valor/Percentual a ser Concedido'
+      pos: [ 51,65 ]
+      type: N013V2
+    codigo_multa:
+      description: 'Código da Multa'
+      pos: [ 66,66 ]
+      type: N001
+    data_multa:
+      description: 'Data da Multa'
+      pos: [ 67,74 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_percentual_aplicado:
+      description: 'Valor/Percentual a ser Aplicado'
+      pos: [ 75,89 ]
+      type: N013V2
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 90,99 ]
+      type: A010
+    mensagem_3:
+      description: 'Mensagem 3'
+      pos: [ 100,139 ]
+      type: A040
+    mensagem_4:
+      description: 'Mensagem 4'
+      pos: [ 140,179 ]
+      type: A040
+    reservado:
+      description: 'Reservado'
+      pos: [ 180,240 ]
+      type: A061
+  "3Y03REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: A001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'Y'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    identificacao_registro:
+      description: 'Identificação do Registro'
+      pos: [ 18,19 ]
+      type: N002
+      default: '03'
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 20,80 ]
+      type: A061
+    tipo_chave_pix:
+      description: 'Tipo de Chave PIX'
+      pos: [ 81,81 ]
+      type: A001
+    chave_pix:
+      description: 'Chave PIX'
+      pos: [ 82,158 ]
+      type: A077
+    codigo_identificacao_qr_code:
+      description: 'Código de Identificação do QR Code'
+      pos: [ 159,193 ]
+      type: A035
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 194,240 ]
+      type: A047
+  "3Y53REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: A001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'Y'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento_remessa:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    identificacao_registro:
+      description: 'Identificação do Registro'
+      pos: [ 18,19 ]
+      type: N002
+      default: '53'
+    identificacao_tipo_pagamento:
+      description: 'Identificação do Tipo de Pagamento'
+      pos: [ 20,21 ]
+      type: N002
+    quantidade_pagamentos_possiveis:
+      description: 'Quantidade de Pagamentos Possíveis'
+      pos: [ 22,23 ]
+      type: N002
+    tipo_valor_informado:
+      description: 'Tipo de Valor Informado'
+      pos: [ 24,24 ]
+      type: N001
+    valor_maximo_ou_percentual:
+      description: 'Valor Máximo ou Percentual'
+      pos: [ 25,39 ]
+      type: A015
+    tipo_valor_informado_2:
+      description: 'Tipo de Valor Informado'
+      pos: [ 40,40 ]
+      type: N001
+    valor_minimo_ou_percentual:
+      description: 'Valor Mínimo ou Percentual'
+      pos: [ 41,55 ]
+      type: A015
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 56,240 ]
+      type: A185
+  "3S1REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'S'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    identificacao_impressao:
+      description: 'Identificação Impressão'
+      pos: [ 18,18 ]
+      type: N001
+    numero_linha_impressa:
+      description: 'Número da linha a ser impressa'
+      pos: [ 19,20 ]
+      type: N002
+    mensagem_recibo_pagador:
+      description: 'Mensagem para o Recibo do Pagador'
+      pos: [ 21,21 ]
+      type: A001
+    mensagem_impressa:
+      description: 'Mensagem a ser impressa'
+      pos: [ 22,121 ]
+      type: A100
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 122,240 ]
+      type: A119
+  "3S2REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código do Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'S'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento Remessa'
+      pos: [ 16,17 ]
+      type: N002
+    identificacao_impressao:
+      description: 'Identificação Impressão'
+      pos: [ 18,18 ]
+      type: N001
+    mensagem_5:
+      description: 'Mensagem 5'
+      pos: [ 19,58 ]
+      type: A40
+    mensagem_6:
+      description: 'Mensagem 6'
+      pos: [ 59,98 ]
+      type: A40
+    mensagem_7:
+      description: 'Mensagem 7'
+      pos: [ 99,138 ]
+      type: A40
+    mensagem_8:
+      description: 'Mensagem 8'
+      pos: [ 139,178 ]
+      type: A40
+    mensagem_9:
+      description: 'Mensagem 9'
+      pos: [ 179,218 ]
+      type: A40
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 219,240 ]
+      type: A022
+  "5REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '5'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 9,17 ]
+      type: A009
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: N006
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 24,240 ]
+      type: A217
+  "9REM":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '9'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 9,17 ]
+      type: A009
+    quantidade_lotes_arquivo:
+      description: 'Quantidade de Lotes do Arquivo'
+      pos: [ 18,23 ]
+      type: N006
+    quantidade_registros_arquivo:
+      description: 'Quantidade de Registros do Arquivo'
+      pos: [ 24,29 ]
+      type: N006
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 30,240 ]
+      type: A211
+  # Arquivo Retorno
+  "0RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '0'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 9,16 ]
+      type: A008
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 17,17 ]
+      type: N001
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 18,32 ]
+      type: N015
+    agencia_beneficiario:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 33,36 ]
+      type: N004
+    digito_agencia_beneficiario:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 37,37 ]
+      type: A001
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 38,46 ]
+      type: N009
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 47,47 ]
+      type: A001
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 48,52 ]
+      type: A005
+    codigo_beneficiario:
+      description: 'Código do Beneficiário'
+      pos: [ 53,61 ]
+      type: A009
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 62,72 ]
+      type: A011
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: A030
+    nome_banco:
+      description: 'Nome do Banco'
+      pos: [ 103,132 ]
+      type: A030
+      default: 'BANCO SANTANDER'
+    reservado_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 133,142 ]
+      type: A010
+    codigo_remessa_retorno:
+      description: 'Código Remessa/Retorno'
+      pos: [ 143,143 ]
+      type: N001
+      default: '2'
+    data_geracao_arquivo:
+      description: 'Data de Geração do Arquivo'
+      pos: [ 144,151 ]
+      type: N008
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 152,157 ]
+      type: A006
+    numero_sequencial_arquivo:
+      description: 'Número Sequencial do Arquivo'
+      pos: [ 158,163 ]
+      type: N006
+    numero_versao_layout_arquivo:
+      description: 'Número da Versão do Layout do Arquivo'
+      pos: [ 164,166 ]
+      type: N003
+      default: '040'
+    reservado:
+      description: 'Reservado'
+      pos: [ 167,240 ]
+      type: A074
+  "1RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: A001
+      default: 'T'
+    tipo_servico:
+      description: 'Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: N002
+      default: '01'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 12,13 ]
+      type: A002
+    numero_versao_layout_lote:
+      description: 'Número da Versão do Layout do Lote'
+      pos: [ 14,16 ]
+      type: N003
+      default: '040'
+    reservado:
+      description: 'Reservado'
+      pos: [ 17,17 ]
+      type: A001
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: N001
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,33 ]
+      type: N015
+    codigo_beneficiario:
+      description: 'Código do Beneficiário'
+      pos: [ 34,42 ]
+      type: A009
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 43,53 ]
+      type: A011
+    agencia_beneficiario:
+      description: 'Agência do Beneficiário'
+      pos: [ 54,57 ]
+      type: N004
+    digito_agencia_beneficiario:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: A001
+    numero_conta_beneficiario:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,67 ]
+      type: N009
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 68,68 ]
+      type: A001
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 69,73 ]
+      type: A005
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 74,103 ]
+      type: A030
+    reservado_uso_banco_4:
+      description: 'Reservado (uso Banco)'
+      pos: [ 104,183 ]
+      type: A080
+    numero_retorno:
+      description: 'Número do Retorno'
+      pos: [ 184,191 ]
+      type: N008
+    data_gravacao_remessa_retorno:
+      description: 'Data da Gravação do Arquivo Remessa/Retorno'
+      pos: [ 192,199 ]
+      type: N008
+    reservado_uso_banco_5:
+      description: 'Reservado (uso Banco)'
+      pos: [ 200,240 ]
+      type: A041
+  "3TRET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_retorno:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'T'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento (ocorrência)'
+      pos: [ 16,17 ]
+      type: N002
+    agencia_beneficiario:
+      description: 'Agência do Beneficiário'
+      pos: [ 18,21 ]
+      type: N004
+    digito_agencia_beneficiario:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 22,22 ]
+      type: A001
+    numero_conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 23,31 ]
+      type: N009
+    digito_verificador_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 32,32 ]
+      type: A001
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 33,40 ]
+      type: A008
+    identificacao_boleto_banco:
+      description: 'Identificação do Título no Banco'
+      pos: [ 41,53 ]
+      type: N013
+    codigo_carteira:
+      description: 'Código da Carteira'
+      pos: [ 54,54 ]
+      type: A001
+    numero_documento_cobranca:
+      description: 'Número do Documento de Cobrança'
+      pos: [ 55,69 ]
+      type: A015
+    data_vencimento_boleto:
+      description: 'Data de Vencimento do Título'
+      pos: [ 70,77 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_nominal_boleto:
+      description: 'Valor Nominal do Título'
+      pos: [ 78,92 ]
+      type: N013V2
+    numero_banco_cobrador_recebedor:
+      description: 'Número do Banco Cobrador/Recebedor'
+      pos: [ 93,95 ]
+      type: N003
+    agencia_cobradora_recebedora:
+      description: 'Agência Cobradora/Recebedora'
+      pos: [ 96,99 ]
+      type: N004
+    digito_agencia_beneficiario_2:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 100,100 ]
+      type: A001
+    identificacao_boleto_empresa:
+      description: 'Identificação do boleto na Empresa'
+      pos: [ 101,125 ]
+      type: A025
+    codigo_moeda:
+      description: 'Código da Moeda'
+      pos: [ 126,127 ]
+      type: A002
+    tipo_inscricao_pagador:
+      description: 'Tipo de Inscrição do Pagador'
+      pos: [ 128,128 ]
+      type: N001
+    numero_inscricao_pagador:
+      description: 'Número de Inscrição do Pagador'
+      pos: [ 129,143 ]
+      type: N015
+    nome_pagador:
+      description: 'Nome do Pagador'
+      pos: [ 144,183 ]
+      type: A040
+    conta_cobranca:
+      description: 'Conta Cobrança'
+      pos: [ 184,193 ]
+      type: A010
+    valor_tarifa_custas:
+      description: 'Valor da Tarifa/Custas'
+      pos: [ 194,208 ]
+      type: N013V2
+    identificacao_rejeicoes:
+      description: 'Identificação das Rejeições'
+      pos: [ 209,218 ]
+      type: A010
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 219,240 ]
+      type: A022
+  "3URET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'U'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento (ocorrência)'
+      pos: [ 16,17 ]
+      type: N002
+    juros_multa_encargos:
+      description: 'Juros/Multa/Encargos'
+      pos: [ 18,32 ]
+      type: N013V2
+    valor_desconto_concedido:
+      description: 'Valor do Desconto Concedido'
+      pos: [ 33,47 ]
+      type: N013V2
+    valor_abatimento_concedido_cancelado:
+      description: 'Valor do Abatimento Concedido/Cancelado'
+      pos: [ 48,62 ]
+      type: N013V2
+    valor_iof_recolhido:
+      description: 'Valor do IOF Recolhido'
+      pos: [ 63,77 ]
+      type: N013V2
+    valor_pago_pagador:
+      description: 'Valor Pago pelo Pagador'
+      pos: [ 78,92 ]
+      type: N013V2
+    valor_liquido_a_ser_creditado:
+      description: 'Valor Líquido a ser Creditado'
+      pos: [ 93,107 ]
+      type: N013V2
+    valor_outras_despesas:
+      description: 'Valor Outras Despesas'
+      pos: [ 108,122 ]
+      type: N013V2
+    valor_outros_creditos:
+      description: 'Valor Outros Créditos'
+      pos: [ 123,137 ]
+      type: N013V2
+    data_ocorrencia:
+      description: 'Data da Ocorrência'
+      pos: [ 138,145 ]
+      type: N008
+      convert: ddmmaaaa
+    data_efetivacao_credito:
+      description: 'Data da Efetivação do Crédito'
+      pos: [ 146,153 ]
+      type: N008
+      convert: ddmmaaaa
+    codigo_ocorrencia_pagador:
+      description: 'Código da Ocorrência do Pagador'
+      pos: [ 154,157 ]
+      type: N004
+    data_ocorrencia_pagador:
+      description: 'Data da Ocorrência do Pagador'
+      pos: [ 158,165 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_ocorrencia_pagador:
+      description: 'Valor da Ocorrência do Pagador'
+      pos: [ 166,180 ]
+      type: N013V2
+    complemento_ocorrencia_pagador:
+      description: 'Complemento da Ocorrência do Pagador'
+      pos: [ 181,210 ]
+      type: A030
+    codigo_banco_correspondente_compensacao:
+      description: 'Código do Banco Correspondente na Compensação'
+      pos: [ 211,213 ]
+      type: N003
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 214,240 ]
+      type: A027
+  "3Y03RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'Y'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento (ocorrência)'
+      pos: [ 16,17 ]
+      type: N002
+    identificacao_registro:
+      description: 'Identificação do Registro'
+      pos: [ 18,19 ]
+      type: A001
+      default: '03'
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 20,80 ]
+      type: A061
+    tipo_chave_pix_brancos:
+      description: 'Tipo de Chave PIX / Brancos'
+      pos: [ 81,81 ]
+      type: A001
+    chave_pix_url_qr_code:
+      description: 'Chave PIX / URL / QR Code'
+      pos: [ 82,158 ]
+      type: A077
+    codigo_identificacao_qr_code:
+      description: 'Código de Identificação do QR Code (TXID)'
+      pos: [ 159,193 ]
+      type: A035
+    reservado_uso_banco_3:
+      description: 'Reservado (uso Banco)'
+      pos: [ 194,240 ]
+      type: A047
+  "3Y04RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'Y'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento (ocorrência)'
+      pos: [ 16,17 ]
+      type: N002
+    identificacao_registro:
+      description: 'Identificação do Registro'
+      pos: [ 18,19 ]
+      type: A001
+      default: '04'
+    identificacao_cheque_1:
+      description: 'Identificação do Cheque 1'
+      pos: [ 20,53 ]
+      type: A034
+    identificacao_cheque_2:
+      description: 'Identificação do Cheque 2'
+      pos: [ 54,87 ]
+      type: A034
+    identificacao_cheque_3:
+      description: 'Identificação do Cheque 3'
+      pos: [ 88,121 ]
+      type: A034
+    identificacao_cheque_4:
+      description: 'Identificação do Cheque 4'
+      pos: [ 122,155 ]
+      type: A034
+    identificacao_cheque_5:
+      description: 'Identificação do Cheque 5'
+      pos: [ 156,189 ]
+      type: A034
+    identificacao_cheque_6:
+      description: 'Identificação do Cheque 6'
+      pos: [ 190,223 ]
+      type: A034
+    reservado:
+      description: 'Reservado'
+      pos: [ 224,240 ]
+      type: A017
+  "5RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '5'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 9,17 ]
+      type: A009
+    quantidade_registros_lote:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: N006
+    quantidade_boletos_cobranca_simples:
+      description: 'Quantidade de Boletos de Cobrança Simples'
+      pos: [ 24,29 ]
+      type: N006
+    valor_total_boletos_cobranca_simples:
+      description: 'Valor Total dos Boletos de Cobrança Simples'
+      pos: [ 30,46 ]
+      type: N015V2
+    quantidade_boletos_cobranca_vinculada:
+      description: 'Quantidade de Boletos de Cobrança Vinculada'
+      pos: [ 47,52 ]
+      type: N006
+    valor_total_boletos_cobranca_vinculada:
+      description: 'Valor Total dos Boletos de Cobrança Vinculada'
+      pos: [ 53,69 ]
+      type: N015V2
+    quantidade_boletos_cobranca_caucionada:
+      description: 'Quantidade de Boletos de Cobrança Caucionada'
+      pos: [ 70,75 ]
+      type: N006
+    valor_total_boletos_cobranca_caucionada:
+      description: 'Valor Total dos Boletos de Cobrança Caucionada'
+      pos: [ 76,92 ]
+      type: N015V2
+    quantidade_boletos_cobranca_descontada:
+      description: 'Quantidade de Boletos de Cobrança Descontada'
+      pos: [ 93,98 ]
+      type: N006
+    valor_total_boletos_cobranca_descontada:
+      description: 'Valor Total dos Boletos de Cobrança Descontada'
+      pos: [ 99,115 ]
+      type: N015V2
+    numero_aviso_lancamento:
+      description: 'Número do Aviso de Lançamento'
+      pos: [ 116,123 ]
+      type: N008
+    reservado:
+      description: 'Reservado'
+      pos: [ 124,240 ]
+      type: A117
+  "9RET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    numero_lote_remessa:
+      description: 'Número do Lote de Remessa'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '9'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 9,17 ]
+      type: A009
+    quantidade_lotes_arquivo:
+      description: 'Quantidade de Lotes do Arquivo'
+      pos: [ 18,23 ]
+      type: N006
+    quantidade_registros_arquivo:
+      description: 'Quantidade de Registros do Arquivo'
+      pos: [ 24,29 ]
+      type: N006
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 30,240 ]
+      type: A211
