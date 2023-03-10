@@ -1017,10 +1017,10 @@ register:
       pos: [ 4,7 ]
       type: N004
     tipo_registro:
-        description: 'Tipo de Registro'
-        pos: [ 8,8 ]
-        type: N001
-        default: '3'
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
     numero_sequencial_registro_lote:
       description: 'Número Sequencial do Registro no Lote'
       pos: [ 9,13 ]
@@ -1031,103 +1031,201 @@ register:
       type: A001
       default: 'T'
     reservado_uso_banco:
-        description: 'Reservado (uso Banco)'
-        pos: [ 15,15 ]
-        type: A001
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
     codigo_movimento:
-        description: 'Código de Movimento (ocorrência)'
-        pos: [ 16,17 ]
-        type: N002
+      description: 'Código de Movimento (ocorrência)'
+      pos: [ 16,17 ]
+      type: N002
     agencia_beneficiario:
-        description: 'Agência do Beneficiário'
-        pos: [ 18,21 ]
-        type: N004
+      description: 'Agência do Beneficiário'
+      pos: [ 18,21 ]
+      type: N004
     digito_agencia_beneficiario:
-        description: 'Dígito Verificador da Agência'
-        pos: [ 22,22 ]
-        type: A001
+      description: 'Dígito Verificador da Agência'
+      pos: [ 22,22 ]
+      type: A001
     numero_conta_corrente:
-        description: 'Número da Conta Corrente'
-        pos: [ 23,31 ]
-        type: N009
+      description: 'Número da Conta Corrente'
+      pos: [ 23,31 ]
+      type: N009
     digito_verificador_conta:
-        description: 'Dígito Verificador da Conta'
-        pos: [ 32,32 ]
-        type: A001
+      description: 'Dígito Verificador da Conta'
+      pos: [ 32,32 ]
+      type: A001
     reservado_uso_banco_2:
-        description: 'Reservado (uso Banco)'
-        pos: [ 33,40 ]
-        type: A008
+      description: 'Reservado (uso Banco)'
+      pos: [ 33,40 ]
+      type: A008
     identificacao_boleto_banco:
-        description: 'Identificação do Título no Banco'
-        pos: [ 41,53 ]
-        type: N013
+      description: 'Identificação do Título no Banco'
+      pos: [ 41,53 ]
+      type: N013
     codigo_carteira:
-        description: 'Código da Carteira'
-        pos: [ 54,54 ]
-        type: A001
+      description: 'Código da Carteira'
+      pos: [ 54,54 ]
+      type: A001
     numero_documento_cobranca:
-        description: 'Número do Documento de Cobrança'
-        pos: [ 55,69 ]
-        type: A015
+      description: 'Número do Documento de Cobrança'
+      pos: [ 55,69 ]
+      type: A015
     data_vencimento_boleto:
-        description: 'Data de Vencimento do Título'
-        pos: [ 70,77 ]
-        type: N008
-        convert: ddmmaaaa
+      description: 'Data de Vencimento do Título'
+      pos: [ 70,77 ]
+      type: N008
+      convert: ddmmaaaa
     valor_nominal_boleto:
-        description: 'Valor Nominal do Título'
-        pos: [ 78,92 ]
-        type: N013V2
+      description: 'Valor Nominal do Título'
+      pos: [ 78,92 ]
+      type: N013V2
     numero_banco_cobrador_recebedor:
-        description: 'Número do Banco Cobrador/Recebedor'
-        pos: [ 93,95 ]
-        type: N003
+      description: 'Número do Banco Cobrador/Recebedor'
+      pos: [ 93,95 ]
+      type: N003
     agencia_cobradora_recebedora:
-        description: 'Agência Cobradora/Recebedora'
-        pos: [ 96,99 ]
-        type: N004
+      description: 'Agência Cobradora/Recebedora'
+      pos: [ 96,99 ]
+      type: N004
     digito_agencia_beneficiario_2:
-        description: 'Dígito Verificador da Agência'
-        pos: [ 100,100 ]
-        type: A001
+      description: 'Dígito Verificador da Agência'
+      pos: [ 100,100 ]
+      type: A001
     identificacao_boleto_empresa:
-        description: 'Identificação do boleto na Empresa'
-        pos: [ 101,125 ]
-        type: A025
+      description: 'Identificação do boleto na Empresa'
+      pos: [ 101,125 ]
+      type: A025
     codigo_moeda:
-        description: 'Código da Moeda'
-        pos: [ 126,127 ]
-        type: A002
+      description: 'Código da Moeda'
+      pos: [ 126,127 ]
+      type: A002
     tipo_inscricao_pagador:
-        description: 'Tipo de Inscrição do Pagador'
-        pos: [ 128,128 ]
-        type: N001
+      description: 'Tipo de Inscrição do Pagador'
+      pos: [ 128,128 ]
+      type: N001
     numero_inscricao_pagador:
-        description: 'Número de Inscrição do Pagador'
-        pos: [ 129,143 ]
-        type: N015
+      description: 'Número de Inscrição do Pagador'
+      pos: [ 129,143 ]
+      type: N015
     nome_pagador:
-        description: 'Nome do Pagador'
-        pos: [ 144,183 ]
-        type: A040
+      description: 'Nome do Pagador'
+      pos: [ 144,183 ]
+      type: A040
     conta_cobranca:
-        description: 'Conta Cobrança'
-        pos: [ 184,193 ]
-        type: A010
+      description: 'Conta Cobrança'
+      pos: [ 184,193 ]
+      type: A010
     valor_tarifa_custas:
-        description: 'Valor da Tarifa/Custas'
-        pos: [ 194,208 ]
-        type: N013V2
+      description: 'Valor da Tarifa/Custas'
+      pos: [ 194,208 ]
+      type: N013V2
     identificacao_rejeicoes:
-        description: 'Identificação das Rejeições'
-        pos: [ 209,218 ]
-        type: A010
+      description: 'Identificação das Rejeições'
+      pos: [ 209,218 ]
+      type: A010
     reservado_uso_banco_3:
-        description: 'Reservado (uso Banco)'
-        pos: [ 219,240 ]
-        type: A022
-#3URET
+      description: 'Reservado (uso Banco)'
+      pos: [ 219,240 ]
+      type: A022
+  "3URET":
+    codigo_banco_compensacao:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: N003
+    lotes_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: N004
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: N001
+      default: '3'
+    numero_sequencial_registro_lote:
+      description: 'Número Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: N005
+    codigo_segmento_registro_detalhe:
+      description: 'Código Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: A001
+      default: 'U'
+    reservado_uso_banco:
+      description: 'Reservado (uso Banco)'
+      pos: [ 15,15 ]
+      type: A001
+    codigo_movimento:
+      description: 'Código de Movimento (ocorrência)'
+      pos: [ 16,17 ]
+      type: N002
+    juros_multa_encargos:
+      description: 'Juros/Multa/Encargos'
+      pos: [ 18,32 ]
+      type: N013V2
+    valor_desconto_concedido:
+      description: 'Valor do Desconto Concedido'
+      pos: [ 33,47 ]
+      type: N013V2
+    valor_abatimento_concedido_cancelado:
+      description: 'Valor do Abatimento Concedido/Cancelado'
+      pos: [ 48,62 ]
+      type: N013V2
+    valor_iof_recolhido:
+      description: 'Valor do IOF Recolhido'
+      pos: [ 63,77 ]
+      type: N013V2
+    valor_pago_pagador:
+      description: 'Valor Pago pelo Pagador'
+      pos: [ 78,92 ]
+      type: N013V2
+    valor_liquido_a_ser_creditado:
+      description: 'Valor Líquido a ser Creditado'
+      pos: [ 93,107 ]
+      type: N013V2
+    valor_outras_despesas:
+      description: 'Valor Outras Despesas'
+      pos: [ 108,122 ]
+      type: N013V2
+    valor_outros_creditos:
+      description: 'Valor Outros Créditos'
+      pos: [ 123,137 ]
+      type: N013V2
+    data_ocorrencia:
+      description: 'Data da Ocorrência'
+      pos: [ 138,145 ]
+      type: N008
+      convert: ddmmaaaa
+    data_efetivacao_credito:
+      description: 'Data da Efetivação do Crédito'
+      pos: [ 146,153 ]
+      type: N008
+      convert: ddmmaaaa
+    codigo_ocorrencia_pagador:
+      description: 'Código da Ocorrência do Pagador'
+      pos: [ 154,157 ]
+      type: N004
+    data_ocorrencia_pagador:
+      description: 'Data da Ocorrência do Pagador'
+      pos: [ 158,165 ]
+      type: N008
+      convert: ddmmaaaa
+    valor_ocorrencia_pagador:
+      description: 'Valor da Ocorrência do Pagador'
+      pos: [ 166,180 ]
+      type: N013V2
+    complemento_ocorrencia_pagador:
+      description: 'Complemento da Ocorrência do Pagador'
+      pos: [ 181,210 ]
+      type: A030
+    codigo_banco_correspondente_compensacao:
+      description: 'Código do Banco Correspondente na Compensação'
+      pos: [ 211,213 ]
+      type: N003
+    reservado_uso_banco_2:
+      description: 'Reservado (uso Banco)'
+      pos: [ 214,240 ]
+      type: A027
+
 #3Y03RET
 #3Y04RET
 #5RET
