@@ -1,0 +1,1041 @@
+provider: Itau
+service: 'Cobrança'
+version: Janeiro 2017
+layout: cobranca_240
+register:
+  "0":
+    codigo_banco:
+      description: 'Nro do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+      default: '0000'
+    tipo_registro:
+      description: 'Registro Header de Arquivo'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '0'
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 9,17 ]
+      type: X(09)
+      default: '         '
+    codigo_inscricao:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(01)
+      default: '1'
+    inscricao_numero:
+      description: 'Nro de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(14)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 33,52 ]
+      type: X(20)
+      default: '                    '
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 53,53 ]
+      type: 9(01)
+      default: '00000'
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 54,57 ]
+      type: 9(04)
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 58,58 ]
+      type: X(01)
+      default: ' '
+    zeros_2:
+      description: 'Complemento de Registro'
+      pos: [ 59,65 ]
+      type: 9(07)
+      default: '0000000'
+    conta:
+      description: 'Nro da Conta Corrente da Empresa'
+      pos: [ 66,70 ]
+      type: 9(05)
+    brancos_4:
+      description: 'Complemento de Registro'
+      pos: [ 71,71 ]
+      type: X(01)
+      default: ' '
+    dac:
+      description: 'Dígito de Auto-Conferência da Ag/Conta Empresa'
+      pos: [ 72,72 ]
+      type: 9(01)
+    nome_empresa:
+      description: 'Nome por extenso da Empresa Mãe'
+      pos: [ 73,102 ]
+      type: X(30)
+    nome_banco:
+      description: 'Nome por extenso do Banco Cobrador'
+      pos: [ 103,132 ]
+      type: X(30)
+      default: 'BANCO ITAU SA'
+    brancos_5:
+      description: 'Complemento de Registro'
+      pos: [ 133,142 ]
+      type: X(10)
+      default: '          '
+    codigo_arquivo:
+      description: 'Código Remessa/Retorno'
+      pos: [ 143,143 ]
+      type: 9(01)
+      default: '1'
+    data_geracao:
+      description: 'Data de Geração do Arquivo'
+      pos: [ 144,151 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    hora_geracao:
+      description: 'Hora de Geração do Arquivo'
+      pos: [ 152,157 ]
+      type: 9(06)
+      convert: hhmmss
+    numero_sequencial_arquivo_retorno:
+      description: 'Nro Seqüencial do Arquivo'
+      pos: [ 158,163 ]
+      type: 9(06)
+    layout_arquivo:
+      description: 'Nro da Versão do Layout do Arquivo'
+      pos: [ 164,166 ]
+      type: 9(03)
+      default: '040'
+    zeros_3:
+      description: 'Complemento de Registro'
+      pos: [ 167,171 ]
+      type: 9(05)
+      default: '00000'
+    brancos_6:
+      description: 'Complemento de Registro'
+      pos: [ 172,225 ]
+      type: X(54)
+    zeros_4:
+      description: 'Complemento de Registro'
+      pos: [ 226,228 ]
+      type: 9(03)
+      default: '00000'
+    brancos_7:
+      description: 'Complemento de Registro'
+      pos: [ 229,240 ]
+      type: X(12)
+  "1":
+    codigo_banco:
+      description: 'Nro do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+      default: '0001'
+    tipo_registro:
+      description: 'Registro Header de Lote'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '1'
+    operacao:
+      description: 'Tipo de Operação'
+      pos: [ 9,9 ]
+      type: X(01)
+    codigo_servico:
+      description: 'Identificação do Tipo de Serviço'
+      pos: [ 10,11 ]
+      type: 9(02)
+      default: '01'
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 12,13 ]
+      type: 9(02)
+      default: '00'
+    layout_lote:
+      description: 'Nro da Versão do Layout do Lote'
+      pos: [ 14,16 ]
+      type: 9(03)
+      default: '040'
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 17,17 ]
+      type: X(01)
+      default: ' '
+    codigo_inscricao:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(01)
+      default: '1'
+    inscricao_numero:
+      description: 'Nro de Inscrição da Empresa'
+      pos: [ 19,33 ]
+      type: 9(15)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 34,53 ]
+      type: X(20)
+      default: '                    '
+    zeros_2:
+      description: 'Complemento de Registro'
+      pos: [ 54,54 ]
+      type: 9(01)
+      default: '00000'
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 55,58 ]
+      type: 9(04)
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 59,59 ]
+      type: X(01)
+      default: ' '
+    zeros_3:
+      description: 'Complemento de Registro'
+      pos: [ 60,66 ]
+      type: 9(07)
+      default: '0000000'
+    conta:
+      description: 'Nro da Conta Corrente'
+      pos: [ 67,71 ]
+      type: 9(05)
+    brancos_4:
+      description: 'Complemento de Registro'
+      pos: [ 72,72 ]
+      type: X(01)
+      default: ' '
+    dac:
+      description: 'Dígito de Auto-Conferência da Ag/Conta'
+      pos: [ 73,73 ]
+      type: 9(01)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 74,103 ]
+      type: X(30)
+    brancos_5:
+      description: 'Complemento de Registro'
+      pos: [ 104,183 ]
+      type: X(80)
+      default: '                                        '
+    numero_sequencial_arquivo_retorno:
+      description: 'Nro Seqüencial do Arquivo'
+      pos: [ 184,191 ]
+      type: 9(08)
+    data_gravacao:
+      description: 'Data de Gravação do Arquivo'
+      pos: [ 192,199 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    data_credito:
+      description: 'Data do Crédito'
+      pos: [ 200,207 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    branoc_6:
+      description: 'Complemento de Registro'
+      pos: [ 208,240 ]
+      type: X(33)
+      default: '                                 '
+  "3P":
+    codigo_banco:
+      description: 'Nro do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+    tipo_registro:
+      description: 'Registro Header de Lote'
+      pos: [ 8,8 ]
+      type: 9(01)
+    numero_registro:
+      description: 'Nro Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(05)
+    segmento:
+      description: 'Cód. Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(01)
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 15,15 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Cód. de Ocorrência'
+      pos: [ 16,17 ]
+      type: 9(02)
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 18,18 ]
+      type: 9(01)
+      default: '0'
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 19,22 ]
+      type: 9(04)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 23,23 ]
+      type: X(01)
+    zeros_2:
+      description: 'Complemento de Registro'
+      pos: [ 24,30 ]
+      type: 9(07)
+      default: '0000000'
+    conta:
+      description: 'Nro da Conta Corrente'
+      pos: [ 31,35 ]
+      type: 9(05)
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 36,36 ]
+      type: X(01)
+    dac:
+      description: 'Dígito de Auto-Conferência da Ag/Conta'
+      pos: [ 37,37 ]
+      type: 9(01)
+    numero_carteira:
+      description: 'Nro da Carteira no Banco'
+      pos: [ 38,40 ]
+      type: 9(01)
+    nosso_numero:
+      description: 'Nro do Nosso Nro no Banco'
+      pos: [ 41,48 ]
+      type: 9(08)
+    dac_nosso_numero:
+      description: 'Dígito de Auto-Conferência do Nosso Nro'
+      pos: [ 49,49 ]
+      type: 9(01)
+    brancos_4:
+      description: 'Complemento de Registro'
+      pos: [ 50,57 ]
+      type: X(08)
+    zeros_3:
+      description: 'Complemento de Registro'
+      pos: [ 58,62 ]
+      type: 9(05)
+      default: '0'
+    numero_documento:
+      description: 'Nro do Documento de Cobrança (Dupl. NP...)'
+      pos: [ 63,72 ]
+      type: X(10)
+    brancos_5:
+      description: 'Complemento de Registro'
+      pos: [ 73,77 ]
+      type: X(05)
+    vencimento:
+      description: 'Data de Vencimento do Título'
+      pos: [ 78,85 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    valor_titulo:
+      description: 'Valor Nominal do Título'
+      pos: [ 86,100 ]
+      type: 9(13)V9(2)
+    agencia_cobradora:
+      description: 'Agência Cobradora'
+      pos: [ 101,105 ]
+      type: 9(05)
+    dac_agencia_cobradora:
+      description: 'Dígito de Auto-Conferência da Agência Cobradora'
+      pos: [ 106,106 ]
+      type: 9(01)
+    especie_titulo:
+      description: 'Espécie do Título'
+      pos: [ 107,108 ]
+      type: 9(02)
+    aceite:
+      description: 'Identificação de Título Aceito/Não Aceito'
+      pos: [ 109,109 ]
+      type: X(01)
+    data_emissao_titulo:
+      description: 'Data de Emissão do Título'
+      pos: [ 110,117 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    zeros_4:
+      description: 'Complemento de Registro'
+      pos: [ 118,118 ]
+      type: 9(01)
+      default: '0'
+    data_juros_mora:
+      description: 'Data Base P/Cobrança de Juros de Mora'
+      pos: [ 119,126 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    juros_1_dia:
+      description: 'Valor de mora por dia de atraso'
+      pos: [ 127,141 ]
+      type: 9(13)V9(2)
+    zeros_5:
+      description: 'Complemento de Registro'
+      pos: [ 142,142 ]
+      type: 9(01)
+      default: '0'
+    data_1_desconto:
+      description: 'Data Limite P/Concessão de Desconto 1'
+      pos: [ 143,150 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    valor_desconto_1:
+      description: 'Valor do Desconto 1'
+      pos: [ 151,165 ]
+      type: 9(13)V9(2)
+    valor_iof:
+      description: 'Valor do IOF a ser Recolhido'
+      pos: [ 166,180 ]
+      type: 9(13)V9(2)
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 181,195 ]
+      type: 9(13)V9(2)
+    uso_empresa:
+      description: 'Uso da Empresa'
+      pos: [ 196,220 ]
+      type: X(25)
+    codigo_negativacao_protesto:
+      description: 'Cód. para Negativação ou Protesto'
+      pos: [ 221,221 ]
+      type: 9(01)
+    prazo_negativacao_protesto:
+      description: 'Numero de dias para Negativação ou Protesto'
+      pos: [ 222,223 ]
+      type: 9(02)
+    codigo_baixa:
+      description: 'Código para Baixa'
+      pos: [ 224,224 ]
+      type: 9(01)
+    prazo_baixa:
+      description: 'Número de dias para Baixa'
+      pos: [ 225,226 ]
+      type: 9(02)
+    zeros_6:
+      description: 'Complemento de Registro'
+      pos: [ 227,239 ]
+      type: 9(13)
+    brancos_6:
+      description: 'Complemento de Registro'
+      pos: [ 240,240 ]
+      type: X(01)
+  "3Q":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+      default: '0000'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '3'
+    numero_registro:
+      description: 'Nro Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(05)
+    segmento:
+      description: 'Cód. Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(01)
+      default: 'Q'
+    brancos_1:
+      description: 'Complemento de Registro'
+      pos: [ 15,15 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Identificação de Ocorrência'
+      pos: [ 16,17 ]
+      type: 9(02)
+    codigo_inscricao:
+      description: 'Código de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(01)
+    inscricao_numero:
+      description: 'Nro de Inscrição da Empresa'
+      pos: [ 19,33 ]
+      type: 9(15)
+    nome:
+      description: 'Nome do Pagador'
+      pos: [ 34,63 ]
+      type: X(30)
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 64,73 ]
+      type: X(10)
+    logradouro:
+      description: 'Logradouro do Pagador'
+      pos: [ 74,113 ]
+      type: X(40)
+    bairro:
+      description: 'Bairro do Pagador'
+      pos: [ 114,128 ]
+      type: X(15)
+    cep:
+      description: 'CEP do Pagador'
+      pos: [ 129,133 ]
+      type: 9(05)
+    sufixo_cep:
+      description: 'Sufixo do CEP do Pagador'
+      pos: [ 134,136 ]
+      type: 9(03)
+    cidade:
+      description: 'Cidade do Pagador'
+      pos: [ 137,151 ]
+      type: X(15)
+    uf:
+      description: 'UF do Pagador'
+      pos: [ 152,153 ]
+      type: X(02)
+    codigo_inscricao_sacador:
+      description: 'Tipo de inscrição do Sacador/Avalista'
+      pos: [ 154,154 ]
+      type: 9(01)
+    inscricao_numero_sacador:
+      description: 'Nro de Inscrição do Sacador/Avalista'
+      pos: [ 155,169 ]
+      type: 9(15)
+    sacador_avalista:
+      description: 'Nome do Sacador/Avalista'
+      pos: [ 170,199 ]
+      type: X(30)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 200,209 ]
+      type: X(41)
+    zeros_1:
+      description: 'Complemento de Registro'
+      pos: [ 210,212 ]
+      type: 9(01)
+      default: '0'
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 213,240 ]
+      type: X(01)
+      default: ' '
+  "3R":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+      default: '0000'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '3'
+    numero_registro:
+      description: 'Nro Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(05)
+    segmento:
+      description: 'Cód. Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(01)
+      default: 'R'
+    brancos_1:
+      description: 'Complemento de Registro'
+      pos: [ 15,15 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Identificação de Ocorrência'
+      pos: [ 16,17 ]
+      type: 9(02)
+    zeros_1:
+      description: 'Complemento de Registro'
+      pos: [ 18,18 ]
+      type: 9(01)
+      default: '0'
+    data_2_desconto:
+      description: 'Data do 2º Desconto'
+      pos: [ 19,26 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    valor_2_desconto:
+      description: 'Valor/Percentual a ser Concedido'
+      pos: [ 27,41 ]
+      type: 9(13)V9(2)
+    zeros_2:
+      description: 'Complemento de Registro'
+      pos: [ 42,42 ]
+      type: 9(01)
+    data_3_desconto:
+      description: 'Data do 3º Desconto'
+      pos: [ 43,50 ]
+      type: 9(08)
+    valor_3_desconto:
+      description: 'Valor do 3 desconto a ser Concedido'
+      pos: [ 51,65 ]
+      type: 9(13)V9(2)
+    codigo_multa:
+      description: 'Código da Multa'
+      pos: [ 66,66 ]
+      type: 9(01)
+    data_multa:
+      description: 'Data da Multa'
+      pos: [ 67,74 ]
+      type: 9(08)
+    multa:
+      description: 'Valor/Percentual a ser Aplicado'
+      pos: [ 75,89 ]
+      type: 9(13)V9(2)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 90,99 ]
+      type: X(01)
+      default: ' '
+    informacao_pagador:
+      description: 'Informação ao Pagador - Conteúdo indicado será impresso no rodapé do campo instrucões'
+      pos: [ 100,139 ]
+      type: X(40)
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 140,199 ]
+      type: X(01)
+      default: ' '
+    codigo_ocorrencia_pagador:
+      description: 'Código da ocorrência do Pagador'
+      pos: [ 200,207 ]
+      type: 9(08)
+    zeros_3:
+      description: 'Complemento de Registro'
+      pos: [ 208,215 ]
+      type: 9(08)
+    brancos_4:
+      description: 'Complemento de Registro'
+      pos: [ 216,216 ]
+      type: X(01)
+    zeros_4:
+      description: 'Complemento de Registro'
+      pos: [ 217,228 ]
+      type: 9(12)
+    brancos_5:
+      description: 'Complemento de Registro'
+      pos: [ 229,230 ]
+      type: X(02)
+    zeros_5:
+      description: 'Complemento de Registro'
+      pos: [ 231,231 ]
+      type: 9(01)
+    brancos_6:
+      description: 'Complemento de Registro'
+      pos: [ 232,240 ]
+      type: X(09)
+  "3Y":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+      default: '9999'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '5'
+    numero_registro:
+      description: 'Nro Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(05)
+    segmento:
+      description: 'Cód. Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(01)
+      default: 'Y'
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 15,15 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Identificação de Ocorrência'
+      pos: [ 16,17 ]
+      type: 9(02)
+    codigo_registro_opcional:
+      description: 'Código do Registro Opcional'
+      pos: [ 18,19 ]
+      type: 9(02)
+      default: '01'
+    codigo_inscricao:
+      description: 'Código de Inscrição da Empresa'
+      pos: [ 20,20 ]
+      type: 9(01)
+    inscricao_numero:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 21,35 ]
+      type: 9(15)
+    nome_sacador_avalista:
+      description: 'Nome do Sacador/Avalista'
+      pos: [ 36,75 ]
+      type: X(40)
+    endereco_sacador:
+      description: 'Endereço do Sacador/Avalista'
+      pos: [ 76,115 ]
+      type: X(40)
+    bairro_sacador:
+      description: 'Bairro do Sacador/Avalista'
+      pos: [ 116,130 ]
+      type: X(15)
+    cep_sacador:
+      description: 'CEP do Sacador/Avalista'
+      pos: [ 131,138 ]
+      type: 9(08)
+    cidade_sacador:
+      description: 'Cidade do Sacador/Avalista'
+      pos: [ 139,153 ]
+      type: X(15)
+    uf_sacador:
+      description: 'UF do Sacador/Avalista'
+      pos: [ 154,155 ]
+      type: X(02)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 156,240 ]
+      type: X(85)
+      default: ' '
+  "3T":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '3'
+    numero_registro:
+      description: 'Nro Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(05)
+    segmento:
+      description: 'Cód. Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(01)
+      default: 'T'
+    boleto_dda:
+      description: 'Indicador de Boleto DDA'
+      pos: [ 15,15 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Identificação de Ocorrência'
+      pos: [ 16,17 ]
+      type: 9(02)
+    zeros_1:
+      description: 'Complemento de Registro'
+      pos: [ 18,18 ]
+      type: 9(01)
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 19,22 ]
+      type: 9(05)
+    zeros_2:
+      description: 'Complemento de Registro'
+      pos: [ 23,30 ]
+      type: 9(01)
+    conta:
+      description: 'Numero Conta Corrente da Empresa'
+      pos: [ 31,35 ]
+      type: 9(05)
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 36,36 ]
+      type: 9(01)
+    dac:
+      description: 'Dígito Verificador da Ag/Conta'
+      pos: [ 37,37 ]
+      type: 9(01)
+    numero_carteira:
+      description: 'Número da Carteira'
+      pos: [ 38,40 ]
+      type: 9(03)
+    nosso_numero:
+      description: 'Nosso Número'
+      pos: [ 41,48 ]
+      type: 9(08)
+    dac_nosso_numero:
+      description: 'Dígito Verificador do Nosso Número'
+      pos: [ 49,49 ]
+      type: 9(01)
+    brancos_1:
+      description: 'Complemento de Registro'
+      pos: [ 50,57 ]
+      type: X(08)
+    zeros_3:
+      description: 'Complemento de Registro'
+      pos: [ 58,58 ]
+      type: 9(01)
+    seu_numero:
+      description: 'Seu Número'
+      pos: [ 59,68 ]
+      type: X(10)
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 69,73 ]
+      type: X(05)
+    vencimento:
+      description: 'Data de Vencimento do Título'
+      pos: [ 74,81 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    valor_titulo:
+      description: 'Valor Nominal do Título'
+      pos: [ 82,96 ]
+      type: 9(13)V9(02)
+    zeros_4:
+      description: 'Complemento de Registro'
+      pos: [ 97,99 ]
+      type: 9(03)
+    agencia_cobradora:
+      description: 'Agência Cobradora'
+      pos: [ 100,104 ]
+      type: 9(05)
+    dac_agencia_cobradora:
+      description: 'Dígito Verificador da Agência Cobradora'
+      pos: [ 105,105 ]
+      type: 9(01)
+    uso_empresa:
+      description: 'Uso da Empresa'
+      pos: [ 106,130 ]
+      type: X(01)
+    zeros_5:
+      description: 'Complemento de Registro'
+      pos: [ 131,132 ]
+      type: 9(02)
+    codigo_inscricao:
+      description: 'Código de Inscrição do Pagador'
+      pos: [ 133,133 ]
+      type: 9(01)
+    inscricao_numero:
+      description: 'Número de Inscrição do Pagador'
+      pos: [ 134,148 ]
+      type: 9(15)
+    nome:
+      description: 'Nome do Pagador'
+      pos: [ 149,178 ]
+      type: X(30)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 179,188 ]
+      type: X(01)
+    zeros_6:
+      description: 'Complemento de Registro'
+      pos: [ 189,198 ]
+      type: 9(10)
+    tarifas_custas:
+      description: 'Tarifas/Custas'
+      pos: [ 199,213 ]
+      type: 9(13)V9(02)
+    erros:
+      description: 'Erros'
+      pos: [ 214,221 ]
+      type: 9(08)
+    codigo_liquidacao:
+      description: 'Código da Liquidação'
+      pos: [ 222,223 ]
+      type: X(02)
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 224,240 ]
+      type: X(17)
+  "3U":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+    registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '3'
+    numero_registro:
+      description: 'Nro Sequencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(05)
+    segmento:
+      description: 'Cód. Segmento do Registro Detalhe'
+      pos: [ 14,14 ]
+      type: X(01)
+      default: 'U'
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 15,15 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Identificação de Ocorrência'
+      pos: [ 16,17 ]
+      type: 9(02)
+    juros_multa:
+      description: 'Juros de Mora/Multa'
+      pos: [ 18,32 ]
+      type: 9(13)V9(02)
+    valor_desconto:
+      description: 'Valor do Desconto'
+      pos: [ 33,47 ]
+      type: 9(13)V9(02)
+    valor_abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 48,62 ]
+      type: 9(13)V9(02)
+    valor_iof:
+      description: 'Valor do IOF'
+      pos: [ 63,77 ]
+      type: 9(13)V9(02)
+    valor_creditado:
+      description: 'Valor Lançado em Conta Corrente'
+      pos: [ 78,92 ]
+      type: 9(13)V9(02)
+    valor_creditado_2:
+      description: 'Valor Lançado em Conta Corrente'
+      pos: [ 93,107 ]
+      type: 9(13)V9(02)
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 108,137 ]
+      type: 9(30)
+    data_ocorrencia:
+      description: 'Data da Ocorrência'
+      pos: [ 138,145 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    data_credito:
+      description: 'Data do Crédito'
+      pos: [ 146,153 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    ocorrencia_pagador:
+      description: 'Ocorrência do Pagador'
+      pos: [ 154,157 ]
+      type: 9(04)
+    data_ocorrencia_2:
+      description: 'Data da Ocorrência'
+      pos: [ 158,165 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    valor_ocorrencia:
+      description: 'Valor da Ocorrência'
+      pos: [ 166,180 ]
+      type: 9(13)V9(02)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 181,210 ]
+      type: X(60)
+    zeros_2:
+      description: 'Complemento de Registro'
+      pos: [ 211,233 ]
+      type: 9(23)
+    brancos_3:
+      description: 'Complemento de Registro'
+      pos: [ 234,240 ]
+      type: X(07)
+  "5":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '5'
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 9,17 ]
+      type: X(09)
+    quantidade_registros:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(06)
+    quantidade_cobranca_simples:
+      description: 'Quantidade de Títulos em Cobrança Simples'
+      pos: [ 24,29 ]
+      type: 9(06)
+    valor_cobranca_simples:
+      description: 'Valor Total dos Títulos em Cobrança Simples'
+      pos: [ 30,46 ]
+      type: 9(13)V9(02)
+    quantidade_cobranca_vinculada:
+      description: 'Quantidade de Títulos em Cobrança Vinculada'
+      pos: [ 47,52 ]
+      type: 9(06)
+    valor_cobranca_vinculada:
+      description: 'Valor Total dos Títulos em Cobrança Vinculada'
+      pos: [ 53,69 ]
+      type: 9(13)V9(02)
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 70,115 ]
+      type: 9(46)
+    aviso_bancario:
+      description: 'Aviso ao Favorecido'
+      pos: [ 116,123 ]
+      type: X(08)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 124,240 ]
+      type: X(117)
+  "9":
+    codigo_banco:
+      description: 'Numero do Banco na Câmara de Compensação'
+      pos: [ 1,3 ]
+      type: 9(03)
+      default: '341'
+    codigo_lote:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(04)
+    registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(01)
+      default: '9'
+    brancos:
+      description: 'Complemento de Registro'
+      pos: [ 9,17 ]
+      type: X(09)
+    total_lotes:
+      description: 'Quantidade de Lotes do Arquivo'
+      pos: [ 18,23 ]
+      type: 9(06)
+    total_registros:
+      description: 'Quantidade de Registros do Arquivo'
+      pos: [ 24,29 ]
+      type: 9(06)
+    zeros:
+      description: 'Complemento de Registro'
+      pos: [ 30,35 ]
+      type: 9(06)
+    brancos_2:
+      description: 'Complemento de Registro'
+      pos: [ 36,240 ]
+      type: X(205)
