@@ -4,7 +4,7 @@ from abc import abstractmethod
 from farialimer.parser.basic_parser import BasicParser
 
 
-class SantanderParser(BasicParser):
+class ItauParser(BasicParser):
     """Read, parse and write"""
 
     def __init__(self, provider):

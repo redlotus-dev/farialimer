@@ -13,6 +13,8 @@ from farialimer.utils.converters import (
     convert_yyyymmdd,
     convert_yyyy_mm_dd,
     convert_to_string,
+    convert_to_int,
+    febraban_convert_to_numeric,
 )
 from farialimer.utils.raise_exceptions import raise_error_for_nonascii_character
 
@@ -38,14 +40,27 @@ class BasicParser(ABC):
         """Given a line, returns the register type"""
 
     @staticmethod
-    @abstractmethod
     def data_mapper(datatype):
-        """Given a datatype, returns the respective converter"""
+        """for the spec datatype, return its respective converter"""
+        core_type = BasicParser.get_core_type(datatype)
+
+        _data_map = {
+            "X": convert_to_string,
+            "9": convert_to_int,
+            "9V": febraban_convert_to_numeric,
+        }
+        return _data_map[core_type]
 
     @staticmethod
-    @abstractmethod
     def get_core_type(datatype):
-        """Given a datatype, returns the respective converter"""
+        """regex that returns only characters or strings that start with 9"""
+        if "V" in datatype:
+            return "9V"
+        if "9" in datatype:
+            return "9"
+        if "X" in datatype:
+            return "X"
+        raise ValueError("Invalid datatype")
 
     def parse(self, content, spec):
         """Given a content and spec document, returns a list of dict with the parsed information"""

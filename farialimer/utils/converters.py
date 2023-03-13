@@ -65,7 +65,7 @@ def b3_convert_to_numeric(parse_obj: ParseObject):
     return numeric_value
 
 
-def santander_convert_to_numeric(parse_obj: ParseObject):
+def febraban_convert_to_numeric(parse_obj: ParseObject):
     """given a parse_obj, convert to a numerico value with its decimal places"""
     if not parse_obj.value or parse_obj.value.isspace():
         return None
