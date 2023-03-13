@@ -1,0 +1,70 @@
+provider: Itau
+service: 'Cobrança'
+version: Outbro 2022
+layout: cobranca_400
+register:
+  "0":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    operacao:
+      description: 'Operação'
+      pos: [ 2,2 ]
+      type: 9(01)
+    literal_remessa:
+      description: 'Literal de remessa'
+      pos: [ 3,9 ]
+      type: X(07)
+    codigo_servico:
+      description: 'Código do serviço'
+      pos: [ 10,11 ]
+      type: 9(02)
+    literal_servico:
+      description: 'Literal de serviço'
+      pos: [ 12,26 ]
+      type: X(15)
+    agencia:
+      description: 'Agência'
+      pos: [ 27,30 ]
+      type: 9(04)
+    zeros:
+      description: 'Zeros'
+      pos: [ 31,32 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 33,37 ]
+      type: 9(05)
+    dac:
+      description: 'DAC'
+      pos: [ 38,38 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 39,46 ]
+      type: X(08)
+    nome_empresa:
+      description: 'Nome da empresa'
+      pos: [ 47,76 ]
+      type: X(30)
+    codigo_banco:
+      description: 'Código do banco'
+      pos: [ 77,79 ]
+      type: 9(03)
+    nome_banco:
+      description: 'Nome do banco'
+      pos: [ 80,94 ]
+      type: X(15)
+    data_geracao:
+      description: 'Data de geração do arquivo'
+      pos: [ 95,100 ]
+      type: 9(06)
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 101,394 ]
+      type: X(294)
+    numero_sequencial:
+      description: 'Número sequencial do registro'
+      pos: [ 395,400 ]
+      type: 9(06)
