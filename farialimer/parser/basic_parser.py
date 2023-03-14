@@ -84,16 +84,21 @@ class BasicParser(ABC):
             for key, values in yml["register"].items():
                 layout_list = []
                 for item, prop in values.items():
-                    layout_list.append(
-                        Field(
-                            item,
-                            prop["description"],
-                            prop["type"],
-                            prop.get("convert"),
-                            prop["pos"][0],
-                            prop["pos"][1],
+                    try:
+                        layout_list.append(
+                            Field(
+                                item,
+                                prop["description"],
+                                prop["type"],
+                                prop.get("convert"),
+                                prop["pos"][0],
+                                prop["pos"][1],
+                            )
                         )
-                    )
+                    except KeyError as err:
+                        raise KeyError(
+                            f"Error in {filepath} in {key} {item} - {prop['description']}"
+                        ) from err
                 document[key] = layout_list
         return document
 
