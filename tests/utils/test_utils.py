@@ -11,6 +11,7 @@ from farialimer.utils.converters import (
     convert_yyyy_mm_dd,
     b3_convert_to_numeric,
     convert_to_int,
+    febraban_convert_to_numeric,
 )
 
 
@@ -49,6 +50,22 @@ def test_b3_convert_to_numeric(value, datatype, expected):
     """Test given a raw numeric string and datatype, returns the correct decimal value"""
     base = ParseObject(value, "", datatype)
     result = b3_convert_to_numeric(base)
+
+    assert result == expected
+
+
+@pytest.mark.parametrize(
+    "value, datatype, expected",
+    [
+        ("0000000028701475025900000000", "9(18)V10", Decimal("2870147502.59")),
+        ("                            ", "9(18)V10", None),
+        ("", "9(3)", None),
+    ],
+)
+def test_febraban_convert_to_numeric(value, datatype, expected):
+    """Test given a raw numeric string and datatype, returns the correct decimal value"""
+    base = ParseObject(value, "", datatype)
+    result = febraban_convert_to_numeric(base)
 
     assert result == expected
 

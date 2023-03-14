@@ -2,7 +2,7 @@
 
 import pytest
 
-from farialimer.parser.b3 import B3Parser as Parser
+from farialimer.parser.b3.b3 import B3Parser as Parser
 from tests.helpers import _get_testfiles
 
 

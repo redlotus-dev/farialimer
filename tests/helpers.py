@@ -4,7 +4,7 @@ import os
 from collections import namedtuple
 from os import walk
 
-from farialimer.parser.b3 import B3Parser as Parser
+from farialimer.parser.b3.b3 import B3Parser as Parser
 
 SampleSuit = namedtuple("SampleSuit", "provider spec path")
 SampleSpec = namedtuple("SampleSpec", "provider spec")
