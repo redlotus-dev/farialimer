@@ -1,7 +1,7 @@
 """B3 specific Specs tests"""
 
 import pytest
-from farialimer.parser.b3 import B3Parser
+from farialimer.parser.b3.b3 import B3Parser
 
 
 @pytest.mark.parametrize(

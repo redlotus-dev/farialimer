@@ -4,7 +4,7 @@ import datetime
 from collections import OrderedDict
 from decimal import Decimal
 
-from farialimer.parser.b3 import B3Parser as Parser
+from farialimer.parser.b3.b3 import B3Parser as Parser
 
 
 def test_parse_imbarq014():

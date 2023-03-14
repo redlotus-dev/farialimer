@@ -79,27 +79,32 @@ class BasicParser(ABC):
         filepath = self.spec_dict[spec]
         with open(filepath, encoding="utf-8") as yinput:
             yml = yaml.safe_load(yinput)
-            document = {}
 
-            for key, values in yml["register"].items():
-                layout_list = []
-                for item, prop in values.items():
-                    try:
-                        layout_list.append(
-                            Field(
-                                item,
-                                prop["description"],
-                                prop["type"],
-                                prop.get("convert"),
-                                prop["pos"][0],
-                                prop["pos"][1],
-                            )
+            return self.parse_spec(filepath, yml)
+
+    @staticmethod
+    def parse_spec(filepath, yml):
+        """Given a spec yaml, returns namedtuple list with its props"""
+        document = {}
+        for key, values in yml["register"].items():
+            layout_list = []
+            for item, prop in values.items():
+                try:
+                    layout_list.append(
+                        Field(
+                            item,
+                            prop["description"],
+                            prop["type"],
+                            prop.get("convert"),
+                            prop["pos"][0],
+                            prop["pos"][1],
                         )
-                    except KeyError as err:
-                        raise KeyError(
-                            f"Error in {filepath} in {key} {item} - {prop['description']}"
-                        ) from err
-                document[key] = layout_list
+                    )
+                except KeyError as err:
+                    raise KeyError(
+                        f"Error in {filepath} in {key} {item} - {prop['description']}"
+                    ) from err
+            document[key] = layout_list
         return document
 
     def parse_line(self, line, fields: List[Field]):
