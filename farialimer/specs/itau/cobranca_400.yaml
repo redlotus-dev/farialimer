@@ -60,10 +60,1342 @@ register:
       description: 'Data de geração do arquivo'
       pos: [ 95,100 ]
       type: 9(06)
+      convert: ddmmaa
     brancos_2:
       description: 'Brancos'
       pos: [ 101,394 ]
       type: X(294)
+    numero_sequencial:
+      description: 'Número sequencial do registro'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "1REM":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_inscricao:
+      description: 'Código de inscrição'
+      pos: [ 2,3 ]
+      type: 9(02)
+    numero_inscricao:
+      description: 'Número de inscrição'
+      pos: [ 4,17 ]
+      type: 9(14)
+    agencia:
+      description: 'Agência'
+      pos: [ 18,21 ]
+      type: 9(04)
+    zeros:
+      description: 'Zeros'
+      pos: [ 22,23 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 24,28 ]
+      type: 9(05)
+    dac:
+      description: 'DAC'
+      pos: [ 29,29 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 30,33 ]
+      type: X(08)
+    instrucao_alegacao:
+      description: 'Instrução de alegação'
+      pos: [ 34,37 ]
+      type: 9(04)
+    uso_empresa:
+      description: 'Uso da empresa'
+      pos: [ 38,62 ]
+      type: X(25)
+    nosso_numero:
+      description: 'Nosso número'
+      pos: [ 63,70 ]
+      type: 9(08)
+    quantidade_moeda:
+      description: 'Quantidade de moeda'
+      pos: [ 71,83 ]
+      type: 9(08)V9(5)
+    numero_carteira:
+      description: 'Número da carteira'
+      pos: [ 84,86 ]
+      type: 9(01)
+    uso_banco:
+      description: 'Uso do banco'
+      pos: [ 87,107 ]
+      type: X(21)
+    carteira:
+      description: 'Carteira'
+      pos: [ 108,108 ]
+      type: 9(01)
+    codigo_ocorrencia:
+      description: 'Código de ocorrência'
+      pos: [ 109,110 ]
+      type: 9(02)
+    numero_documento:
+      description: 'Número do documento'
+      pos: [ 111,120 ]
+      type: X(10)
+    vencimento:
+      description: 'Vencimento'
+      pos: [ 121,126 ]
+      type: 9(06)
+      convert: ddmmaa
+    valor_boleto:
+      description: 'Valor do boleto'
+      pos: [ 127,139 ]
+      type: 9(11)V9(2)
+    codigo_banco:
+      description: 'Código do banco'
+      pos: [ 140,142 ]
+      type: 9(03)
+    agencia_cobradora:
+      description: 'Agência cobradora'
+      pos: [ 143,147 ]
+      type: 9(05)
+    especie:
+      description: 'Espécie'
+      pos: [ 148,149 ]
+      type: X(02)
+    aceite:
+      description: 'Aceite'
+      pos: [ 150,150 ]
+      type: X(01)
+    data_emissao:
+      description: 'Data de emissão'
+      pos: [ 151,156 ]
+      type: 9(06)
+      convert: ddmmaa
+    instrucao_1:
+      description: 'Instrução 1'
+      pos: [ 157,158 ]
+      type: X(02)
+    instrucao_2:
+      description: 'Instrução 2'
+      pos: [ 159,160 ]
+      type: X(02)
+    juros_1_dia:
+      description: 'Juros de 1 dia'
+      pos: [ 161,173 ]
+      type: 9(11)V9(2)
+    desconto_ate:
+      description: 'Desconto até'
+      pos: [ 174,179 ]
+      type: 9(06)
+      convert: ddmmaa
+    valor_desconto:
+      description: 'Valor do desconto'
+      pos: [ 180,192 ]
+      type: 9(11)V9(2)
+    valor_iof:
+      description: 'Valor do IOF'
+      pos: [ 193,205 ]
+      type: 9(11)V9(2)
+    abatimento:
+      description: 'Abatimento'
+      pos: [ 206,218 ]
+      type: 9(11)V9(2)
+    codigo_inscricao_2:
+      description: 'Código de inscrição'
+      pos: [ 219,220 ]
+      type: 9(02)
+    numero_inscricao_2:
+      description: 'Número de inscrição'
+      pos: [ 221,234 ]
+      type: 9(14)
+    nome:
+      description: 'Nome'
+      pos: [ 235,264 ]
+      type: X(30)
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 265,274 ]
+      type: X(10)
+    logradouro:
+      description: 'Logradouro'
+      pos: [ 275,314 ]
+      type: X(40)
+    bairro:
+      description: 'Bairro'
+      pos: [ 315,326 ]
+      type: X(12)
+    cep:
+      description: 'CEP'
+      pos: [ 327,334 ]
+      type: 9(08)
+    cidade:
+      description: 'Cidade'
+      pos: [ 335,349 ]
+      type: X(15)
+    estado:
+      description: 'Estado'
+      pos: [ 350,351 ]
+      type: X(02)
+    beneficiario_final:
+      description: 'Beneficiário final'
+      pos: [ 352,381 ]
+      type: X(30)
+    branca_3:
+      description: 'Branca'
+      pos: [ 382,385 ]
+      type: X(04)
+    data_mora:
+      description: 'Data de mora'
+      pos: [ 386,391 ]
+      type: 9(06)
+      convert: ddmmaa
+    prazo:
+      description: 'Prazo'
+      pos: [ 392,393 ]
+      type: 9(02)
+    brancos_4:
+      description: 'Brancos'
+      pos: [ 394,394 ]
+      type: X(14)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "2REM":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_multa:
+      description: 'Código da multa'
+      pos: [ 2,2 ]
+      type: 9(01)
+    data_multa:
+      description: 'Data da multa'
+      pos: [ 3,10 ]
+      type: 9(08)
+      convert: ddmmaaaa
+    multa:
+      description: 'Multa'
+      pos: [ 11,23 ]
+      type: 9(11)V9(2)
+    brancos:
+      description: 'Brancos'
+      pos: [ 24,394 ]
+      type: X(371)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "3REM":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    chave_pix:
+      description: 'Chave PIX'
+      pos: [ 2,78 ]
+      type: X(77)
+    id_location:
+      description: 'ID Location'
+      pos: [ 79,142 ]
+      type: X(64)
+    codigo_tipo_cobranca_qr_code:
+      description: 'Código do tipo de cobrança QR Code'
+      pos: [ 143,144 ]
+      type: X(02)
+    brancos:
+      description: 'Brancos'
+      pos: [ 145,394 ]
+      type: X(250)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "4REM":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_inscricao:
+      description: 'Código de inscrição'
+      pos: [ 2,3 ]
+      type: 9(02)
+    numero_inscricao:
+      description: 'Número de inscrição'
+      pos: [ 4,17 ]
+      type: 9(14)
+    agencia:
+      description: 'Agência'
+      pos: [ 18,21 ]
+      type: 9(05)
+    zeros:
+      description: 'Zeros'
+      pos: [ 22,23 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 24,28 ]
+      type: 9(05)
+    dac:
+      description: 'DAC'
+      pos: [ 29,29 ]
+      type: 9(01)
+    numero_carteira:
+      description: 'Número da carteira'
+      pos: [ 30,32 ]
+      type: 9(01)
+    nosso_numero:
+      description: 'Nosso número'
+      pos: [ 33,40 ]
+      type: 9(08)
+    dac_nosso_numero:
+      description: 'DAC do nosso número'
+      pos: [ 41,41 ]
+      type: 9(01)
+    sequencia:
+      description: 'Sequência'
+      pos: [ 42,43 ]
+      type: 9(02)
+    agencia_01:
+      description: 'Agência'
+      pos: [ 44,47 ]
+      type: 9(05)
+    conta_01:
+      description: 'Conta'
+      pos: [ 48,54 ]
+      type: 9(07)
+    dac_01:
+      description: 'DAC'
+      pos: [ 55,55 ]
+      type: 9(01)
+    valor_01:
+      description: 'Valor'
+      pos: [ 56,68 ]
+      type: 9(11)V9(2)
+    agencia_02:
+      description: 'Agência'
+      pos: [ 69,72 ]
+      type: 9(05)
+    conta_02:
+      description: 'Conta'
+      pos: [ 73,79 ]
+      type: 9(07)
+    dac_02:
+      description: 'DAC'
+      pos: [ 80,80 ]
+      type: 9(01)
+    valor_02:
+      description: 'Valor'
+      pos: [ 81,93 ]
+      type: 9(11)V9(2)
+    agencia_03:
+      description: 'Agência'
+      pos: [ 94,97 ]
+      type: 9(05)
+    conta_03:
+      description: 'Conta'
+      pos: [ 98,104 ]
+      type: 9(07)
+    dac_03:
+      description: 'DAC'
+      pos: [ 105,105 ]
+      type: 9(01)
+    valor_03:
+      description: 'Valor'
+      pos: [ 106,118 ]
+      type: 9(11)V9(2)
+    agencia_04:
+      description: 'Agência'
+      pos: [ 119,122 ]
+      type: 9(05)
+    conta_04:
+      description: 'Conta'
+      pos: [ 123,129 ]
+      type: 9(07)
+    dac_04:
+      description: 'DAC'
+      pos: [ 130,130 ]
+      type: 9(01)
+    valor_04:
+      description: 'Valor'
+      pos: [ 131,143 ]
+      type: 9(11)V9(2)
+    agencia_05:
+      description: 'Agência'
+      pos: [ 144,147 ]
+      type: 9(05)
+    conta_05:
+      description: 'Conta'
+      pos: [ 148,154 ]
+      type: 9(07)
+    dac_05:
+      description: 'DAC'
+      pos: [ 155,155 ]
+      type: 9(01)
+    valor_05:
+      description: 'Valor'
+      pos: [ 156,168 ]
+      type: 9(11)V9(2)
+    agencia_06:
+      description: 'Agência'
+      pos: [ 169,172 ]
+      type: 9(05)
+    conta_06:
+      description: 'Conta'
+      pos: [ 173,179 ]
+      type: 9(07)
+    dac_06:
+      description: 'DAC'
+      pos: [ 180,180 ]
+      type: 9(01)
+    valor_06:
+      description: 'Valor'
+      pos: [ 181,193 ]
+      type: 9(11)V9(2)
+    agencia_07:
+      description: 'Agência'
+      pos: [ 194,197 ]
+      type: 9(05)
+    conta_07:
+      description: 'Conta'
+      pos: [ 198,204 ]
+      type: 9(07)
+    dac_07:
+      description: 'DAC'
+      pos: [ 205,205 ]
+      type: 9(01)
+    valor_07:
+      description: 'Valor'
+      pos: [ 206,218 ]
+      type: 9(11)V9(2)
+    agencia_08:
+      description: 'Agência'
+      pos: [ 219,222 ]
+      type: 9(05)
+    conta_08:
+      description: 'Conta'
+      pos: [ 223,229 ]
+      type: 9(07)
+    dac_08:
+      description: 'DAC'
+      pos: [ 230,230 ]
+      type: 9(01)
+    valor_08:
+      description: 'Valor'
+      pos: [ 231,243 ]
+      type: 9(11)V9(2)
+    agencia_09:
+      description: 'Agência'
+      pos: [ 244,247 ]
+      type: 9(05)
+    conta_09:
+      description: 'Conta'
+      pos: [ 248,254 ]
+      type: 9(07)
+    dac_09:
+      description: 'DAC'
+      pos: [ 255,255 ]
+      type: 9(01)
+    valor_09:
+      description: 'Valor'
+      pos: [ 256,268 ]
+      type: 9(11)V9(2)
+    agencia_10:
+      description: 'Agência'
+      pos: [ 269,272 ]
+      type: 9(05)
+    conta_10:
+      description: 'Conta'
+      pos: [ 273,279 ]
+      type: 9(07)
+    dac_10:
+      description: 'DAC'
+      pos: [ 280,280 ]
+      type: 9(01)
+    valor_10:
+      description: 'Valor'
+      pos: [ 281,293 ]
+      type: 9(11)V9(2)
+    agencia_11:
+      description: 'Agência'
+      pos: [ 294,297 ]
+      type: 9(05)
+    conta_11:
+      description: 'Conta'
+      pos: [ 298,304 ]
+      type: 9(07)
+    dac_11:
+      description: 'DAC'
+      pos: [ 305,305 ]
+      type: 9(01)
+    valor_11:
+      description: 'Valor'
+      pos: [ 306,318 ]
+      type: 9(11)V9(2)
+    agencia_12:
+      description: 'Agência'
+      pos: [ 319,322 ]
+      type: 9(05)
+    conta_12:
+      description: 'Conta'
+      pos: [ 323,329 ]
+      type: 9(07)
+    dac_12:
+      description: 'DAC'
+      pos: [ 330,330 ]
+      type: 9(01)
+    valor_12:
+      description: 'Valor'
+      pos: [ 331,343 ]
+      type: 9(11)V9(2)
+    agencia_13:
+      description: 'Agência'
+      pos: [ 344,347 ]
+      type: 9(05)
+    conta_13:
+      description: 'Conta'
+      pos: [ 348,354 ]
+      type: 9(07)
+    dac_13:
+      description: 'DAC'
+      pos: [ 355,355 ]
+      type: 9(01)
+    valor_13:
+      description: 'Valor'
+      pos: [ 356,368 ]
+      type: 9(11)V9(2)
+    agencia_14:
+      description: 'Agência'
+      pos: [ 369,372 ]
+      type: 9(05)
+    conta_14:
+      description: 'Conta'
+      pos: [ 373,379 ]
+      type: 9(07)
+    dac_14:
+      description: 'DAC'
+      pos: [ 380,380 ]
+      type: 9(01)
+    valor_14:
+      description: 'Valor'
+      pos: [ 381,393 ]
+      type: 9(11)V9(2)
+    tipo_valor:
+      description: 'Tipo de valor'
+      pos: [ 394,394 ]
+      type: 9(01)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "5REM":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    endereco_email:
+      description: 'Endereço de e-mail'
+      pos: [ 2,121 ]
+      type: X(120)
+    codigo_inscricao:
+      description: 'Código de inscrição'
+      pos: [ 122,123 ]
+      type: 9(02)
+    numero_inscricao:
+      description: 'Número de inscrição'
+      pos: [ 124,137 ]
+      type: 9(14)
+    logradouro:
+      description: 'Logradouro'
+      pos: [ 138,177 ]
+      type: X(40)
+    bairro:
+      description: 'Bairro'
+      pos: [ 178,189 ]
+      type: X(12)
+    cep:
+      description: 'CEP'
+      pos: [ 190,197 ]
+      type: 9(08)
+    cidade:
+      description: 'Cidade'
+      pos: [ 198,212 ]
+      type: X(15)
+    estado:
+      description: 'Estado'
+      pos: [ 213,214 ]
+      type: X(02)
+    brancos:
+      description: 'Brancos'
+      pos: [ 215,394 ]
+      type: X(180)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "9REM":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 2,394 ]
+      type: X(393)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "0RET":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_retorno:
+      description: 'Código de retorno'
+      pos: [ 2,2 ]
+      type: 9(01)
+    literal_retorno:
+      description: 'Literal de retorno'
+      pos: [ 3,9 ]
+      type: X(07)
+    codigo_servico:
+      description: 'Código de serviço'
+      pos: [ 10,11 ]
+      type: 9(02)
+    literal_servico:
+      description: 'Literal de serviço'
+      pos: [ 12,26 ]
+      type: X(15)
+    agencia:
+      description: 'Agência'
+      pos: [ 27,30 ]
+      type: 9(04)
+    zeros:
+      description: 'Zeros'
+      pos: [ 31,32 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 33,37 ]
+      type: 9(05)
+    dac:
+      description: 'DAC'
+      pos: [ 38,38 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 39,46 ]
+      type: X(08)
+    nome_empresa:
+      description: 'Nome da empresa'
+      pos: [ 47,76 ]
+      type: X(30)
+    codigo_banco:
+      description: 'Código do banco'
+      pos: [ 77,79 ]
+      type: 9(03)
+    nome_banco:
+      description: 'Nome do banco'
+      pos: [ 80,94 ]
+      type: X(15)
+    data_geracao:
+      description: 'Data de geração'
+      pos: [ 95,100 ]
+      type: 9(06)
+      convert: ddmmaa
+    densidade:
+      description: 'Densidade'
+      pos: [ 101,105 ]
+      type: 9(05)
+    unidade_densidade:
+      description: 'Unidade de densidade'
+      pos: [ 106,108 ]
+      type: X(03)
+    numero_sequencial_arquivo_retorno:
+      description: 'Número sequencial do arquivo de retorno'
+      pos: [ 109,113 ]
+      type: 9(05)
+    data_credito:
+      description: 'Data de crédito dos lançamentos'
+      pos: [ 114,119 ]
+      type: 9(06)
+      convert: ddmmaa
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 120,394 ]
+      type: X(275)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "1RET":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_inscricao:
+      description: 'Código de inscrição'
+      pos: [ 2,3 ]
+      type: 9(02)
+    numero_inscricao:
+      description: 'Número de inscrição'
+      pos: [ 4,17 ]
+      type: 9(14)
+    agencia:
+      description: 'Agência'
+      pos: [ 18,21 ]
+      type: 9(04)
+    zeros:
+      description: [ 'Zeros', 'Zeros' ]
+      pos: [ 22,23 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 24,28 ]
+      type: 9(05)
+    dac:
+      description: 'DAC'
+      pos: [ 29,29 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 30,37 ]
+      type: X(08)
+    uso_empresa:
+      description: 'Uso da empresa'
+      pos: [ 38,62 ]
+      type: X(25)
+    nosso_numero:
+      description: 'Nosso número'
+      pos: [ 63,70 ]
+      type: 9(08)
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 71,82 ]
+      type: X(12)
+    carteira:
+      description: 'Carteira'
+      pos: [ 83,85 ]
+      type: 9(03)
+    nosso_numero_2:
+      description: 'Nosso número'
+      pos: [ 86,93 ]
+      type: 9(09)
+    dac_nosso_numero:
+      description: 'DAC do nosso número'
+      pos: [ 94,94 ]
+      type: 9(01)
+    brancos_3:
+      description: 'Brancos'
+      pos: [ 95,107 ]
+      type: X(13)
+    carteira_2:
+      description: 'Carteira'
+      pos: [ 108,108 ]
+      type: X(01)
+    codigo_ocorrencia:
+      description: 'Código de ocorrência'
+      pos: [ 109,110 ]
+      type: 9(02)
+    data_ocorrencia:
+      description: 'Data da ocorrência'
+      pos: [ 111,116 ]
+      type: 9(06)
+      convert: ddmmaa
+    numero_documento:
+      description: 'Número do documento'
+      pos: [ 117,126 ]
+      type: X(10)
+    nosso_numero_3:
+      description: 'Nosso número'
+      pos: [ 127,134 ]
+      type: 9(08)
+    brancos_4:
+      description: 'Brancos'
+      pos: [ 135,146 ]
+      type: X(12)
+    vencimento:
+      description: 'Vencimento'
+      pos: [ 147,152 ]
+      type: 9(06)
+      convert: ddmmaa
+    valor_boleto:
+      description: 'Valor do boleto'
+      pos: [ 153,165 ]
+      type: 9(11)V9(2)
+    codigo_banco:
+      description: 'Código do banco'
+      pos: [ 166,168 ]
+      type: 9(03)
+    agencia_cobradora:
+      description: 'Agência cobradora'
+      pos: [ 169,172 ]
+      type: 9(04)
+    dac_agencia_cobradora:
+      description: 'DAC da agência cobradora'
+      pos: [ 173,173 ]
+      type: 9(01)
+    especie:
+      description: 'Espécie'
+      pos: [ 174,175 ]
+      type: X(02)
+    tarifa_cobranca:
+      description: 'Tarifa de cobrança'
+      pos: [ 176,188 ]
+      type: 9(11)V9(2)
+    brancos_5:
+      description: 'Brancos'
+      pos: [ 189,214 ]
+      type: X(02)
+    valor_iof:
+      description: 'Valor do IOF'
+      pos: [ 215,227 ]
+      type: 9(11)V9(2)
+    valor_abatimento:
+      description: 'Valor do abatimento'
+      pos: [ 228,240 ]
+      type: 9(11)V9(2)
+    descontos:
+      description: 'Descontos'
+      pos: [ 241,253 ]
+      type: 9(11)V9(2)
+    valor_principal:
+      description: 'Valor principal'
+      pos: [ 254,266 ]
+      type: 9(11)V9(2)
+    juros_mora_multa:
+      description: 'Juros de mora e multa'
+      pos: [ 267,279 ]
+      type: 9(11)V9(2)
+    outros_creditos:
+      description: 'Outros créditos'
+      pos: [ 280,292 ]
+      type: 9(11)V9(2)
+    boleto_dda:
+      description: 'Boleto DDA'
+      pos: [ 293,293 ]
+      type: X(01)
+    brancos_6:
+      description: 'Brancos'
+      pos: [ 294,295 ]
+      type: X(02)
+    data_credito:
+      description: 'Data de crédito'
+      pos: [ 296,301 ]
+      type: 9(06)
+      convert: ddmmaa
+    instrucao_cancelada:
+      description: 'Instrução cancelada'
+      pos: [ 302,305 ]
+      type: 9(04)
+    brancos_7:
+      description: 'Brancos'
+      pos: [ 306,311 ]
+      type: X(21)
+    zeros_2:
+      description: [ 'Zeros', 'Zeros' ]
+      pos: [ 312,324 ]
+      type: 9(02)
+    nome_pagador:
+      description: 'Nome do pagador'
+      pos: [ 325,354 ]
+      type: X(30)
+    brancos_8:
+      description: 'Brancos'
+      pos: [ 355,377 ]
+      type: X(40)
+    erros_mensagem_informativa:
+      description: 'Erros e mensagem informativa'
+      pos: [ 378,385 ]
+      type: X(17)
+    brancos_9:
+      description: 'Brancos'
+      pos: [ 386,392 ]
+      type: X(07)
+    codigo_liquidacao:
+      description: 'Código da liquidação'
+      pos: [ 393,394 ]
+      type: X(02)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "1CHEQUERET":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_inscricao:
+      description: 'Código de inscrição'
+      pos: [ 2,3 ]
+      type: 9(02)
+    numero_inscricao:
+      description: 'Número de inscrição'
+      pos: [ 4,17 ]
+      type: 9(14)
+    agencia:
+      description: 'Agência'
+      pos: [ 18,21 ]
+      type: 9(04)
+    zeros:
+      description: 'Zeros'
+      pos: [ 22,23 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 24,28 ]
+      type: 9(06)
+    dac:
+      description: 'DAC'
+      pos: [ 29,29 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 30,37 ]
+      type: X(01)
+    uso_empresa:
+      description: 'Uso da empresa'
+      pos: [ 38,62 ]
+      type: X(25)
+    nosso_numero:
+      description: 'Nosso número'
+      pos: [ 63,70 ]
+      type: 9(08)
+    agencia_conta_cheque:
+      description: 'Agência conta do cheque'
+      pos: [ 71,82 ]
+      type: X(12)
+    carteira:
+      description: 'Carteira'
+      pos: [ 83,85 ]
+      type: 9(03)
+    nosso_numero_2:
+      description: 'Nosso número'
+      pos: [ 86,93 ]
+      type: 9(08)
+    dac_nosso_numero:
+      description: 'DAC do nosso número'
+      pos: [ 94,94 ]
+      type: 9(01)
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 95,107 ]
+      type: X(13)
+    carteira_2:
+      description: 'Carteira'
+      pos: [ 108,108 ]
+      type: 9(03)
+    codigo_ocorrencia:
+      description: 'Código de ocorrência'
+      pos: [ 109,110 ]
+      type: 9(02)
+    data_ocorrencia:
+      description: 'Data da ocorrência'
+      pos: [ 111,116 ]
+      type: 9(06)
+      convert: ddmmaa
+    numero_documento:
+      description: 'Número do documento'
+      pos: [ 117,126 ]
+      type: X(10)
+    nosso_numero_3:
+      description: 'Nosso número'
+      pos: [ 127,134 ]
+      type: 9(08)
+    brancos_3:
+      description: 'Brancos'
+      pos: [ 135,146 ]
+      type: X(12)
+    zeros_2:
+      description: 'Complemento do Registro'
+      pos: [ 147,152 ]
+      type: 9(06)
+    valor_boleto:
+      description: 'Valor do boleto'
+      pos: [ 153,165 ]
+      type: 9(11)V9(2)
+    codigo_banco:
+      description: 'Código do banco'
+      pos: [ 166,168 ]
+      type: 9(03)
+    agencia_cobradora:
+      description: 'Agência cobradora'
+      pos: [ 169,172 ]
+      type: 9(04)
+    dac_agencia_cobradora:
+      description: 'DAC da agência cobradora'
+      pos: [ 173,173 ]
+      type: 9(01)
+    brancos_4:
+      description: 'Brancos'
+      pos: [ 174,175 ]
+      type: X(02)
+    zeros_3:
+      description: 'Zeros'
+      pos: [ 176,253 ]
+      type: 9(78)
+    valor_cheque:
+      description: 'Valor do cheque'
+      pos: [ 254,266 ]
+      type: 9(11)V9(2)
+    zeros_4:
+      description: 'Zeros'
+      pos: [ 267,292 ]
+      type: 9(26)
+    brancos_5:
+      description: 'Brancos'
+      pos: [ 293,301 ]
+      type: X(09)
+    zeros_5:
+      description: 'Zeros'
+      pos: [ 302,324 ]
+      type: 9(23)
+    banda_magnetica:
+      description: 'Banda magnética'
+      pos: [ 325,354 ]
+      type: X(30)
+    brancos_6:
+      description: 'Brancos'
+      pos: [ 355,377 ]
+      type: X(23)
+    motivo:
+      description: 'Motivo'
+      pos: [ 378,379 ]
+      type: X(02)
+    brancos_7:
+      description: 'Brancos'
+      pos: [ 380,394 ]
+      type: X(15)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "3RET":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    emv_qr_code:
+      description: 'EMV QR Code'
+      pos: [ 2,391 ]
+      type: X(390)
+    codigo_erro_pix:
+      description: 'Código de erro PIX'
+      pos: [ 392,394 ]
+      type: 9(03)
+    numero_sequencial:
+      description: 'Número sequencial'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "4RET":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_inscricao:
+      description: 'Código de inscrição'
+      pos: [ 2,3 ]
+      type: 9(02)
+    numero_inscricao:
+      description: 'Número de inscrição'
+      pos: [ 4,17 ]
+      type: 9(14)
+    agencia:
+      description: 'Agência'
+      pos: [ 18,21 ]
+      type: 9(04)
+    zeros:
+      description: 'Zeros'
+      pos: [ 22,23 ]
+      type: 9(02)
+    conta:
+      description: 'Conta'
+      pos: [ 24,28 ]
+      type: 9(06)
+    dac:
+      description: 'DAC'
+      pos: [ 29,29 ]
+      type: 9(01)
+    brancos:
+      description: 'Brancos'
+      pos: [ 30,37 ]
+      type: X(01)
+    uso_empresa:
+      description: 'Uso da empresa'
+      pos: [ 38,62 ]
+      type: X(25)
+    nosso_numero:
+      description: 'Nosso número'
+      pos: [ 63,70 ]
+      type: 9(08)
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 71,82 ]
+      type: X(12)
+    numero_carteira:
+      description: 'Número da carteira'
+      pos: [ 83,85 ]
+      type: 9(03)
+    nosso_numero_2:
+      description: 'Nosso número'
+      pos: [ 86,93 ]
+      type: 9(08)
+    dac_nosso_numero:
+      description: 'DAC do nosso número'
+      pos: [ 94,94 ]
+      type: 9(01)
+    brancos_3:
+      description: 'Brancos'
+      pos: [ 95,107 ]
+      type: X(13)
+    carteira_2:
+      description: 'Carteira'
+      pos: [ 108,108 ]
+      type: 9(03)
+    codigo_ocorrencia:
+      description: 'Código de ocorrência'
+      pos: [ 109,110 ]
+      type: 9(02)
+    sequencia:
+      description: 'Sequência'
+      pos: [ 111,112 ]
+      type: 9(02)
+    valor_boleto:
+      description: 'Valor do boleto'
+      pos: [ 113,125 ]
+      type: 9(11)V9(2)
+    agencia_01:
+      description: 'Agência'
+      pos: [ 126,129 ]
+      type: 9(04)
+    conta_01:
+      description: 'Conta'
+      pos: [ 130,136 ]
+      type: 9(07)
+    dac_01:
+      description: 'DAC'
+      pos: [ 137,137 ]
+      type: 9(01)
+    valor_01:
+      description: 'Valor'
+      pos: [ 138,150 ]
+      type: 9(11)V9(2)
+    valor_encargos_01:
+      description: 'Valor dos encargos'
+      pos: [ 151,160 ]
+      type: 9(11)V9(2)
+    agencia_02:
+      description: 'Agência'
+      pos: [ 161,164 ]
+      type: 9(04)
+    conta_02:
+      description: 'Conta'
+      pos: [ 165,171 ]
+      type: 9(07)
+    dac_02:
+      description: 'DAC'
+      pos: [ 172,172 ]
+      type: 9(01)
+    valor_02:
+      description: 'Valor'
+      pos: [ 173,185 ]
+      type: 9(11)V9(2)
+    valor_encargos_02:
+      description: 'Valor dos encargos'
+      pos: [ 186,195 ]
+      type: 9(11)V9(2)
+    agencia_03:
+      description: 'Agência'
+      pos: [ 196,199 ]
+      type: 9(04)
+    conta_03:
+      description: 'Conta'
+      pos: [ 200,206 ]
+      type: 9(07)
+    dac_03:
+      description: 'DAC'
+      pos: [ 207,207 ]
+      type: 9(01)
+    valor_03:
+      description: 'Valor'
+      pos: [ 208,220 ]
+      type: 9(11)V9(2)
+    valor_encargos_03:
+      description: 'Valor dos encargos'
+      pos: [ 221,230 ]
+      type: 9(11)V9(2)
+    agencia_04:
+      description: 'Agência'
+      pos: [ 231,234 ]
+      type: 9(04)
+    conta_04:
+      description: 'Conta'
+      pos: [ 235,241 ]
+      type: 9(07)
+    dac_04:
+      description: 'DAC'
+      pos: [ 242,242 ]
+      type: 9(01)
+    valor_04:
+      description: 'Valor'
+      pos: [ 243,255 ]
+      type: 9(11)V9(2)
+    valor_encargos_04:
+      description: 'Valor dos encargos'
+      pos: [ 256,265 ]
+      type: 9(11)V9(2)
+    agencia_05:
+      description: 'Agência'
+      pos: [ 266,269 ]
+      type: 9(04)
+    conta_05:
+      description: 'Conta'
+      pos: [ 270,276 ]
+      type: 9(07)
+    dac_05:
+      description: 'DAC'
+      pos: [ 277,277 ]
+      type: 9(01)
+    valor_05:
+      description: 'Valor'
+      pos: [ 278,290 ]
+      type: 9(11)V9(2)
+    valor_encargos_05:
+      description: 'Valor dos encargos'
+      pos: [ 291,300 ]
+      type: 9(11)V9(2)
+    agencia_06:
+      description: 'Agência'
+      pos: [ 301,304 ]
+      type: 9(04)
+    conta_06:
+      description: 'Conta'
+      pos: [ 305,311 ]
+      type: 9(07)
+    dac_06:
+      description: 'DAC'
+      pos: [ 312,312 ]
+      type: 9(01)
+    valor_06:
+      description: 'Valor'
+      pos: [ 313,325 ]
+      type: 9(11)V9(2)¶
+    valor_encargos_06:
+      description: 'Valor dos encargos'
+      pos: [ 326,335 ]
+      type: 9(11)V9(2)
+    agencia_07:
+      description: 'Agência'
+      pos: [ 336,339 ]
+      type: 9(04)
+    conta_07:
+      description: 'Conta'
+      pos: [ 340,346 ]
+      type: 9(07)
+    dac_07:
+      description: 'DAC'
+      pos: [ 347,347 ]
+      type: 9(01)
+    valor_07:
+      description: 'Valor'
+      pos: [ 348,360 ]
+      type: 9(11)V9(2)
+    valor_encargos_07:
+      description: 'Valor dos encargos'
+      pos: [ 361,370 ]
+      type: 9(11)V9(2)
+    brancos_4:
+      description: 'Brancos'
+      pos: [ 371,393 ]
+      type: X(23)
+    tipo_valor:
+      description: 'Tipo de valor'
+      pos: [ 394,394 ]
+      type: 9(01)
+    numero_sequencial:
+      description: 'Número sequencial do registro'
+      pos: [ 395,400 ]
+      type: 9(06)
+  "9RET":
+    tipo_registro:
+      description: 'Tipo de registro'
+      pos: [ 1,1 ]
+      type: 9(01)
+    codigo_retorno:
+      description: 'Código de retorno'
+      pos: [ 2,2 ]
+      type: 9(01)
+    codigo_servico:
+      description: 'Código do serviço'
+      pos: [ 3,4 ]
+      type: 9(02)
+    codigo_banco:
+      description: 'Código do banco'
+      pos: [ 5,7 ]
+      type: 9(03)
+    brancos_1:
+      description: 'Brancos'
+      pos: [ 8,17 ]
+      type: X(10)
+    quantidade_boletos:
+      description: 'Quantidade de boletos'
+      pos: [ 18,25 ]
+      type: 9(08)
+    valor_total:
+      description: 'Valor total'
+      pos: [ 26,39 ]
+      type: 9(11)V9(2)
+    aviso_bancario:
+      description: 'Aviso bancário'
+      pos: [ 40,47 ]
+      type: X(08)
+    brancos:
+      description: 'Brancos'
+      pos: [ 48,57 ]
+      type: X(10)
+    quantidade_boletos_cobranca:
+      description: 'Quantidade de boletos de cobrança'
+      pos: [ 58,65 ]
+      type: 9(08)
+    valor_total_cobranca:
+      description: 'Valor total'
+      pos: [ 66,79 ]
+      type: 9(12)V9(2)
+    aviso_bancario_2:
+      description: 'Aviso bancário'
+      pos: [ 80,87 ]
+      type: X(08)
+    brancos_2:
+      description: 'Brancos'
+      pos: [ 88,177 ]
+      type: X(90)
+    quantidade_boletos_cobranca_direta:
+      description: 'Quantidade de boletos'
+      pos: [ 178,185 ]
+      type: 9(08)
+    valor_total_cobranca_direta:
+      description: 'Valor total'
+      pos: [ 186,199 ]
+      type: 9(11)V9(2)
+    aviso_bancario_3:
+      description: 'Aviso bancário'
+      pos: [ 200,207 ]
+      type: X(08)
+    controle_arquivo:
+      description: 'Controle do arquivo'
+      pos: [ 208,212 ]
+      type: 9(05)
+    quantidade_detalhes:
+      description: 'Quantidade de detalhes'
+      pos: [ 213,220 ]
+      type: 9(08)
+    valor_total_informado:
+      description: 'Valor total informado'
+      pos: [ 221,234 ]
+      type: 9(12)V9(2)
+    brancos_3:
+      description: 'Brancos'
+      pos: [ 235,394 ]
+      type: X(160)
     numero_sequencial:
       description: 'Número sequencial do registro'
       pos: [ 395,400 ]

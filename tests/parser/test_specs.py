@@ -6,7 +6,6 @@ from farialimer.utils.math_ops import sum_layout_fields_size
 from tests.helpers import _get_spec_list, _get_spec
 
 
-# @pytest.mark.skip(reason="Not implemented")
 @pytest.mark.parametrize("provider, spec", _get_spec_list())
 def test_spec_size(provider, spec):
     """Test the Sum of layout field sizes. Assumes that the last field has the correct size (end)"""
@@ -16,4 +15,7 @@ def test_spec_size(provider, spec):
         result = sum_layout_fields_size(spec_parser, register)
         expected = fields[-1].end
 
-        assert result == expected
+        assert result == expected, (
+            f"Sum of register {register} not equal to register size. "
+            f"Expected {expected}, got {result}"
+        )
