@@ -1,0 +1,537 @@
+provider: Sicredi
+service: 'Folha de Pagamento'
+version: 2.3
+layout: folha_pagamento
+register:
+  "0":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '748'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+      default: '0000'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '0'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 9,17 ]
+      type: X(009)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    codigo_convenio_banco:
+      description: 'Código do Convênio no Banco'
+      pos: [ 33,52 ]
+      type: X(020)
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador da Ag/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    nome_banco:
+      description: 'Nome do Banco'
+      pos: [ 103,132 ]
+      type: X(030)
+      default: 'SICREDI'
+    cnab_2:
+      description: 'Uso Exclusivo SICREDI'
+      pos: [ 133,142 ]
+      type: X(010)
+    codigo_remessa_retorno:
+      description: 'Código Remessa/Retorno'
+      pos: [ 143,143 ]
+      type: 9(001)
+    data_geracao:
+      description: 'Data de Geração do Arquivo'
+      pos: [ 144,151 ]
+      type: 9(008)
+    hora_geracao:
+      description: 'Hora de Geração do Arquivo'
+      pos: [ 152,157 ]
+      type: 9(006)
+    numero_sequencial_arquivo:
+      description: 'Sequencial (NSA)'
+      pos: [ 158,163 ]
+      type: 9(006)
+    layout_arquivo:
+      description: 'Nº da Versão do Leiaute do Arquivo'
+      pos: [ 164,166 ]
+      type: 9(003)
+      default: '082'
+    densidade_gravacao:
+      description: 'Densidade'
+      pos: [ 167,171 ]
+      type: 9(005)
+    reservado_banco:
+      description: 'Para Uso Reservado do Banco'
+      pos: [ 172,191 ]
+      type: X(020)
+    reservado_empresa:
+      description: 'Para Uso Reservado da Empresa'
+      pos: [ 192,211 ]
+      type: X(020)
+    cnab_3:
+      description: 'Uso Exclusivo SICREDI'
+      pos: [ 212,240 ]
+      type: X(029)
+
+  "1":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '748'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '1'
+    tipo_operacao:
+      description: 'Operação'
+      pos: [ 9,9 ]
+      type: X(001)
+      default: 'C'
+    tipo_servico:
+      description: 'Tipo do Serviço'
+      pos: [ 10,11 ]
+      type: 9(002)
+    forma_lancamento:
+      description: 'Forma de Lançamento'
+      pos: [ 12,13 ]
+      type: 9(002)
+    layout_lote:
+      description: 'Nº da Versão do Leiaute do Lote'
+      pos: [ 14,16 ]
+      type: 9(003)
+      default: '042'
+    cnab:
+      description: 'Uso Exclusivo SICREDI'
+      pos: [ 17,17 ]
+      type: X(001)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    codigo_convenio_banco:
+      description: 'Código do Convênio no Banco'
+      pos: [ 33,52 ]
+      type: X(020)
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador da Ag/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    mensagem:
+      description: 'Mensagem'
+      pos: [ 103,142 ]
+      type: X(040)
+    logradouro:
+      description: 'Logradouro'
+      pos: [ 143,172 ]
+      type: X(030)
+    numero:
+      description: 'Número do Local'
+      pos: [ 173,177 ]
+      type: 9(005)
+    complemento:
+      description: 'Complemento'
+      pos: [ 178,192 ]
+      type: X(015)
+    cidade:
+      description: 'Cidade'
+      pos: [ 193,212 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 213,217 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento CEP'
+      pos: [ 218,220 ]
+      type: X(003)
+    estado:
+      description: 'Estado'
+      pos: [ 221,222 ]
+      type: X(002)
+    cnab_1:
+      description: 'Uso Exclusivo SICREDI'
+      pos: [ 223,230 ]
+      type: X(008)
+    ocorrencias:
+      description: 'Códigos das Ocorrências p/ Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  "3A":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '748'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_registro:
+      description: 'Nº do Registro'
+      pos: [ 9,13 ]
+      type: 9(005)
+    segmento:
+      description: 'Código de Segmento do Reg. Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'A'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_movimento:
+      description: 'Código da Instrução p/ Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    camara:
+      description: 'Código da Câmara Centralizadora'
+      pos: [ 18,20 ]
+      type: 9(003)
+    banco_favorecido:
+      description: 'Código do Banco do Favorecido'
+      pos: [ 21,23 ]
+      type: 9(003)
+    agencia_favorecido:
+      description: 'Ag. Mantenedora da Conta'
+      pos: [ 24,28 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 29,29 ]
+      type: X(001)
+    conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 30,41 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 42,42 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador da Ag./Conta'
+      pos: [ 43,43 ]
+      type: X(001)
+    nome_favorecido:
+      description: 'Nome do Favorecido'
+      pos: [ 44,73 ]
+      type: X(030)
+    seu_numero:
+      description: 'Seu Número'
+      pos: [ 74,93 ]
+      type: X(020)
+    data_pagamento:
+      description: 'Data Pagamento'
+      pos: [ 94,101 ]
+      type: 9(008)
+    moeda_tipo:
+      description: 'Tipo da Moeda'
+      pos: [ 102,104 ]
+      type: X(003)
+      default: 'BRL'
+    quantidade_moeda:
+      description: 'Quantidade da Moeda'
+      pos: [ 105,119 ]
+      type: 9(010)V05
+    valor_pagamento:
+      description: 'Valor Pagamento'
+      pos: [ 120,134 ]
+      type: 9(013)V02
+    nosso_numero:
+      description: 'Nosso Número'
+      pos: [ 135,154 ]
+      type: X(020)
+    data_real:
+      description: 'Data Real'
+      pos: [ 155,162 ]
+      type: 9(008)
+    valor_real:
+      description: 'Valor Real'
+      pos: [ 163,177 ]
+      type: 9(013)V02
+    informacao_2:
+      description: 'Informação 2'
+      pos: [ 178,217 ]
+      type: X(040)
+    codigo_finalidade_doc:
+      description: 'Código Finalidade DOC'
+      pos: [ 218,219 ]
+      type: X(002)
+    codigo_finalidade_ted:
+      description: 'Código Finalidade TED'
+      pos: [ 220,224 ]
+      type: X(005)
+    codigo_finalidade_complementar:
+      description: 'Código Finalidade Complementar'
+      pos: [ 225,226 ]
+      type: X(002)
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 227,229 ]
+      type: X(003)
+    aviso:
+      description: 'Aviso'
+      pos: [ 230,230 ]
+      type: 9(001)
+    ocorrencias:
+      description: 'Ocorrências'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  "3B":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '748'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_registro:
+      description: 'Nº do Registro'
+      pos: [ 9,13 ]
+      type: 9(005)
+    segmento:
+      description: 'Segmento'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'B'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 15,17 ]
+      type: X(003)
+    tipo_inscricao:
+      description: 'Tipo de Inscrição do Favorecido'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao:
+      description: 'Nº de Inscrição do Favorecido'
+      pos: [ 19,32 ]
+      type: 9(014)
+    logradouro:
+      description: 'Logradouro'
+      pos: [ 33,62 ]
+      type: X(030)
+    numero:
+      description: 'Nº do Local'
+      pos: [ 63,67 ]
+      type: 9(005)
+    complemento:
+      description: 'Complemento'
+      pos: [ 68,82 ]
+      type: X(015)
+    bairro:
+      description: 'Bairro'
+      pos: [ 83,97 ]
+      type: X(015)
+    cidade:
+      description: 'Cidade'
+      pos: [ 98,117 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 118,122 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento do CEP'
+      pos: [ 123,125 ]
+      type: X(003)
+    estado:
+      description: 'Estado'
+      pos: [ 126,127 ]
+      type: X(002)
+    vencimento:
+      description: 'Vencimento'
+      pos: [ 128,135 ]
+      type: 9(008)
+    valor_documento:
+      description: 'Valor Documento'
+      pos: [ 136,150 ]
+      type: 9(013)V02
+    abatimento:
+      description: 'Abatimento'
+      pos: [ 151,165 ]
+      type: 9(013)V02
+    desconto:
+      description: 'Desconto'
+      pos: [ 166,180 ]
+      type: 9(013)V02
+    mora:
+      description: 'Mora'
+      pos: [ 181,195 ]
+      type: 9(013)V02
+    multa:
+      description: 'Multa'
+      pos: [ 196,210 ]
+      type: 9(013)V02
+    codigo_documento_favorecido:
+      description: 'Código/Documento do Favorecido'
+      pos: [ 211,225 ]
+      type: X(015)
+    aviso:
+      description: 'Aviso ao Favorecido'
+      pos: [ 226,226 ]
+      type: 9(001)
+    codigo_ug_centralizadora:
+      description: 'Código UG Centralizadora'
+      pos: [ 227,232 ]
+      type: 9(006)
+    codigo_ispb:
+      description: 'Identificação do Banco no SPB'
+      pos: [ 233,240 ]
+      type: 9(008)
+
+  "5":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '748'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatoria_valores:
+      description: 'Somatória dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V02
+    somatoria_quantidade_moedas:
+      description: 'Somatória Quantidade Moeda'
+      pos: [ 42,59 ]
+      type: 9(013)V05
+    numero_aviso_debito:
+      description: 'Número Aviso Débito'
+      pos: [ 60,65 ]
+      type: 9(006)
+    cnab_2:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 66,230 ]
+      type: X(165)
+    ocorrencias:
+      description: 'Ocorrências'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  "9":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '748'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+      default: '9999'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '9'
+    cnab:
+      description: 'Uso Exclusivo SICREDI'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_lotes:
+      description: 'Qtde de Lotes do Arquivo'
+      pos: [ 18,23 ]
+      type: 9(006)
+    quantidade_registros:
+      description: 'Qtde de Registros do Arquivo'
+      pos: [ 24,29 ]
+      type: 9(006)
+    quantidade_contas_conciliacao:
+      description: 'Qtde de Contas p/ Conc. (Lotes)'
+      pos: [ 30,35 ]
+      type: 9(006)
+    cnab_2:
+      description: 'Uso Exclusivo SICREDI'
+      pos: [ 36,240 ]
+      type: X(205)
