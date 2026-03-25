@@ -31,14 +31,13 @@ pytest tests/ --cov=./ --cov-report=xml
 
 ### Linting
 ```bash
-flake8
-find . -name "*.py" | xargs black --check
-find . -name "*.py" | xargs pylint --output-format=colorized
+ruff check .
+ruff format --check .
 ```
 
 ### Format code
 ```bash
-find . -name "*.py" | xargs black
+ruff format .
 ```
 
 ## Architecture

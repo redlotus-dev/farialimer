@@ -1,4 +1,4 @@
-""""Test Layout Properties"""
+""" "Test Layout Properties"""
 
 import pytest
 
@@ -16,6 +16,5 @@ def test_spec_size(provider, spec):
         expected = fields[-1].end
 
         assert result == expected, (
-            f"Sum of register {register} not equal to register size. "
-            f"Expected {expected}, got {result}"
+            f"Sum of register {register} not equal to register size. Expected {expected}, got {result}"
         )

@@ -1,4 +1,5 @@
 """Test the basic parser module"""
+
 import pytest
 
 from farialimer.parser.basic_parser import BasicParser

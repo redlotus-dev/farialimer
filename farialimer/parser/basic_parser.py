@@ -101,9 +101,7 @@ class BasicParser(ABC):
                         )
                     )
                 except KeyError as err:
-                    raise KeyError(
-                        f"Error in {filepath} in {key} {item} - {prop['description']}"
-                    ) from err
+                    raise KeyError(f"Error in {filepath} in {key} {item} - {prop['description']}") from err
             document[key] = layout_list
         return document
 

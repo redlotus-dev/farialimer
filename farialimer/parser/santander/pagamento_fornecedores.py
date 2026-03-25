@@ -1,4 +1,5 @@
 """Parse module"""
+
 from collections import namedtuple
 
 from farialimer.parser.santander.base_santander import SantanderParser

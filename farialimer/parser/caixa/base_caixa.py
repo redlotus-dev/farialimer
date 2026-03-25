@@ -1,4 +1,5 @@
 """Parse module"""
+
 from abc import abstractmethod
 
 from farialimer.parser.basic_parser import BasicParser

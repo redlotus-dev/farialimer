@@ -10,7 +10,7 @@ authors = [
 ]
 description = "Parser for Brazilian Finance Documents. Ex: IMBARQ, CNAB"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 keywords = ["parser", "imbarq", "cnab"]
 license = { text = "MIT" }
 classifiers = [
@@ -20,4 +20,15 @@ dependencies = ["PyYAML"]
 
 [project.urls]
 repository = "https://github.com/redlotus-dev/farialimer"
+
+[tool.ruff]
+line-length = 120
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C90"]
+ignore = ["E203", "E226", "E302", "E401"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
 
