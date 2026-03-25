@@ -1,0 +1,674 @@
+provider: Banco do Brasil
+service: 'Folha de Pagamento'
+version: julho/2019
+layout: folha_pagamento
+register:
+  # HEADER DE ARQUIVO
+  "0":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+      default: '0000'
+    tipo_registro:
+      description: 'Tipo de Serviço'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '0'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 9,17 ]
+      type: X(009)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    convenio_numero:
+      description: 'Nº do Convênio'
+      pos: [ 33,41 ]
+      type: 9(009)
+    convenio_codigo:
+      description: 'Código do Convênio'
+      pos: [ 42,45 ]
+      type: 9(004)
+      default: '0126'
+    convenio_reservado_banco:
+      description: 'Uso Reservado do Banco'
+      pos: [ 46,50 ]
+      type: X(005)
+    arquivo_teste:
+      description: 'Arquivo de teste'
+      pos: [ 51,52 ]
+      type: X(002)
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador da Ag/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+      default: '0'
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    nome_banco:
+      description: 'Nome do Banco'
+      pos: [ 103,132 ]
+      type: X(030)
+      default: 'BANCO DO BRASIL'
+    cnab_2:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 133,142 ]
+      type: X(010)
+    codigo_remessa_retorno:
+      description: 'Código Remessa / Retorno'
+      pos: [ 143,143 ]
+      type: 9(001)
+    data_geracao:
+      description: 'Data de Geração do Arquivo'
+      pos: [ 144,151 ]
+      type: 9(008)
+    hora_geracao:
+      description: 'Hora de Geração do Arquivo'
+      pos: [ 152,157 ]
+      type: 9(006)
+    numero_sequencial_arquivo:
+      description: 'Número Sequencial do Arquivo'
+      pos: [ 158,163 ]
+      type: 9(006)
+    layout_arquivo:
+      description: 'Nº Versão do Layout do Arquivo'
+      pos: [ 164,166 ]
+      type: 9(003)
+    densidade_gravacao:
+      description: 'Densidade de Gravação do Arquivo'
+      pos: [ 167,171 ]
+      type: 9(005)
+      default: '00000'
+    reservado_banco:
+      description: 'Para Uso Reservado do Banco'
+      pos: [ 172,191 ]
+      type: X(020)
+    reservado_empresa:
+      description: 'Para Uso Reservado da Empresa'
+      pos: [ 192,211 ]
+      type: X(020)
+    cnab_3:
+      description: 'Para Uso Exclusivo FEBRABAN CNAB'
+      pos: [ 212,222 ]
+      type: X(011)
+    identificacao:
+      description: 'Identificação cobrança sem papel'
+      pos: [ 223,225 ]
+      type: X(003)
+    controle_vans:
+      description: 'Uso exclusivo das VANS'
+      pos: [ 226,228 ]
+      type: 9(003)
+      default: '000'
+    servico:
+      description: 'Tipo de Serviço'
+      pos: [ 229,230 ]
+      type: 9(002)
+      default: '00'
+    ocorrencias:
+      description: 'Códigos de Ocorrências'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  # HEADER DE LOTE AB
+  "1":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '1'
+    tipo_operacao:
+      description: 'Tipo da Operação'
+      pos: [ 9,9 ]
+      type: X(001)
+      default: 'C'
+    tipo_servico:
+      description: 'Tipo do Serviço'
+      pos: [ 10,11 ]
+      type: 9(002)
+    forma_lancamento:
+      description: 'Forma de Lançamento'
+      pos: [ 12,13 ]
+      type: 9(002)
+    layout_lote:
+      description: 'Nº da Versão do Layout do Lote'
+      pos: [ 14,16 ]
+      type: 9(003)
+    cnab:
+      description: 'Uso Exclusivo da FEBRABAN/CNAB'
+      pos: [ 17,17 ]
+      type: X(001)
+    tipo_inscricao_empresa:
+      description: 'Tipo de Inscrição da Empresa'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao_empresa:
+      description: 'Número de Inscrição da Empresa'
+      pos: [ 19,32 ]
+      type: 9(014)
+    convenio_numero:
+      description: 'Nº do Convênio'
+      pos: [ 33,41 ]
+      type: 9(009)
+    convenio_codigo:
+      description: 'Código do Convênio'
+      pos: [ 42,45 ]
+      type: 9(004)
+      default: '0126'
+    convenio_reservado_banco:
+      description: 'Uso Reservado do Banco'
+      pos: [ 46,50 ]
+      type: X(005)
+    arquivo_teste:
+      description: 'Arquivo de teste'
+      pos: [ 51,52 ]
+      type: X(002)
+    agencia:
+      description: 'Agência Mantenedora da Conta'
+      pos: [ 53,57 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 58,58 ]
+      type: X(001)
+    conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 59,70 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 71,71 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador da Ag/Conta'
+      pos: [ 72,72 ]
+      type: X(001)
+      default: '0'
+    nome_empresa:
+      description: 'Nome da Empresa'
+      pos: [ 73,102 ]
+      type: X(030)
+    informacao_1:
+      description: 'Mensagem'
+      pos: [ 103,142 ]
+      type: X(040)
+    logradouro:
+      description: 'Nome da Rua, Av, Pça, Etc'
+      pos: [ 143,172 ]
+      type: X(030)
+    numero:
+      description: 'Número do Local'
+      pos: [ 173,177 ]
+      type: 9(005)
+    complemento:
+      description: 'Casa, Apto, Sala, Etc'
+      pos: [ 178,192 ]
+      type: X(015)
+    cidade:
+      description: 'Cidade'
+      pos: [ 193,212 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 213,217 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento do CEP'
+      pos: [ 218,220 ]
+      type: X(003)
+    estado:
+      description: 'Sigla do Estado'
+      pos: [ 221,222 ]
+      type: X(002)
+    cnab_1:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 223,230 ]
+      type: X(008)
+    ocorrencias:
+      description: 'Código das Ocorrências p/ Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  # REGISTRO DETALHE - SEGMENTO A
+  "3A":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_registro:
+      description: 'Nº Seqüencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    segmento:
+      description: 'Código de Segmento no Reg. Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'A'
+    tipo_movimento:
+      description: 'Tipo de Movimento'
+      pos: [ 15,15 ]
+      type: 9(001)
+    codigo_movimento:
+      description: 'Código da Instrução p/ Movimento'
+      pos: [ 16,17 ]
+      type: 9(002)
+    camara:
+      description: 'Código da Câmara Centralizadora'
+      pos: [ 18,20 ]
+      type: 9(003)
+    banco_favorecido:
+      description: 'Código do Banco Favorecido'
+      pos: [ 21,23 ]
+      type: 9(003)
+    agencia_favorecido:
+      description: 'Ag. Mantenedora da Conta Favorec.'
+      pos: [ 24,28 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 29,29 ]
+      type: X(001)
+    conta_corrente:
+      description: 'Número da Conta Corrente'
+      pos: [ 30,41 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta Corren.'
+      pos: [ 42,42 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador Agência/Conta'
+      pos: [ 43,43 ]
+      type: X(001)
+    nome_favorecido:
+      description: 'Nome do Favorecido'
+      pos: [ 44,73 ]
+      type: X(030)
+    seu_numero:
+      description: 'Nº do Docto Atribuído pela Empresa'
+      pos: [ 74,93 ]
+      type: X(020)
+    data_pagamento:
+      description: 'Data do Pagamento'
+      pos: [ 94,101 ]
+      type: 9(008)
+    moeda_tipo:
+      description: 'Tipo da Moeda'
+      pos: [ 102,104 ]
+      type: X(003)
+      default: 'BRL'
+    quantidade_moeda:
+      description: 'Quantidade da Moeda'
+      pos: [ 105,119 ]
+      type: 9(010)V05
+    valor_pagamento:
+      description: 'Valor do Pagamento'
+      pos: [ 120,134 ]
+      type: 9(013)V02
+    nosso_numero:
+      description: 'Nº do Docto Atribuído pelo Banco'
+      pos: [ 135,154 ]
+      type: X(020)
+    data_real:
+      description: 'Data Real da Efetivação do Pagto'
+      pos: [ 155,162 ]
+      type: 9(008)
+    valor_real:
+      description: 'Valor Real da Efetivação do Pagto'
+      pos: [ 163,177 ]
+      type: 9(013)V02
+    informacao_2:
+      description: 'Outras Informações'
+      pos: [ 178,217 ]
+      type: X(040)
+    codigo_finalidade_doc:
+      description: 'Compl. Tipo Serviço'
+      pos: [ 218,219 ]
+      type: X(002)
+    codigo_finalidade_ted:
+      description: 'Código Finalidade da TED'
+      pos: [ 220,224 ]
+      type: X(005)
+    codigo_finalidade_complementar:
+      description: 'Complemento de Finalidade Pagto'
+      pos: [ 225,226 ]
+      type: X(002)
+    cnab:
+      description: 'Uso Exclusivo Febraban'
+      pos: [ 227,229 ]
+      type: X(003)
+    aviso:
+      description: 'Aviso ao Fornecedor'
+      pos: [ 230,230 ]
+      type: 9(001)
+      default: '0'
+    ocorrencias:
+      description: 'Código das Ocorrências p/ Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  # REGISTRO DETALHE - SEGMENTO B
+  "3B":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_registro:
+      description: 'Nº Seqüencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    segmento:
+      description: 'Código de Segmento do Reg. Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'B'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 15,17 ]
+      type: X(003)
+    tipo_inscricao:
+      description: 'Tipo de Inscrição do Favorecido'
+      pos: [ 18,18 ]
+      type: 9(001)
+    numero_inscricao:
+      description: 'Nº de Inscrição do Favorecido'
+      pos: [ 19,32 ]
+      type: 9(014)
+    logradouro:
+      description: 'Nome da Rua, Av, Pça, Etc'
+      pos: [ 33,62 ]
+      type: X(030)
+    numero:
+      description: 'Nº do Local'
+      pos: [ 63,67 ]
+      type: 9(005)
+    complemento:
+      description: 'Casa, Apto, Sala, Etc'
+      pos: [ 68,82 ]
+      type: X(015)
+    bairro:
+      description: 'Nome do Bairro'
+      pos: [ 83,97 ]
+      type: X(015)
+    cidade:
+      description: 'Nome da Cidade'
+      pos: [ 98,117 ]
+      type: X(020)
+    cep:
+      description: 'CEP'
+      pos: [ 118,122 ]
+      type: 9(005)
+    complemento_cep:
+      description: 'Complemento do CEP'
+      pos: [ 123,125 ]
+      type: X(003)
+    estado:
+      description: 'Sigla do Estado'
+      pos: [ 126,127 ]
+      type: X(002)
+    vencimento:
+      description: 'Data do Vencimento (Nominal)'
+      pos: [ 128,135 ]
+      type: 9(008)
+    valor_documento:
+      description: 'Valor do Documento (Nominal)'
+      pos: [ 136,150 ]
+      type: 9(013)V02
+    abatimento:
+      description: 'Valor do Abatimento'
+      pos: [ 151,165 ]
+      type: 9(013)V02
+    desconto:
+      description: 'Valor do Desconto'
+      pos: [ 166,180 ]
+      type: 9(013)V02
+    mora:
+      description: 'Valor da Mora'
+      pos: [ 181,195 ]
+      type: 9(013)V02
+    multa:
+      description: 'Valor da Multa'
+      pos: [ 196,210 ]
+      type: 9(013)V02
+    codigo_documento_favorecido:
+      description: 'Código/Documento do Favorecido'
+      pos: [ 211,225 ]
+      type: X(015)
+    aviso:
+      description: 'Aviso ao Favorecido'
+      pos: [ 226,226 ]
+      type: 9(001)
+      default: '0'
+    codigo_ug_centralizadora:
+      description: 'Código UG Centralizadora'
+      pos: [ 227,232 ]
+      type: 9(006)
+    codigo_ispb:
+      description: 'Identificação do Banco no SPB'
+      pos: [ 233,240 ]
+      type: 9(008)
+
+  # REGISTRO DETALHE - SEGMENTO C
+  "3C":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '3'
+    numero_registro:
+      description: 'Nº Seqüencial do Registro no Lote'
+      pos: [ 9,13 ]
+      type: 9(005)
+    segmento:
+      description: 'Código de Segmento do Reg. Detalhe'
+      pos: [ 14,14 ]
+      type: X(001)
+      default: 'C'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 15,17 ]
+      type: X(003)
+    valor_ir:
+      description: 'Valor do IR'
+      pos: [ 18,32 ]
+      type: 9(013)V02
+    valor_iss:
+      description: 'Valor do ISS'
+      pos: [ 33,47 ]
+      type: 9(013)V02
+    valor_iof:
+      description: 'Valor do IOF'
+      pos: [ 48,62 ]
+      type: 9(013)V02
+    outras_deducoes:
+      description: 'Valor Outras Deduções'
+      pos: [ 63,77 ]
+      type: 9(013)V02
+    outros_acrescimos:
+      description: 'Valor Outros Acréscimos'
+      pos: [ 78,92 ]
+      type: 9(013)V02
+    agencia_favorecido:
+      description: 'Agência do Favorecido'
+      pos: [ 93,97 ]
+      type: 9(005)
+    dv_agencia:
+      description: 'Dígito Verificador da Agência'
+      pos: [ 98,98 ]
+      type: X(001)
+    numero_conta_corrente:
+      description: 'Número Conta Corrente'
+      pos: [ 99,110 ]
+      type: 9(012)
+    dv_conta:
+      description: 'Dígito Verificador da Conta'
+      pos: [ 111,111 ]
+      type: X(001)
+    dv_agencia_conta:
+      description: 'Dígito Verificador Agência/Conta'
+      pos: [ 112,112 ]
+      type: X(001)
+    valor_inss:
+      description: 'Valor do INSS'
+      pos: [ 113,127 ]
+      type: 9(013)V02
+    numero_conta_pagamento_creditada:
+      description: 'Número Conta Pagamento Creditada'
+      pos: [ 128,147 ]
+      type: 9(020)
+    cnab_2:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 148,240 ]
+      type: X(093)
+
+  # TRAILER DE LOTE
+  "5":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '5'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_registros:
+      description: 'Quantidade de Registros do Lote'
+      pos: [ 18,23 ]
+      type: 9(006)
+    somatoria_valores:
+      description: 'Somatória dos Valores'
+      pos: [ 24,41 ]
+      type: 9(016)V02
+    somatoria_quantidade_moedas:
+      description: 'Somatória de Quantidade de Moedas'
+      pos: [ 42,59 ]
+      type: 9(013)V05
+    numero_aviso_debito:
+      description: 'Número Aviso Débito'
+      pos: [ 60,65 ]
+      type: 9(006)
+      default: '000000'
+    cnab_2:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 66,230 ]
+      type: X(165)
+    ocorrencias:
+      description: 'Códigos das Ocorrências para Retorno'
+      pos: [ 231,240 ]
+      type: X(010)
+
+  # TRAILER DE ARQUIVO
+  "9":
+    codigo_banco:
+      description: 'Código do Banco na Compensação'
+      pos: [ 1,3 ]
+      type: 9(003)
+      default: '001'
+    lote_servico:
+      description: 'Lote de Serviço'
+      pos: [ 4,7 ]
+      type: 9(004)
+      default: '9999'
+    tipo_registro:
+      description: 'Tipo de Registro'
+      pos: [ 8,8 ]
+      type: 9(001)
+      default: '9'
+    cnab:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 9,17 ]
+      type: X(009)
+    quantidade_lotes:
+      description: 'Quantidade de Lotes do Arquivo'
+      pos: [ 18,23 ]
+      type: 9(006)
+    quantidade_registros:
+      description: 'Quantidade de Registros do Arquivo'
+      pos: [ 24,29 ]
+      type: 9(006)
+    quantidade_contas_conciliacao:
+      description: 'Qtde de Contas p/ Conc. (Lotes)'
+      pos: [ 30,35 ]
+      type: 9(006)
+      default: '000000'
+    cnab_2:
+      description: 'Uso Exclusivo FEBRABAN/CNAB'
+      pos: [ 36,240 ]
+      type: X(205)
