@@ -1,22 +1,19 @@
 """Basic Interface for TXT Parsers"""
 
-import os
 from abc import ABC, abstractmethod
 from collections import OrderedDict
-from os import walk
 from typing import List
 
 import yaml
 
 from farialimer.parser.models import Field, ParseObject
 from farialimer.utils.converters import (
-    convert_yyyymmdd,
-    convert_yyyy_mm_dd,
     convert_to_string,
     convert_to_int,
     febraban_convert_to_numeric,
 )
 from farialimer.utils.raise_exceptions import raise_error_for_nonascii_character
+from farialimer.utils.spec_loader import get_spec_dict, parse_spec, convert_mapper
 
 
 class BasicParser(ABC):
@@ -74,36 +71,18 @@ class BasicParser(ABC):
             parsed_lines.append(register)
         return parsed_lines
 
+    @staticmethod
+    def parse_spec(filepath, yml):
+        """Given a spec yaml, returns namedtuple list with its props"""
+        return parse_spec(filepath, yml)
+
     def get_spec_parser(self, spec):
         """Given a spec, returns namedtuple list with its props"""
         filepath = self.spec_dict[spec]
         with open(filepath, encoding="utf-8") as yinput:
             yml = yaml.safe_load(yinput)
 
-            return self.parse_spec(filepath, yml)
-
-    @staticmethod
-    def parse_spec(filepath, yml):
-        """Given a spec yaml, returns namedtuple list with its props"""
-        document = {}
-        for key, values in yml["register"].items():
-            layout_list = []
-            for item, prop in values.items():
-                try:
-                    layout_list.append(
-                        Field(
-                            item,
-                            prop["description"],
-                            prop["type"],
-                            prop.get("convert"),
-                            prop["pos"][0],
-                            prop["pos"][1],
-                        )
-                    )
-                except KeyError as err:
-                    raise KeyError(f"Error in {filepath} in {key} {item} - {prop['description']}") from err
-            document[key] = layout_list
-        return document
+            return parse_spec(filepath, yml)
 
     def parse_line(self, line, fields: List[Field]):
         """Given a line and a list of fields, extract the value from each layout item,
@@ -116,29 +95,3 @@ class BasicParser(ABC):
             parse_item = converter(parse_obj)
             parse_result[item.name] = parse_item
         return parse_result
-
-
-def get_spec_dict(provider):
-    """
-    Load a spec dict:
-    key: spec name
-    value: spec yaml filepath
-    """
-    spec_dict = {}
-    for dirpath, _, filenames in walk(f"farialimer/specs/{provider}"):
-        for filename in filenames:
-            if filename.endswith("yaml"):
-                spec_key = filename.split(".")[0]
-                filepath = os.path.join(dirpath, filename)
-                spec_dict[spec_key] = filepath
-    return spec_dict
-
-
-def convert_mapper(converter):
-    """map the converter to it respective function"""
-    _convert_map = {
-        "aaaammdd": convert_yyyymmdd,
-        "aaaa-mm-dd": convert_yyyy_mm_dd,
-        "string": convert_to_string,
-    }
-    return _convert_map.get(converter)

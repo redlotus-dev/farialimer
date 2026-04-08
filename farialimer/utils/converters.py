@@ -1,7 +1,7 @@
 "module for converting datatypes to other representations"
 
 import re
-from datetime import date
+from datetime import date, time
 from decimal import Decimal
 
 from farialimer.parser.models import ParseObject
@@ -78,3 +78,83 @@ def febraban_convert_to_numeric(parse_obj: ParseObject):
     numeric_value_str = ".".join([integer_part, decimal_part])
     numeric_value = Decimal(numeric_value_str)
     return numeric_value
+
+
+# ---------------------------------------------------------------------------
+# Reverse converters — used by the generator to convert values back to
+# fixed-width strings
+# ---------------------------------------------------------------------------
+
+
+def reverse_convert_to_string(valor: str | None, largura: int) -> str:
+    """str -> left-aligned, space-padded to largura"""
+    if valor is None:
+        return " " * largura
+    resultado = str(valor).ljust(largura)
+    if len(resultado) > largura:
+        raise ValueError(f"Valor '{valor}' excede largura {largura}")
+    return resultado
+
+
+def reverse_convert_to_int(valor: int | None, largura: int) -> str:
+    """int -> right-aligned, zero-padded to largura"""
+    if valor is None:
+        return "0" * largura
+    resultado = str(int(valor)).zfill(largura)
+    if len(resultado) > largura:
+        raise ValueError(f"Valor '{valor}' excede largura {largura}")
+    return resultado
+
+
+def reverse_febraban_numeric(valor: Decimal | None, datatype: str, largura: int) -> str:
+    """Decimal -> multiply by 10^dec_places, zero-pad to largura"""
+    if valor is None:
+        return "0" * largura
+    str_dec_len = re.search(r"9\((\d+)\)V(\d+)", datatype).group(2)
+    dec_len = int(str_dec_len)
+    valor_inteiro = int(valor * (10**dec_len))
+    resultado = str(valor_inteiro).zfill(largura)
+    if len(resultado) > largura:
+        raise ValueError(f"Valor '{valor}' excede largura {largura}")
+    return resultado
+
+
+def reverse_b3_numeric(valor: Decimal | None, datatype: str, largura: int) -> str:
+    """Decimal -> multiply by 10^dec_places, zero-pad to largura (B3 format)"""
+    if valor is None:
+        return "0" * largura
+    str_dec_len = re.search(r"N\((\d+)\)V(\d+)", datatype).group(2)
+    dec_len = int(str_dec_len)
+    valor_inteiro = int(valor * (10**dec_len))
+    resultado = str(valor_inteiro).zfill(largura)
+    if len(resultado) > largura:
+        raise ValueError(f"Valor '{valor}' excede largura {largura}")
+    return resultado
+
+
+def reverse_convert_yyyymmdd(valor: date | None, largura: int) -> str:
+    """date -> 'YYYYMMDD' format, zero-filled if None"""
+    if valor is None:
+        return "0" * largura
+    return valor.strftime("%Y%m%d")
+
+
+def reverse_convert_yyyy_mm_dd(valor: date | None, largura: int) -> str:
+    """date -> 'YYYY-MM-DD' format, space-filled if None"""
+    if valor is None:
+        return " " * largura
+    return valor.strftime("%Y-%m-%d")
+
+
+def reverse_convert_ddmmaaaa(valor: date | None, largura: int) -> str:
+    """date -> 'DDMMYYYY' format, zero-filled if None"""
+    if valor is None:
+        return "0" * largura
+    return valor.strftime("%d%m%Y")
+
+
+def reverse_convert_hhmmss(valor: time | None, largura: int) -> str:
+    """time -> 'HHMMSS' format, zero-filled if None"""
+    if valor is None:
+        return "0" * largura
+    return valor.strftime("%H%M%S")

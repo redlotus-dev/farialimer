@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "farialimer"
-version = "0.1.0"
+version = "0.2.0"
 authors = [
     { name = "Leandro Meili", email = "leandro.meili@gmail.com" },
 ]
-description = "Parser for Brazilian Finance Documents. Ex: IMBARQ, CNAB"
+description = "Parser and Generator for Brazilian Finance Documents. Ex: IMBARQ, CNAB"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["parser", "imbarq", "cnab"]
