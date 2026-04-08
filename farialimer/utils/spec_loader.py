@@ -23,7 +23,8 @@ def get_spec_dict(provider):
     value: spec yaml filepath
     """
     spec_dict = {}
-    for dirpath, _, filenames in walk(f"farialimer/specs/{provider}"):
+    _package_dir = os.path.dirname(os.path.dirname(__file__))
+    for dirpath, _, filenames in walk(os.path.join(_package_dir, "specs", provider)):
         for filename in filenames:
             if filename.endswith("yaml"):
                 spec_key = filename.split(".")[0]
